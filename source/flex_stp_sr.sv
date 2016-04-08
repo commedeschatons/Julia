@@ -6,7 +6,7 @@
 // Version:     1.0  Initial Design Entry
 // Description: 
 
-
+//ONLY Modification is that it should reset 
 module flex_stp_sr
 #(
 parameter NUM_BITS = 4,
