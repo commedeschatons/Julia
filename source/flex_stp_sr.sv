@@ -26,7 +26,8 @@ always_ff @ (posedge clk, negedge n_rst)
 begin
 
 	if (n_rst == 1'b0)
-		parallel_out[(NUM_BITS-1):0] <= '1;
+		parallel_out[(NUM_BITS-1):1] <= '0;
+		parallel_out[0] <= 1'b1;
 	else
 		parallel_out<=q;
 		
