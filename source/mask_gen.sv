@@ -7,7 +7,7 @@
 
 module mask_gen
 #(
-	NUM_WRK = 8 //NUMBER OF Julia workers
+	NUM_WRK = 16 //NUMBER OF Julia workers
 )
 (	
 	input wire clk,
@@ -21,10 +21,10 @@ module mask_gen
 	flex_stp_sr #(NUM_WRK, 1) FSS (
 		.clk(clk),
 		.n_rst(n_rst),
-		.serial_in(mask[NUM_WRK-1],
+		.serial_in(mask[NUM_WRK-1]),
 		.shift_enable(shift_enable),
-		.parallel_out(mask),
+		.parallel_out(mask)
 	
 	);
-
+	
 endmodule
