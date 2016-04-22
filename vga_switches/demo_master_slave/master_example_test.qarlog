@@ -1,0 +1,28 @@
+Quartus Prime Archive log --	C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/master_example_test.qarlog
+
+Archive:	C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/master_example_test.qar
+Date:		Fri Apr 22 14:18:34 2016
+Quartus Prime		15.1.0 Build 185 10/21/2015 SJ Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.atm
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.cfm
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.dpi
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.hdbx
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.logdb
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.map.kpt
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.qxp_info
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.rcf
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.cmp.scidsc
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.atm
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.dpi
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.hdbx
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.logdb
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.map.kpt
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.qxp_info
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/master_example.map.scidsc
+C:/Users/Kenji/Desktop/vga_switches/demo_master_slave/db/master_example_tmp_qic_export/qic_export_file_list
+	======= Total: 17 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
