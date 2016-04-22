@@ -6,12 +6,15 @@
 module search
 #(
 	NUM_BITS = 8;
+	NUM_JULIA = 8;
 )
 (
+	
 	input wire clk,
 	input wire n_rst,
-	input wire addresses
-	input wire [NUM_BITS -1:0] done,
+	input wire [NUM_JULIA*32 -1:0] cataddresses
+	input wire [NUM_JULIA*8 -1:0] catpixels
+	input wire [NUM_JULIA -1:0] done,
 	output reg found,
 	output reg [7:0] sel_data,
 	output reg [31:0] sel_address
@@ -42,14 +45,21 @@ module search
 	
 	//address muxing
 	always_comb begin
-	 for(int i = 0; i < X; i++) begin
-  		if(onehot == (1 << i))
-    		sel_address = address[i];
+	 for(int i = 0; i < NUM_JULIA-1; i++) begin
+  		if(done == (1 << i)) begin
+    		sel_address[31:0] = addresses[32*NUM_JULIA -1: i*32];
+    		sel_data[7:0] = pixels[8*NUM_JULIA -1: i*8];
+    	end	
 	end
 	
 	//pixel muxing
 	always_comb begin
-	
+		 for(int i = 0; i < NUM_JULIA-1; i++) begin
+  		if(done == (1 << i)) begin
+    		sel_address[31:0] = addresses[32*NUM_JULIA -1: i*32];
+    		sel_data[7:0] = pixels[8*NUM_JULIA -1: i*8];
+    	end	
+		
 	end
 
 
