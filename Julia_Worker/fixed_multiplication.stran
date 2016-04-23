@@ -1,0 +1,29 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_fixed_multiplication 
+# Start time: 17:49:20 on Apr 22,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_fixed_multiplication(fast)
+# Loading work.fixed_multiplication(fast)
+# ** Warning: (vsim-3839) source/tb_fixed_multiplication.sv(63): Variable '/tb_fixed_multiplication/tb_result', driven via a port connection, is multiply driven. See source/tb_fixed_multiplication.sv(19).
+#         Region: /tb_fixed_multiplication
+# ** Warning: (vsim-3839) source/tb_fixed_multiplication.sv(41): Variable '/tb_fixed_multiplication/tb_result', driven via a port connection, is multiply driven. See source/tb_fixed_multiplication.sv(19).
+#         Region: /tb_fixed_multiplication
+add wave *
+run 100ns
+# ** Info: Test case 1(-1.2*-1.2): PASSED
+#    Time: 4900 ps  Scope: tb_fixed_multiplication File: source/tb_fixed_multiplication.sv Line: 52
+# ** Info: Test case 2(1*1): PASSED
+#    Time: 12700 ps  Scope: tb_fixed_multiplication File: source/tb_fixed_multiplication.sv Line: 74
+exit
+# End time: 17:49:53 on Apr 22,2016, Elapsed time: 0:00:33
+# Errors: 0, Warnings: 2
