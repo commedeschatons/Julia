@@ -89,7 +89,7 @@ module tb_pixel_calculator ();
 	//pixel = 1
 
 
-        //TEST CASE 3
+
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
@@ -101,8 +101,37 @@ module tb_pixel_calculator ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
+	tb_z_real_in = 20'd208;   // decimal  2.0
+	tb_z_imag_in = 20'd103;   // decimal  0.1
+	tb_c_real_in = 20'd512;   // decimal  0.5
+	tb_c_imag_in = 20'd512;   // decimal  0.5
+	tb_iteration_in = 0;	
+	tb_n_rst = 0;
+	
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	tb_n_rst = 1;
 	//expected output:
+	//z_real_out = 0.55
+	//z_imag_out = 0.54
+	//size_squared = 0.5941
 	//pixel = 1
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	//expected output:
+	//z_real_out = 0.504384
+	//z_imag_out = 1.094
+	//size_squared = 1.4512
+	//pixel = 2
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	//expected output:
+	//z_real_out = -0.442432
+	//z_imag_out = 1.60359
+	//size_squared = 2.767
+	//pixel = 3
      end
    
 endmodule

@@ -18,6 +18,7 @@ module pixel_calculator
    (
     input clk,
     input n_rst,
+    input calc_start,
     input signed [WIDTH-1:0] z_real_in,
     input signed [WIDTH-1:0] z_imag_in,
     input signed [WIDTH-1:0] c_real_in,
@@ -26,7 +27,8 @@ module pixel_calculator
     output  signed [WIDTH-1:0] z_real_out,
     output  signed [WIDTH-1:0] z_imag_out,
     output  signed [WIDTH-1:0] size_squared_out,
-    output  unsigned [7:0] pixel
+    output  unsigned [7:0] pixel,
+    output reg calc_done
     );
 
    reg        unsigned [7:0] iteration_old;
@@ -49,9 +51,10 @@ module pixel_calculator
    
    always_ff @(posedge clk, negedge n_rst) begin
       if(!n_rst) begin
-	 iteration_old <= iteration_in;
-	 z_real_old <= z_real_in;
-	 z_imag_old <= z_imag_in;
+	 iteration_old <= 0;
+	 z_real_old <= 0;
+	 z_imag_old <= 0;
+	 enable <= 0;
       end else begin
 	 iteration_old <= iteration_old_next;
 	 z_real_old <= z_real_old_next;
@@ -73,27 +76,40 @@ module pixel_calculator
       .iteration_in(iteration_old_wire),
       .iteration_out(pixel)
       );
-
+/*
    assign iteration_old_next = (enable) ? ( (pixel == ITERATIONS) ? iteration_old : (pixel == iteration_old ? iteration_old : pixel) ) : iteration_in;
    assign z_real_old_next = (enable) ? ( (pixel == ITERATIONS) ? z_real_old : (pixel == iteration_old ? z_real_old : z_real_out) ) : z_real_in;
    assign z_imag_old_next = (enable) ? ( (pixel == ITERATIONS) ? z_imag_old : (pixel == iteration_old ? z_imag_old : z_imag_out) ) : z_imag_in;   
-/*
+*/
    always_comb begin
-      if(enable == 1) begin
-	 if(pixel == ITERATIONS) begin //update input = input
-	    iteration_old_next = iteration_old;
-	    z_real_old_next = z_real_old;
-	    z_imag_old_next = z_imag_old;
-	 end else if(pixel == iteration_old) begin //update input = input
-	     iteration_old_next = iteration_old;
-	     z_real_old_next = z_real_old;
-	     z_imag_old_next = z_imag_old;
-	 end else begin //update input = output
-	    iteration_old_next = pixel;
-	    z_real_old_next = z_real_out;
-	    z_imag_old_next = z_imag_out;
+      if(calc_start == 1) begin //if task received
+	 calc_done = 0;
+	 if(enable == 1) begin  //if this is second iteration
+	    if(pixel == ITERATIONS) begin //update input = input
+	       iteration_old_next = iteration_old;
+	       z_real_old_next = z_real_old;
+	       z_imag_old_next = z_imag_old;
+	       calc_done = 1;
+	    end else if(pixel == iteration_old) begin //update input = input
+	       iteration_old_next = iteration_old;
+	       z_real_old_next = z_real_old;
+	       z_imag_old_next = z_imag_old;
+	       calc_done = 1;
+	    end else begin //update input = output
+	       iteration_old_next = pixel;
+	       z_real_old_next = z_real_out;
+	       z_imag_old_next = z_imag_out;
+	    end
+	 end else begin
+	    iteration_old_next = iteration_in;
+	    z_real_old_next = z_real_in;
+	    z_imag_old_next = z_imag_in;
 	 end
+      end else begin
+	 iteration_old_next = 0;
+	 z_real_old_next = 0;
+	 z_imag_old_next = 0;
       end
    end
-*/
+
 endmodule
