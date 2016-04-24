@@ -11,7 +11,7 @@ module tb_pixel_calculator ();
    localparam  FRACTIONAL = 10;
    localparam  INTEGRAL = 10;
 
-   reg tb_clk,tb_n_rst;
+   reg tb_clk,tb_n_rst,tb_calc_start,tb_calc_done;
    reg signed [WIDTH-1:0] tb_z_real_in;
    reg signed [WIDTH-1:0] tb_z_imag_in;
    reg signed [WIDTH-1:0] tb_c_real_in;
@@ -36,7 +36,9 @@ module tb_pixel_calculator ();
        .z_imag_out(tb_z_imag_out),
        .size_squared_out(tb_size_squared_out),
        .iteration_in(tb_iteration_in),
-       .pixel(tb_pixel)
+       .pixel(tb_pixel),
+       .calc_start(tb_calc_start),
+       .calc_done(tb_calc_done)
        );
 
    // Clock generation block
@@ -51,27 +53,27 @@ module tb_pixel_calculator ();
    initial
      begin
 	testcase = 1;
-	tb_n_rst = 1'b1;
+	tb_n_rst = 1;
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
+	tb_calc_start = 1;
+	
 	tb_z_real_in = 20'd1024;  // decimal  1.0
 	tb_z_imag_in = 20'd512;   // decimal  0.5
 	tb_c_real_in = -20'd512;  // decimal -0.5
 	tb_c_imag_in = 20'd512;   // decimal  0.5
 	tb_iteration_in = 0;
 
-	tb_n_rst = 1'b0;
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-	tb_n_rst = 1'b1;
 	
         //TEST CASE 1	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-
+	
 	//expected output:
 	//z_real_out = 0.25
 	//z_imag_out = 1.5
@@ -96,7 +98,8 @@ module tb_pixel_calculator ();
 	//expected output:
 	//pixel = 1
 
-
+	tb_calc_start = 0;
+	
         //TEST CASE 4
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -106,11 +109,15 @@ module tb_pixel_calculator ();
 	tb_c_real_in = 20'd512;   // decimal  0.5
 	tb_c_imag_in = 20'd512;   // decimal  0.5
 	tb_iteration_in = 0;	
-	tb_n_rst = 0;
-	
+
+	tb_calc_start = 1;
+	#(CHECK_DELAY);
+
+
+//	tb_calc_start = 1;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-	tb_n_rst = 1;
+
 	//expected output:
 	//z_real_out = 0.55
 	//z_imag_out = 0.54
@@ -127,11 +134,30 @@ module tb_pixel_calculator ();
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 	//expected output:
 	//z_real_out = -0.442432
 	//z_imag_out = 1.60359
 	//size_squared = 2.767
 	//pixel = 3
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_calc_start = 0;
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	tb_calc_start = 1;
+
+	tb_z_real_in = 20'd208;   // decimal  0.2
+	tb_z_imag_in = 20'd103;   // decimal  0.1
+	tb_c_real_in = 20'd4096;   // decimal  0.5
+	tb_c_imag_in = 20'd4096;   // decimal  0.5
+	tb_iteration_in = 0;	
+	
+	
      end
    
 endmodule

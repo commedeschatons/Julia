@@ -45,6 +45,6 @@ module z_calculator
    assign z_imag_out = (2 * z_real_imag) + c_imag_in;
    assign size_squared_out = z_real_squared_new + z_imag_squared_new;
    //13'h1000 <==> 13'binary 100|0000000000 (lhs is integral, rhs is fractional part). We want it to be greater than distance of 4
-   assign iteration_out = (size_squared_out >= 13'h1000) ? iteration_in : iteration_in + 1;
+   assign iteration_out = (size_squared_out >= 13'h1000) ? iteration_in : (c_real_in == 0 && c_imag_in == 0) ? iteration_in : iteration_in + 1;
    
 endmodule

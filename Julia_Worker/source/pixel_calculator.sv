@@ -34,17 +34,21 @@ module pixel_calculator
    reg        unsigned [7:0] iteration_old;
    reg        signed [WIDTH-1:0] z_real_old;
    reg        signed [WIDTH-1:0] z_imag_old;
+   reg signed [WIDTH-1:0] 	 c_real_old;
+   reg signed [WIDTH-1:0] 	 c_imag_old;
+   
    
    wire       unsigned [7:0] iteration_old_wire;
    wire       signed [WIDTH-1:0] z_real_old_wire;
    wire       signed [WIDTH-1:0] z_imag_old_wire;
    
-   wire       unsigned [7:0] iteration_old_next;
-   wire       signed [WIDTH-1:0] z_real_old_next;
-   wire       signed [WIDTH-1:0] z_imag_old_next;
+   reg       unsigned [7:0] iteration_old_next;
+   reg       signed [WIDTH-1:0] z_real_old_next;
+   reg       signed [WIDTH-1:0] z_imag_old_next;
 
-   reg 	   enable = 0;
-
+   reg 	   enable;
+   reg 	   enable_next;
+   
    assign iteration_old_wire = iteration_old;
    assign z_real_old_wire = z_real_old;
    assign z_imag_old_wire = z_imag_old;
@@ -59,7 +63,7 @@ module pixel_calculator
 	 iteration_old <= iteration_old_next;
 	 z_real_old <= z_real_old_next;
 	 z_imag_old <= z_imag_old_next;
-	 enable <= 1;
+	 enable <= enable_next;
       end
    end
 
@@ -68,8 +72,8 @@ module pixel_calculator
      (
       .z_real_in(z_real_old_wire),
       .z_imag_in(z_imag_old_wire),
-      .c_real_in(c_real_in),
-      .c_imag_in(c_imag_in),
+      .c_real_in(c_real_old),
+      .c_imag_in(c_imag_old),
       .z_real_out(z_real_out),
       .z_imag_out(z_imag_out),
       .size_squared_out(size_squared_out),
@@ -100,15 +104,22 @@ module pixel_calculator
 	       z_real_old_next = z_real_out;
 	       z_imag_old_next = z_imag_out;
 	    end
-	 end else begin
+	 end else begin // if (enable != 1)
+	    enable_next = 1;
 	    iteration_old_next = iteration_in;
 	    z_real_old_next = z_real_in;
 	    z_imag_old_next = z_imag_in;
+	    c_real_old = c_real_in;
+	    c_imag_old = c_imag_in;
 	 end
       end else begin
+	 calc_done = 1;
 	 iteration_old_next = 0;
 	 z_real_old_next = 0;
 	 z_imag_old_next = 0;
+	 c_real_old = 0;
+	 c_imag_old = 0;
+	 enable_next = 0;
       end
    end
 
