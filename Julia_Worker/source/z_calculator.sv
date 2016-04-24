@@ -6,7 +6,7 @@
 // Version:     1.0  Initial Design Entry
 // Description: Given z val and c val, calculates the new z value
 
-module pixel_calculator
+module z_calculator
   #(
     WIDTH = 20,
     FRACTIONAL = 10,

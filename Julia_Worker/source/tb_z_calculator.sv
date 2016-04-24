@@ -1,6 +1,6 @@
 `timescale 1ns / 100ps
 
-module tb_pixel_calculator ();
+module tb_z_calculator ();
 
     // Define parameters
 	// basic test bench parameters
@@ -23,7 +23,7 @@ module tb_pixel_calculator ();
 
    integer testcase;
 
-   pixel_calculator #(WIDTH,FRACTIONAL,INTEGRAL) DUT
+   z_calculator #(WIDTH,FRACTIONAL,INTEGRAL) DUT
      ( 
        .z_real_in(tb_z_real_in),
        .z_imag_in(tb_z_imag_in),

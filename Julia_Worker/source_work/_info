@@ -9,10 +9,10 @@ z2
 cModel Technology
 Z0 d/home/ecegrid/a/mg122/ece337/project/Julia/Julia_Worker
 T_opt
-!s110 1461361760
-VlKX`PCk4C80Az7<@=5MHd2
-04 23 4 work tb_fixed_multiplication fast 0
-=1-c81f66bd10e7-571a9c60-6a0f1-18f0
+!s110 1461442402
+Vi_>Qd@z_5SNf<@KC6FzLe3
+04 15 4 work tb_z_calculator fast 0
+=1-5cb9017b479f-571bd762-17564-368
 Z1 o-quiet -auto_acc_if_foreign -work source_work -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim +acc
 n@_opt
 Z2 OL;O;10.3b;59
@@ -20,18 +20,27 @@ R0
 T_opt1
 !s110 1461387042
 VMiUbeKZ1_O;Q79J<47RS[2
-04 19 4 work tb_pixel_calculator fast 0
+Z3 04 19 4 work tb_pixel_calculator fast 0
 =1-c81f66bd10e7-571aff22-5167d-3102
 R1
 n@_opt1
 R2
+R0
+T_opt2
+!s110 1461450522
+V1S5Z>z26eh@T_WEYZ1=8d2
+R3
+=1-5cb9017b479f-571bf71a-40088-6bc6
+R1
+n@_opt2
+R2
 vfixed_multiplication
-Z3 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z4 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
 !s110 1461383897
 !i10b 1
 !s100 1@5fBoJBAkiO5z0>Y:ld72
 Id>BJ8Xh0BDJfbX_:]6zD?2
-Z4 V`JN@9S9cnhjKRR_L]QIcM3
+Z5 V`JN@9S9cnhjKRR_L]QIcM3
 !s105 fixed_multiplication_sv_unit
 S1
 R0
@@ -39,7 +48,7 @@ w1461377173
 8source/fixed_multiplication.sv
 Fsource/fixed_multiplication.sv
 L0 9
-Z5 OL;L;10.3b;59
+Z6 OL;L;10.3b;59
 r1
 !s85 0
 31
@@ -47,39 +56,39 @@ r1
 !s107 source/fixed_multiplication.sv|
 !s90 -sv|-work|source_work|source/fixed_multiplication.sv|
 !i113 0
-Z6 o-sv -work source_work
-Z7 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
+Z7 o-sv -work source_work
+Z8 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
 vpixel_calculator
-R3
-!s110 1461385953
-!i10b 1
-!s100 oHj3Ha4iZk24H]J7?C^h<0
-IhEUZNnLaizMkofcKZI;XK1
 R4
+!s110 1461447741
+!i10b 1
+!s100 ?<`FfZVZeIBSQIDAI6NYH2
+IdD3lgfoo6Oj_9Ved@_1:_3
+R5
 !s105 pixel_calculator_sv_unit
 S1
-R0
-w1461385950
+Z9 d/home/ecegrid/a/mg122/ece337/project/Julia_Worker
+w1461447729
 8source/pixel_calculator.sv
 Fsource/pixel_calculator.sv
-L0 9
-R5
+L0 11
+R6
 r1
 !s85 0
 31
-!s108 1461385953.079583
+!s108 1461447741.590101
 !s107 source/pixel_calculator.sv|
 !s90 -sv|-work|source_work|source/pixel_calculator.sv|
 !i113 0
-R6
 R7
+R8
 vtb_fixed_multiplication
-R3
+R4
 !s110 1461361754
 !i10b 1
 !s100 ^NXkk6T`L4nNloL;FWSa50
 IhS0TK[Sa;lz64TNm=oH5k0
-R4
+R5
 !s105 tb_fixed_multiplication_sv_unit
 S1
 R0
@@ -87,7 +96,7 @@ w1461361748
 8source/tb_fixed_multiplication.sv
 Fsource/tb_fixed_multiplication.sv
 L0 3
-R5
+R6
 r1
 !s85 0
 31
@@ -95,29 +104,77 @@ r1
 !s107 source/tb_fixed_multiplication.sv|
 !s90 -sv|-work|source_work|source/tb_fixed_multiplication.sv|
 !i113 0
-R6
 R7
+R8
 vtb_pixel_calculator
-R3
-!s110 1461387038
-!i10b 1
-!s100 [3V80I9ajHjW43S;MVUJz1
-Ih7a4jV[hkSBSi^7gh?h3b0
 R4
+!s110 1461450517
+!i10b 1
+!s100 >;HZWj2THbdcZSF1n[ZC<1
+IKNbZ_HhJlJ=155G3AbdV:3
+R5
 !s105 tb_pixel_calculator_sv_unit
 S1
-R0
-w1461387007
+R9
+w1461450505
 8source/tb_pixel_calculator.sv
 Fsource/tb_pixel_calculator.sv
 L0 3
-R5
+R6
 r1
 !s85 0
 31
-!s108 1461387038.212985
+!s108 1461450517.361272
 !s107 source/tb_pixel_calculator.sv|
 !s90 -sv|-work|source_work|source/tb_pixel_calculator.sv|
 !i113 0
-R6
 R7
+R8
+vtb_z_calculator
+R4
+!s110 1461442397
+!i10b 1
+!s100 mgm:XVE8d6>NJQDoCTQCk2
+ISOO<oQ@9gX:lXj@@B_5kd3
+R5
+!s105 tb_z_calculator_sv_unit
+S1
+R9
+w1461438629
+8source/tb_z_calculator.sv
+Fsource/tb_z_calculator.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461442397.430174
+!s107 source/tb_z_calculator.sv|
+!s90 -sv|-work|source_work|source/tb_z_calculator.sv|
+!i113 0
+R7
+R8
+vz_calculator
+R4
+!s110 1461441580
+!i10b 1
+!s100 e?:ca8PMKg_k>GV=;IJHD2
+IlCEf6L6@7hImT=m:f;L=J2
+R5
+!s105 z_calculator_sv_unit
+S1
+R9
+w1461438613
+8source/z_calculator.sv
+Fsource/z_calculator.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461441580.803480
+!s107 source/z_calculator.sv|
+!s90 -sv|-work|source_work|source/z_calculator.sv|
+!i113 0
+R7
+R8
