@@ -1,0 +1,15 @@
+switch -> SW[17:0]
+//17 is the read/write enable, needs to be high to change color
+//16 controls read vs. write, needs to be write or high to change color
+
+SW[17] RD/WR enable 
+SW[16] 1 (up) WRITE   0 (down) READ
+
+//switch 2 high, red screen
+//switch 1 high, green screen
+//switch 0 high, blue screen
+//any combination will make other colors
+
+SW[2] 1 (up) turn on RED
+SW[1] 1 (up) turn on GREEN
+SW[0] 1 (up) turn on BLUE

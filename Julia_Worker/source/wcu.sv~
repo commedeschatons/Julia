@@ -1,0 +1,140 @@
+// $Id: $
+// File name:   wcu.sv
+// Created:     4/24/2016
+// Author:      Chongjin Chua
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: takes input from work dispatcher and send output to memory controller
+
+module wcu
+  (
+   input       clk,
+   input       n_rst,
+   input       JW_start,
+   input       MC_busy,
+   input calc_done,
+   output reg      JW_ready ,
+   output reg       JW_done,
+   output reg calc_start
+   );
+
+   typedef enum bit[3:0]
+		{IDLE, ASK_WAIT, CALC, WRITE_WAIT, WRITE, EOP1, EOP2, EOP3, EOP4, EIDLE} rcu_state;
+
+   wcu_state state;
+   wcu_state next_state;
+
+   always @(posedge clk,negedge n_rst) begin
+      if(n_rst==1'b0) begin
+	 state <= IDLE;
+      end
+      else begin
+	 state <= next_state;
+      end
+   end
+
+   always_comb begin
+      next_state = state;
+      JW_ready = 0;
+      JW_done = 0;
+      calc_start = 0;
+
+      case(state)
+	IDLE: begin
+	   JW_ready = 0;
+	   JW_done = 0;
+	   calc_start = 0;
+
+	   next_state = ASK_WAIT;
+	end
+	
+	ASK_WAIT: begin
+	   JW_ready = 1;
+	   JW_done = 0;
+	   calc_start = 0;
+
+	   if(JW_start == 1'b1) begin
+	      next_state = CALC;
+	   end else begin
+	      next_state = ASK_WAIT;
+	   end
+	end
+	
+	CALC: begin
+	   JW_ready = 0;
+	   JW_done = 0;
+	   calc_start = 1;
+
+	   if(calc_done = 1'b1) begin
+	      next_state = WRITE_WAIT;
+	   end
+	   else begin
+	      next_state = CALC;
+	   end
+	end
+
+	WRITE_WAIT: begin
+	   JW_ready = 0;
+	   JW_done = 0;
+	   calc_start = 1;
+
+	   if(byte_received == 1'b1) begin
+	      next_state = RCV_BYTE;
+	   end
+	   else if(eop == 1 && shift_enable == 1) begin
+	      next_state = EOP2;
+	   end
+	end
+
+	EOP1: begin
+	   rcving = 1'b1;
+	   w_enable = 0;
+	   r_error = 1'b1;
+	   if(shift_enable == 1 && eop == 1)
+	      next_state = EOP2;
+	end
+
+	EOP2: begin
+	   rcving = 1'b1;
+	   w_enable = 0;
+	   r_error = 1'b1;
+	   if(d_edge == 1'b1)
+	     next_state = EIDLE;
+	end
+
+	RCV_BYTE: begin
+	   rcving = 1'b1;
+	   w_enable = 1'b1;
+	   r_error = 1'b0;
+	   next_state = EOP3;
+	end
+
+	EOP3: begin
+	   rcving = 1'b1;
+	   w_enable = 1'b0;
+	   r_error = 1'b0;
+	   if(shift_enable == 1 && eop == 1)
+	     next_state = EOP4;
+	   else if(shift_enable == 1 && eop == 0)
+	     next_state = RCV_BITS;
+	end
+
+	EOP4: begin
+	   rcving = 1'b1;
+	   w_enable = 1'b0;
+	   r_error = 1'b0;
+	   if(d_edge == 1'b1)
+	     next_state = IDLE;
+	end
+
+	EIDLE: begin
+	   r_error = 1'b1;
+	   rcving = 0;
+	   w_enable = 0;
+	   if(d_edge == 1'b1)
+	     next_state = RCV_SYNC;
+	end
+	
+      endcase
+   end
+endmodule

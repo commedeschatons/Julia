@@ -1,0 +1,31 @@
+// $Id: $
+// File name:   fixed_multiplication.sv
+// Created:     4/22/2016
+// Author:      Chongjin Chua
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: Multiplies two fixed point values and return result of the same number of bits.(2bits * 2bits = 4bits)
+
+module fixed_multiplication
+  #(
+    FRACTIONAL = 10,
+    INTEGRAL = 10
+   )
+   (
+    a, b, result
+    );
+
+   parameter width = FRACTIONAL + INTEGRAL;
+
+   input signed [width - 1:0] a;
+   input signed [width - 1:0] b;
+   input signed [width - 1:0] result;
+
+   wire signed [width * 2 - 2:0] ab;
+
+   assign ab = a * b;
+   assign result = ab[width + FRACTIONAL -1:FRACTIONAL];
+   
+endmodule
+
+   
