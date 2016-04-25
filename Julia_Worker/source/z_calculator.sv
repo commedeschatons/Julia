@@ -8,9 +8,9 @@
 
 module z_calculator
   #(
-    WIDTH = 20,
-    FRACTIONAL = 10,
-    INTEGRAL = 10
+    WIDTH = 22,
+    FRACTIONAL = 11,
+    INTEGRAL = 11
    )
    (
     input signed [WIDTH-1:0] z_real_in,

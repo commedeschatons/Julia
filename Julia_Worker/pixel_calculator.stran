@@ -9,8 +9,8 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_pixel_calculator 
-# Start time: 00:56:25 on Apr 24,2016
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 19:17:18 on Apr 24,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading sv_std.std
 # Loading work.tb_pixel_calculator(fast)
 # Loading work.pixel_calculator(fast)
@@ -19,5 +19,5 @@
 add wave *
 run 200ns
 # Causality operation skipped due to absence of debug database file
-# End time: 00:58:22 on Apr 24,2016, Elapsed time: 0:01:57
+# End time: 19:19:41 on Apr 24,2016, Elapsed time: 0:02:23
 # Errors: 0, Warnings: 1

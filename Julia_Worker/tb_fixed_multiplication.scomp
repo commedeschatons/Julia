@@ -1,9 +1,9 @@
 QuestaSim-64 vlog 10.3b Compiler 2014.05 May 29 2014
-Start time: 17:49:14 on Apr 22,2016
+Start time: 13:09:32 on Apr 24,2016
 vlog -sv -work source_work source/tb_fixed_multiplication.sv 
 -- Compiling module tb_fixed_multiplication
 
 Top level modules:
 	tb_fixed_multiplication
-End time: 17:49:14 on Apr 22,2016, Elapsed time: 0:00:00
+End time: 13:09:32 on Apr 24,2016, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

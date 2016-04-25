@@ -11,9 +11,9 @@
 module pixel_calculator
   #(
     ITERATIONS = 256,
-    WIDTH = 20,
-    FRACTIONAL = 10,
-    INTEGRAL = 10
+    WIDTH = 22,
+    FRACTIONAL = 11,
+    INTEGRAL = 11
    )
    (
     input clk,

@@ -6,9 +6,9 @@ module tb_z_calculator ();
 	// basic test bench parameters
    localparam	CLK_PERIOD	= 2.5;
    localparam	CHECK_DELAY = 1; // Check 1ns after the rising edge to allow for propagation delay
-   localparam  WIDTH = 20;
-   localparam  FRACTIONAL = 10;
-   localparam  INTEGRAL = 10;
+   localparam  WIDTH = 22;
+   localparam  FRACTIONAL = 11;
+   localparam  INTEGRAL = 11;
 
    reg tb_clk;
    reg signed [WIDTH-1:0] tb_z_real_in;
@@ -54,17 +54,17 @@ module tb_z_calculator ();
 
 	testcase = 1;
 
-	tb_z_real_in = 20'd1024;  // decimal  1.0
-	tb_z_imag_in = 20'd512;   // decimal  0.5
-	tb_c_real_in = -20'd512;  // decimal -0.5
-	tb_c_imag_in = 20'd512;   // decimal  0.5
+	tb_z_real_in = 22'd2048;  // decimal  1.0
+	tb_z_imag_in = 22'd1024;   // decimal  0.5
+	tb_c_real_in = -22'd1024;  // decimal -0.5
+	tb_c_imag_in = 22'd1024;   // decimal  0.5
 	tb_iteration_in = 1;
 
 	//expected output:
 	//z_real_out = 0.25
 	//z_imag_out = 1.5
 	//size_squared = 2.3125
-	//iteration_out = 2
+	//iteration_out = 1
 
         //TEST CASE 2
 	@(posedge tb_clk);
@@ -80,7 +80,7 @@ module tb_z_calculator ();
 	//z_real_out = -2.6875
 	//z_imag_out = 1.25
 	//size_squared = 8.785
-	//iteration_out = 2
+	//iteration_out = 1
 
         //TEST CASE 3
 	@(posedge tb_clk);

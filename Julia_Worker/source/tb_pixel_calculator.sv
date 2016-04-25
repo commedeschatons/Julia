@@ -7,9 +7,9 @@ module tb_pixel_calculator ();
    localparam	CLK_PERIOD	= 2.5;
    localparam	CHECK_DELAY = 1; // Check 1ns after the rising edge to allow for propagation delay
    localparam  ITERATIONS = 256;
-   localparam  WIDTH = 20;
-   localparam  FRACTIONAL = 10;
-   localparam  INTEGRAL = 10;
+   localparam  WIDTH = 22;
+   localparam  FRACTIONAL = 11;
+   localparam  INTEGRAL = 11;
 
    reg tb_clk,tb_n_rst,tb_calc_start,tb_calc_done;
    reg signed [WIDTH-1:0] tb_z_real_in;
@@ -60,10 +60,10 @@ module tb_pixel_calculator ();
 
 	tb_calc_start = 1;
 	
-	tb_z_real_in = 20'd1024;  // decimal  1.0
-	tb_z_imag_in = 20'd512;   // decimal  0.5
-	tb_c_real_in = -20'd512;  // decimal -0.5
-	tb_c_imag_in = 20'd512;   // decimal  0.5
+	tb_z_real_in = 22'd2048;  // decimal  1.0
+	tb_z_imag_in = 20'd1024;   // decimal  0.5
+	tb_c_real_in = -20'd1024;  // decimal -0.5
+	tb_c_imag_in = 20'd1024;   // decimal  0.5
 	tb_iteration_in = 0;
 
 	
@@ -104,10 +104,11 @@ module tb_pixel_calculator ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_z_real_in = 20'd208;   // decimal  2.0
-	tb_z_imag_in = 20'd103;   // decimal  0.1
-	tb_c_real_in = 20'd512;   // decimal  0.5
-	tb_c_imag_in = 20'd512;   // decimal  0.5
+	//incorrect expected values
+	tb_z_real_in = 22'd208;   // decimal  0.2
+	tb_z_imag_in = 22'd103;   // decimal  0.1
+	tb_c_real_in = 22'd512;   // decimal  0.5
+	tb_c_imag_in = 22'd512;   // decimal  0.5
 	tb_iteration_in = 0;	
 
 	tb_calc_start = 1;

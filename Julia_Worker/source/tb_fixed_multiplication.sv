@@ -6,13 +6,14 @@ module tb_fixed_multiplication ();
 	// basic test bench parameters
    localparam	CLK_PERIOD	= 2.5;
    localparam	CHECK_DELAY = 1; // Check 1ns after the rising edge to allow for propagation delay
-   localparam  FRACTIONAL = 10;
-   localparam  INTEGRAL = 10;   
+   localparam  FRACTIONAL = 11;
+   localparam  INTEGRAL = 11;
+   localparam  WIDTH = 22;
 
    reg tb_clk;
-   reg signed [19:0] tb_a;
-   reg signed [19:0] tb_b;
-   reg signed [19:0] tb_result;   
+   reg signed [WIDTH-1:0] tb_a;
+   reg signed [WIDTH-1:0] tb_b;
+   reg signed [WIDTH-1:0] tb_result;   
 
    integer testcase;
 
@@ -42,16 +43,16 @@ module tb_fixed_multiplication ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_a = -20'b0000000010011001101;
-	tb_b = -20'b0000000010011001101;
-
+	tb_a = -22'd2048;
+	tb_b = -22'd4096;
+	
         @(posedge tb_clk);
         #(CHECK_DELAY);
 	
-        if( tb_result == 20'b00000000010111000011 )
-          $info("Test case 1(-1.2*-1.2): PASSED");
+        if( tb_result == 22'd4096 )
+          $info("Test case 1(-1*-2): PASSED");
         else 
-          $error("Test case 1(-1.2*-1.2): FAILED");
+          $error("Test case 1(-1*-2): FAILED");
 
 	@(posedge tb_clk);
         #(CHECK_DELAY);
@@ -64,16 +65,16 @@ module tb_fixed_multiplication ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_a = 20'b00000000010000000000;
-	tb_b = 20'b00000000010000000000;
+	tb_a = 22'b10000000000;
+	tb_b = -22'b10000000000;
 
         @(posedge tb_clk);
         #(CHECK_DELAY);
 	
-        if( tb_result == 20'b00000000010000000000 )
-          $info("Test case 2(1*1): PASSED");
+        if( tb_result == -20'b1000000000 )
+          $info("Test case 2(0.5*-0.5): PASSED");
         else 
-          $error("Test case 2(1*1): FAILED");
+          $error("Test case 2(0.5*-0.5): FAILED");
 
 	@(posedge tb_clk);
         #(CHECK_DELAY);
