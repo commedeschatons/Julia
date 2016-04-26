@@ -31,12 +31,13 @@ module real2imag
    //reg unsigned [9:0] 		     y_reg;
 
 
-   //FORMULA =>  1.5 * (x-w/2) / (0.5 * w * zoom) + moveX => [(3/w) * (x - w/2)]
-   //FORMULA =>  (y-h/2) / (0.5 * h * zoom) + moveY       => [(2/h) * y - 1    ]
+   //FORMULA =>  (x-w/2) / (0.5 * w * zoom) + moveX => [(2/w) * x - 1]
+   //FORMULA =>  (y-h/2) / (0.5 * h * zoom) + moveY => [(2/h) * y - 1]
    //assume zoom=1, moveX=moveY=0
    //3/w = decimal(0.0046875) = 22'b(...1010) = 22'd10
    //w/2 = decimal(320) = 22'd655360
    //2/h = decimal(1/240) = 22'd8
+   //2/w = decimal(1/320) = 22'd7
 /*
    always_comb begin
       x_reg = x;
@@ -48,11 +49,11 @@ module real2imag
    assign x_fixedp = {1'b0,x,11'b0};
    assign y_fixedp = {1'b0,y,11'b0};   
 
-   assign z_real_inter = x_fixedp - 22'd655360;
+   assign z_real_out = z_real_inter - 22'd2048;
    assign z_imag_out = z_imag_inter - 22'd2048;
    
    //#(FRACTIONAL,INTEGRAL)
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) Mreal(.a(22'd10), .b(z_real_inter), .result(z_real_out));
+   fixed_multiplication #(FRACTIONAL,INTEGRAL) Mreal(.a(22'd7), .b(x_fixedp), .result(z_real_inter));
    fixed_multiplication #(FRACTIONAL,INTEGRAL) Mimag(.a(22'd8), .b(y_fixedp), .result(z_imag_inter));
 
 endmodule

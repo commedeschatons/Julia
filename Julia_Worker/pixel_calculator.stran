@@ -9,15 +9,47 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_pixel_calculator 
-# Start time: 19:17:18 on Apr 24,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Start time: 20:07:18 on Apr 25,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.tb_pixel_calculator(fast)
 # Loading work.pixel_calculator(fast)
 # Loading work.z_calculator(fast)
 # Loading work.fixed_multiplication(fast)
 add wave *
-run 200ns
+run 2000ns
 # Causality operation skipped due to absence of debug database file
-# End time: 19:19:41 on Apr 24,2016, Elapsed time: 0:02:23
+add wave -position insertpoint  \
+sim:/tb_pixel_calculator/DUT/z_real_in \
+sim:/tb_pixel_calculator/DUT/z_imag_in \
+sim:/tb_pixel_calculator/DUT/c_real_in \
+sim:/tb_pixel_calculator/DUT/c_imag_in \
+sim:/tb_pixel_calculator/DUT/iteration_in \
+sim:/tb_pixel_calculator/DUT/z_real_out \
+sim:/tb_pixel_calculator/DUT/z_imag_out \
+sim:/tb_pixel_calculator/DUT/size_squared_out \
+sim:/tb_pixel_calculator/DUT/pixel \
+sim:/tb_pixel_calculator/DUT/calc_done \
+sim:/tb_pixel_calculator/DUT/iteration_old \
+sim:/tb_pixel_calculator/DUT/z_real_old \
+sim:/tb_pixel_calculator/DUT/z_imag_old \
+sim:/tb_pixel_calculator/DUT/c_real_old \
+sim:/tb_pixel_calculator/DUT/c_imag_old \
+sim:/tb_pixel_calculator/DUT/iteration_old_wire \
+sim:/tb_pixel_calculator/DUT/z_real_old_wire \
+sim:/tb_pixel_calculator/DUT/z_imag_old_wire \
+sim:/tb_pixel_calculator/DUT/iteration_old_next \
+sim:/tb_pixel_calculator/DUT/z_real_old_next \
+sim:/tb_pixel_calculator/DUT/z_imag_old_next \
+sim:/tb_pixel_calculator/DUT/enable \
+sim:/tb_pixel_calculator/DUT/enable_next
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_pixel_calculator(fast)
+# Loading work.pixel_calculator(fast)
+# Loading work.z_calculator(fast)
+# Loading work.fixed_multiplication(fast)
+run 2000ns
+# End time: 20:41:14 on Apr 25,2016, Elapsed time: 0:33:56
 # Errors: 0, Warnings: 1

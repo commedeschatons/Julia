@@ -7,32 +7,31 @@
 // Description: Julia worker that connects all the sub-modules together
 
 module julia_worker
-  (
-   input clk,
-   input n_rst,
-   input [9:0] x,
-   input [9:0] y,
-   input JW_start,
-   input MC_busy,
-   output JW_ready,
-   output JW_done,
-   output [7:0] pixel,
-   c_real_in,
-   c_imag_in
+  #(
+    FRACTIONAL = 11,
+    INTEGRAL = 11,
+    WIDTH = 22,
+    ITERATIONS = 256,
+    PIXELBITS = 4
+    )
+   (
+    input 		     clk,
+    input 		     n_rst,
+    input [9:0] 	     x,
+    input [9:0] 	     y,
+    input 		     JW_start,
+    input 		     MC_busy,
+    output 		     JW_ready,
+    output 		     JW_done,
+    output [7:0] 	     pixel,
+    input signed [WIDTH-1:0] c_real_in,
+    input signed [WIDTH-1:0] c_imag_in
    );
-
-   parameter FRACTIONAL = 11;
-   parameter INTEGRAL = 11;
-   parameter WIDTH = 22;
-   parameter ITERATIONS = 256;
-   parameter PIXELBITS = 4;
    
-   reg [PIXELBITS-1:0] pixel_size = 3'd8;
-   reg [31:0] 	       offset = 0;
-   reg [7:0] 	       iteration_in = 0;
+   reg [PIXELBITS-1:0] 	     pixel_size = 8;
+   reg [31:0] 		     offset = 32'h08000000; //32'h08000000
+   reg [7:0] 		     iteration_in = 0;
 
-   input signed [WIDTH-1:0] c_real_in;
-   input signed [WIDTH-1:0] c_imag_in;
    reg [WIDTH-1:0] 	    z_real_out;
    reg [WIDTH-1:0] 	    z_imag_out;
    reg [WIDTH-1:0] 	    size_squared_out;

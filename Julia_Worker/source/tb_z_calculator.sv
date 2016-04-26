@@ -53,11 +53,17 @@ module tb_z_calculator ();
 	#(CHECK_DELAY);
 
 	testcase = 1;
-
+/*
 	tb_z_real_in = 22'd2048;  // decimal  1.0
 	tb_z_imag_in = 22'd1024;   // decimal  0.5
 	tb_c_real_in = -22'd1024;  // decimal -0.5
 	tb_c_imag_in = 22'd1024;   // decimal  0.5
+	tb_iteration_in = 1;
+*/
+	tb_z_real_in = 22'd294;  // decimal  1.0
+	tb_z_imag_in = 22'd724;   // decimal  0.5
+	tb_c_real_in = 22'd512;  // decimal -0.5
+	tb_c_imag_in = 22'd512;   // decimal  0.5
 	tb_iteration_in = 1;
 
 	//expected output:

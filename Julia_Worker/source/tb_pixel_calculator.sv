@@ -105,8 +105,9 @@ module tb_pixel_calculator ();
 	#(CHECK_DELAY);
 
 	//incorrect expected values
-	tb_z_real_in = 22'd208;   // decimal  0.2
-	tb_z_imag_in = 22'd103;   // decimal  0.1
+//	tb_z_real_in = 22'd208;   // decimal  0.2
+//	tb_z_imag_in = 22'd103;   // decimal  0.1
+
 	tb_c_real_in = 22'd512;   // decimal  0.5
 	tb_c_imag_in = 22'd512;   // decimal  0.5
 	tb_iteration_in = 0;	
@@ -152,10 +153,16 @@ module tb_pixel_calculator ();
 	#(CHECK_DELAY);
 	tb_calc_start = 1;
 
-	tb_z_real_in = 20'd208;   // decimal  0.2
-	tb_z_imag_in = 20'd103;   // decimal  0.1
-	tb_c_real_in = 20'd4096;   // decimal  0.5
-	tb_c_imag_in = 20'd4096;   // decimal  0.5
+//	tb_z_real_in = 20'd208;   // decimal  0.2
+//	tb_z_imag_in = 20'd103;   // decimal  0.1
+//	tb_c_real_in = 20'd4096;   // decimal  0.5
+//	tb_c_imag_in = 20'd4096;   // decimal  0.5
+
+	tb_z_real_in = 22'd640;   // decimal  0.2
+	tb_z_imag_in = 22'd64;   // decimal  0.1
+	tb_c_real_in = 20'd512;   // decimal  0.5
+	tb_c_imag_in = 20'd512;   // decimal  0.5
+
 	tb_iteration_in = 0;	
 	
 	

@@ -81,10 +81,6 @@ module tb_wcu ();
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-
-	
-
-	
 	
      end
    

@@ -89,7 +89,7 @@ module pixel_calculator
       if(calc_start == 1) begin //if task received
 	 calc_done = 0;
 	 if(enable == 1) begin  //if this is second iteration
-	    if(pixel == ITERATIONS) begin //update input = input
+	    if(pixel == 8'b11111111) begin //update input = input
 	       iteration_old_next = iteration_old;
 	       z_real_old_next = z_real_old;
 	       z_imag_old_next = z_imag_old;
