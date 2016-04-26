@@ -56,6 +56,7 @@ typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
 assign display_data = csr_registers[slave_address];
+logic start_sig;
 
 // Slave side 
 always_ff @ ( posedge clk ) begin 
@@ -63,12 +64,14 @@ always_ff @ ( posedge clk ) begin
   	begin
     		slave_readdata <= 32'h0;
  	      	csr_registers <= '0;
+				start_sig <= '0;
   	end
   else 
   	begin
   	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
   	  	begin
   	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
+			start_sig <= 1'b1;
   	  	end
   	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
   	    	begin

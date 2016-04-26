@@ -21,9 +21,10 @@ PCIE_BAR pcie_bars[] = { PCIE_BAR0, PCIE_BAR1 , PCIE_BAR2 , PCIE_BAR3 , PCIE_BAR
 
 void test32( PCIE_HANDLE hPCIe, DWORD addr );
 void testDMA( PCIE_HANDLE hPCIe, DWORD addr);
-void runCustomLogic( PCIE_HANDLE hPCIe, DWORD addr);
+void runCustomLogic( PCIE_HANDLE hPCIe, DWORD addr,int a,int b);
+DWORD float2fxpt(float x);
 
-int main(void)
+int main(int argc, char * argv[])
 {
 	void *lib_handle;
 	PCIE_HANDLE hPCIe;
@@ -42,9 +43,13 @@ int main(void)
 		return 0;
 	}
 
-	/*
 	
-	*/
+	if(argc != 3){
+		printf("usage: ./app <a int> <b int>");
+		return 1;
+	}
+	runCustomLogic(hPCIe, pcie_bars[0], CRA, a, b);
+	
 	//test CRA
 	test32(hPCIe, CRA);			// Test the Configuration Registers for reads and writes
 	PCIE_Write32( hPCIe, pcie_bars[0], CRA, START_BYTE);
@@ -56,11 +61,32 @@ int main(void)
 	return 0;
 }
 //runs custom logic
-void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr){
+void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr, float a, float b){
 
 	return;
 }
 
+DWORD float2fxpt(float x){
+    int x_int = (int)x;
+    float x_fp = x-x_int;
+    
+    printf("%d",x_int);
+    int i;
+    int tmp = 0;
+    
+    for(i=0;i<11;i++){
+        x_fp*=2;
+        tmp*=2;
+        if(x_fp >=1){
+            tmp++;
+        }
+        x_fp-=(int)x_fp;
+        
+    }
+    printf("%d",tmp);
+    DWORD ret = (DWORD)tmp
+    return ret;
+}
 
 //Tests 16 consecutive PCIE_Write32 to address
 
