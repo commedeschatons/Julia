@@ -56,7 +56,9 @@ typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
 assign display_data = csr_registers[slave_address];
-logic start_sig;
+logic start_sig;		//signal that tells the program to start
+logic nxt_start;
+logic [2:0] arg_count;
 
 // Slave side 
 always_ff @ ( posedge clk ) begin 
@@ -64,14 +66,13 @@ always_ff @ ( posedge clk ) begin
   	begin
     		slave_readdata <= 32'h0;
  	      	csr_registers <= '0;
-				start_sig <= '0;
   	end
   else 
   	begin
   	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
   	  	begin
   	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
-			start_sig <= 1'b1;
+		   arg_count = arg_count + 1;
   	  	end
   	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
   	    	begin
@@ -82,8 +83,24 @@ always_ff @ ( posedge clk ) begin
   	 end
 end
 
+//start_signal
+always_ff @ (posedge clk) begin
+	start_sig <= nxt_start;
+	
+	if(!reset_n) begin
+		nxt_start <= 0;
+		start_sig <= 0;
+		arg_count <=2'b0;
+	end
+	else if (arg_count > 3'b011) begin
+		nxt_start <= 1;
+		arg_count <= 2'b0;
+	end else
+		nxt_start <=0;
+end
 // Master Side
 always_ff @ ( posedge clk ) begin 
+	
 	if (!reset_n) begin 
 		address <= SDRAM_ADDR; //always start out at the base address of SDRAM, where pixel buffer is looking
 		state <= WRITE; 

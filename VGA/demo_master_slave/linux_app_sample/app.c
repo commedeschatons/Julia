@@ -5,6 +5,8 @@
 
 #include "PCIE.h"
 
+#define NUMARGS 4
+
 //MAX BUFFER FOR DMA
 #define MAXDMA 16
 
@@ -21,7 +23,7 @@ PCIE_BAR pcie_bars[] = { PCIE_BAR0, PCIE_BAR1 , PCIE_BAR2 , PCIE_BAR3 , PCIE_BAR
 
 void test32( PCIE_HANDLE hPCIe, DWORD addr );
 void testDMA( PCIE_HANDLE hPCIe, DWORD addr);
-void runCustomLogic( PCIE_HANDLE hPCIe, DWORD addr,int a,int b);
+void runCustomLogic( PCIE_HANDLE hPCIe, DWORD addr,float a,float b);
 DWORD float2fxpt(float x);
 
 int main(int argc, char * argv[])
@@ -47,8 +49,8 @@ int main(int argc, char * argv[])
 		printf("usage: ./app <a int> <b int>");
 		return 1;
 	}
-	runCustomLogic(hPCIe, pcie_bars[0], CRA, argv[1], argv[2]);
-	
+	runCustomLogic(hPCIe, CRA, atof(argv[1]), atof(argv[2]));
+	/*
 	//test CRA
 	test32(hPCIe, CRA);			// Test the Configuration Registers for reads and writes
 	PCIE_Write32( hPCIe, pcie_bars[0], CRA, START_BYTE);
@@ -57,12 +59,37 @@ int main(int argc, char * argv[])
 
 	PCIE_Write32( hPCIe, pcie_bars[0], CRA, STOP_BYTE);
 	printf("\nPush up SW[16] to view data stored in SDRAM and use SW[3:0] to select different addresses.\n");
+*/
 	return 0;
 }
 //runs custom logic
 void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr, float a, float b){
-	DWORD a_int = (DWORD)(int)a;
-	DWORD a_fxp = float2fxpt(a);
+	BOOL bPass;
+	DWORD args[NUMARGS];
+	DWORD readVal;
+	int i;
+	printf("%d\n",(int)(a));
+	args[0] = (DWORD)((int)a);
+	args[1] = float2fxpt(a);
+	args[2] = (DWORD)((int)b);
+	args[3] = float2fxpt(b);
+	
+	for(i = 0;i < NUMARGS;i++){
+		bPass = PCIE_Write32( hPCIe, pcie_bars[0], addr+(4*i), args[i]);
+		if (!bPass){
+			printf("test FAILED: write did not return success");
+			return;
+		}
+
+		bPass = PCIE_Read32( hPCIe, pcie_bars[0], addr+(4*i), &readVal);
+		if (!bPass)
+		{
+			printf("test FAILED: read did not return success");
+			return;
+		}
+		printf("Testing register %d at addr %x with value %x: ", i, addr+(4*i), args[i]);
+		printf("Test: expected %x, received %x\n", args[i], readVal);
+	}
 	return;
 }
 
@@ -84,7 +111,7 @@ DWORD float2fxpt(float x){
         
     }
     //printf("%d",tmp);
-    DWORD ret = (DWORD)tmp
+    DWORD ret = (DWORD)tmp;
     return ret;
 }
 

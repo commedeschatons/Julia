@@ -55,10 +55,17 @@ logic new_data_flag;
 typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
-assign display_data = csr_registers[slave_address];
+assign display_data = csr_registers[2];//slave_address
+
+//INPUT/OUTPUT LOGICS
 logic start_sig;		//signal that tells the program to start
 logic nxt_start;
 logic [2:0] arg_count;
+logic [21:0] a;
+logic [21:0] b;
+
+assign b = {csr_registers[0][10:0],csr_registers[1][10:0]};
+assign a = {csr_registers[2][10:0],csr_registers[3][10:0]};
 
 // Slave side 
 always_ff @ ( posedge clk ) begin 
