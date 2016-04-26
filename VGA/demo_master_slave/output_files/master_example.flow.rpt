@@ -1,5 +1,5 @@
 Flow report for master_example
-Tue Apr 26 00:43:25 2016
+Tue Apr 26 02:21:02 2016
 Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Full Version
 
 
@@ -41,15 +41,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Apr 26 00:43:25 2016       ;
+; Flow Status                        ; Successful - Tue Apr 26 02:21:02 2016       ;
 ; Quartus II 64-Bit Version          ; 14.0.0 Build 200 06/17/2014 SJ Full Version ;
 ; Revision Name                      ; master_example                              ;
 ; Top-level Entity Name              ; master_example                              ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Device                             ; EP4CGX150DF31C7                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 11,597 / 149,760 ( 8 % )                    ;
-;     Total combinational functions  ; 8,901 / 149,760 ( 6 % )                     ;
+; Total logic elements               ; 11,540 / 149,760 ( 8 % )                    ;
+;     Total combinational functions  ; 8,868 / 149,760 ( 6 % )                     ;
 ;     Dedicated logic registers      ; 8,227 / 149,760 ( 5 % )                     ;
 ; Total registers                    ; 8345                                        ;
 ; Total pins                         ; 200 / 508 ( 39 % )                          ;
@@ -69,7 +69,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/26/2016 00:39:25 ;
+; Start date & time ; 04/26/2016 02:16:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; master_example      ;
 +-------------------+---------------------+
@@ -81,7 +81,7 @@ agreement for further details.
 ; Assignment Name                               ; Value                                                                                                                                                                                                                                                                                                                                                                                                                            ; Default Value ; Entity Name                                               ; Section Id           ;
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-----------------------------------------------------------+----------------------+
 ; AUTO_EXPORT_INCREMENTAL_COMPILATION           ; On                                                                                                                                                                                                                                                                                                                                                                                                                               ; Off           ; --                                                        ; --                   ;
-; COMPILER_SIGNATURE_ID                         ; 57277342987768.146164556528313                                                                                                                                                                                                                                                                                                                                                                                                   ; --            ; --                                                        ; --                   ;
+; COMPILER_SIGNATURE_ID                         ; 57277342987768.146165141931012                                                                                                                                                                                                                                                                                                                                                                                                   ; --            ; --                                                        ; --                   ;
 ; EDA_DESIGN_INSTANCE_NAME                      ; NA                                                                                                                                                                                                                                                                                                                                                                                                                               ; --            ; --                                                        ; tb_icb               ;
 ; EDA_INPUT_DATA_FORMAT                         ; Edif                                                                                                                                                                                                                                                                                                                                                                                                                             ; --            ; --                                                        ; eda_design_synthesis ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH          ; tb_icb                                                                                                                                                                                                                                                                                                                                                                                                                           ; --            ; --                                                        ; eda_simulation       ;
@@ -753,7 +753,7 @@ agreement for further details.
 ; POWER_PRESET_COOLING_SOLUTION                 ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                                                                                                                                                                                                                                                                                                                                            ; --            ; --                                                        ; --                   ;
 ; PROJECT_OUTPUT_DIRECTORY                      ; output_files                                                                                                                                                                                                                                                                                                                                                                                                                     ; --            ; --                                                        ; --                   ;
 ; SLD_FILE                                      ; amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.debuginfo                                                                                                                                                                                                                                                                                                                                                          ; --            ; --                                                        ; --                   ;
-; SLD_INFO                                      ; QSYS_NAME amm_master_qsys_with_pcie HAS_SOPCINFO 1 GENERATION_ID 1461617991                                                                                                                                                                                                                                                                                                                                                      ; --            ; amm_master_qsys_with_pcie                                 ; --                   ;
+; SLD_INFO                                      ; QSYS_NAME amm_master_qsys_with_pcie HAS_SOPCINFO 1 GENERATION_ID 1461651370                                                                                                                                                                                                                                                                                                                                                      ; --            ; amm_master_qsys_with_pcie                                 ; --                   ;
 ; SMART_RECOMPILE                               ; On                                                                                                                                                                                                                                                                                                                                                                                                                               ; Off           ; --                                                        ; --                   ;
 ; SOPCINFO_FILE                                 ; amm_master_qsys_with_pcie/synthesis/../../amm_master_qsys_with_pcie.sopcinfo                                                                                                                                                                                                                                                                                                                                                     ; --            ; --                                                        ; --                   ;
 ; SYNTHESIS_ONLY_QIP                            ; On                                                                                                                                                                                                                                                                                                                                                                                                                               ; --            ; --                                                        ; --                   ;
@@ -766,12 +766,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:53     ; 1.0                     ; 1289 MB             ; 00:00:45                           ;
-; Fitter                    ; 00:01:33     ; 1.8                     ; 1748 MB             ; 00:02:20                           ;
-; Assembler                 ; 00:00:10     ; 1.0                     ; 884 MB              ; 00:00:08                           ;
-; TimeQuest Timing Analyzer ; 00:00:17     ; 1.0                     ; 1178 MB             ; 00:00:15                           ;
-; EDA Netlist Writer        ; 00:00:41     ; 1.0                     ; 1129 MB             ; 00:00:24                           ;
-; Total                     ; 00:03:34     ; --                      ; --                  ; 00:03:52                           ;
+; Analysis & Synthesis      ; 00:00:53     ; 1.0                     ; 1313 MB             ; 00:00:46                           ;
+; Fitter                    ; 00:01:35     ; 1.7                     ; 1820 MB             ; 00:02:21                           ;
+; Assembler                 ; 00:00:09     ; 1.0                     ; 891 MB              ; 00:00:08                           ;
+; TimeQuest Timing Analyzer ; 00:00:18     ; 1.2                     ; 1231 MB             ; 00:00:15                           ;
+; EDA Netlist Writer        ; 00:00:41     ; 1.0                     ; 1135 MB             ; 00:00:24                           ;
+; Total                     ; 00:03:36     ; --                      ; --                  ; 00:03:54                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

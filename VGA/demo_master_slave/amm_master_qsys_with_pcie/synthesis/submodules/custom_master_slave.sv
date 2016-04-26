@@ -55,7 +55,17 @@ logic new_data_flag;
 typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
-assign display_data = csr_registers[slave_address];
+assign display_data = csr_registers[0];//slave_address
+
+//INPUT/OUTPUT LOGICS
+logic start_sig;		//signal that tells the program to start
+logic nxt_start;
+logic [2:0] arg_count;
+logic [21:0] a;
+logic [21:0] b;
+
+assign b = {csr_registers[0][10:0],csr_registers[1][10:0]};
+assign a = {csr_registers[2][10:0],csr_registers[3][10:0]};
 
 // Slave side 
 always_ff @ ( posedge clk ) begin 
@@ -69,6 +79,7 @@ always_ff @ ( posedge clk ) begin
   	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
   	  	begin
   	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
+		   arg_count = arg_count + 1;
   	  	end
   	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
   	    	begin
@@ -79,8 +90,24 @@ always_ff @ ( posedge clk ) begin
   	 end
 end
 
+//start_signal
+always_ff @ (posedge clk) begin
+	start_sig <= nxt_start;
+	
+	if(!reset_n) begin
+		nxt_start <= 0;
+		start_sig <= 0;
+		arg_count <=2'b0;
+	end
+	else if (arg_count > 3'b011) begin
+		nxt_start <= 1;
+		arg_count <= 2'b0;
+	end else
+		nxt_start <=0;
+end
 // Master Side
 always_ff @ ( posedge clk ) begin 
+	
 	if (!reset_n) begin 
 		address <= SDRAM_ADDR; //always start out at the base address of SDRAM, where pixel buffer is looking
 		state <= WRITE; 
