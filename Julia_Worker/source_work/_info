@@ -1,0 +1,372 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/mg122/ece337/project/Julia/Julia_Worker
+T_opt
+!s110 1461629238
+VmP36f82Smz1?2_WkG3=PW2
+04 19 4 work tb_pixel_calculator fast 0
+=1-3417ebaeb652-571eb136-453d9-41a1
+Z1 o-quiet -auto_acc_if_foreign -work source_work -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim +acc
+n@_opt
+Z2 OL;O;10.3b;59
+R0
+T_opt1
+!s110 1461636628
+VMLZQ1KWWjbNi<@N@=abK42
+04 15 4 work tb_julia_worker fast 0
+=1-3417ebaeb652-571ece14-77e6e-48c9
+R1
+n@_opt1
+R2
+T_opt2
+!s110 1461631483
+VWcYXkUF>KEM4giHN?gB410
+04 15 4 work tb_z_calculator fast 0
+=1-3417ebaeb652-571eb9fb-90d8a-436f
+R1
+n@_opt2
+R2
+R0
+vaddr_calculator
+Z3 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+!s110 1461539830
+!i10b 1
+!s100 nMWg8ESR4U2_081Xdnmb=1
+IGLA]<4[=^Q[Bf^@IFA?mZ2
+Z4 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 addr_calculator_sv_unit
+S1
+Z5 d/home/ecegrid/a/mg122/ece337/project/Julia_Worker
+w1461539760
+8source/addr_calculator.sv
+Fsource/addr_calculator.sv
+L0 9
+Z6 OL;L;10.3b;59
+r1
+!s85 0
+31
+!s108 1461539830.044991
+!s107 source/addr_calculator.sv|
+!s90 -sv|-work|source_work|source/addr_calculator.sv|
+!i113 0
+Z7 o-sv -work source_work
+Z8 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
+vfixed_multiplication
+R3
+!s110 1461525785
+!i10b 1
+!s100 VGV7z@Nd::dh=QY_DYb>b1
+Ihah:aDDe6H1j8CN@znm0n3
+R4
+!s105 fixed_multiplication_sv_unit
+S1
+R5
+w1461524698
+8source/fixed_multiplication.sv
+Fsource/fixed_multiplication.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461525785.353655
+!s107 source/fixed_multiplication.sv|
+!s90 -sv|-work|source_work|source/fixed_multiplication.sv|
+!i113 0
+R7
+R8
+vjulia_worker
+R3
+!s110 1461625127
+!i10b 1
+!s100 mhb>og@z0SzOYKI3n8;3O1
+I>E>An<c>d8VOFEP=HT`go1
+R4
+!s105 julia_worker_sv_unit
+S1
+R5
+w1461624711
+8source/julia_worker.sv
+Fsource/julia_worker.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461625127.539288
+!s107 source/julia_worker.sv|
+!s90 -sv|-work|source_work|source/julia_worker.sv|
+!i113 0
+R7
+R8
+vpixel_calculator
+R3
+!s110 1461629232
+!i10b 1
+!s100 49IQMPJIQL`bTmzkI=R8l0
+IWmBhCbb]_;3H?MM_8R4;B2
+R4
+!s105 pixel_calculator_sv_unit
+S1
+R5
+w1461629203
+8source/pixel_calculator.sv
+Fsource/pixel_calculator.sv
+L0 11
+R6
+r1
+!s85 0
+31
+!s108 1461629232.217711
+!s107 source/pixel_calculator.sv|
+!s90 -sv|-work|source_work|source/pixel_calculator.sv|
+!i113 0
+R7
+R8
+vreal2imag
+R3
+!s110 1461621699
+!i10b 1
+!s100 >cz:gZnQki0@>l1kA`eLC2
+IAnALh4oQ>^n4@Gf9zBRP?3
+R4
+!s105 real2imag_sv_unit
+S1
+R5
+w1461621591
+8source/real2imag.sv
+Fsource/real2imag.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461621699.275636
+!s107 source/real2imag.sv|
+!s90 -sv|-work|source_work|source/real2imag.sv|
+!i113 0
+R7
+R8
+vtb_addr_calculator
+R3
+!s110 1461537102
+!i10b 1
+!s100 4Ve@SYz5<gaQ??SYLl<Mf3
+IDc]bI1bOSeO6MQMS8>WI92
+R4
+!s105 tb_addr_calculator_sv_unit
+S1
+R5
+w1461537035
+8source/tb_addr_calculator.sv
+Fsource/tb_addr_calculator.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461537102.135155
+!s107 source/tb_addr_calculator.sv|
+!s90 -sv|-work|source_work|source/tb_addr_calculator.sv|
+!i113 0
+R7
+R8
+vtb_fixed_multiplication
+R3
+Z9 !s110 1461517772
+!i10b 1
+!s100 @jFg6le;zKGnM<Qo3JT0F0
+Iz>o9_k:NH8CA3o5i6No>E2
+R4
+!s105 tb_fixed_multiplication_sv_unit
+S1
+R5
+w1461517769
+8source/tb_fixed_multiplication.sv
+Fsource/tb_fixed_multiplication.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461517772.392193
+!s107 source/tb_fixed_multiplication.sv|
+!s90 -sv|-work|source_work|source/tb_fixed_multiplication.sv|
+!i113 0
+R7
+R8
+vtb_julia_worker
+R3
+!s110 1461636623
+!i10b 1
+!s100 g8>90bM4Mzc8<__VAcoC[3
+I`gNU:cLE^=:GNJBA;Tkg80
+R4
+!s105 tb_julia_worker_sv_unit
+S1
+R5
+w1461636618
+8source/tb_julia_worker.sv
+Fsource/tb_julia_worker.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461636623.018248
+!s107 source/tb_julia_worker.sv|
+!s90 -sv|-work|source_work|source/tb_julia_worker.sv|
+!i113 0
+R7
+R8
+vtb_pixel_calculator
+R3
+!s110 1461628953
+!i10b 1
+!s100 OdG1nbW5TkBB5R;<]2lFc0
+IF[lS_c]nke3Hn8hVOW41I3
+R4
+!s105 tb_pixel_calculator_sv_unit
+S1
+R5
+w1461628947
+8source/tb_pixel_calculator.sv
+Fsource/tb_pixel_calculator.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461628953.077733
+!s107 source/tb_pixel_calculator.sv|
+!s90 -sv|-work|source_work|source/tb_pixel_calculator.sv|
+!i113 0
+R7
+R8
+vtb_real2imag
+R3
+!s110 1461530541
+!i10b 1
+!s100 TS5RzLnc]D5T;`Z_BH@c23
+Iz4]zgg=2dO[829[bPN3>U1
+R4
+!s105 tb_real2imag_sv_unit
+S1
+R5
+w1461530533
+8source/tb_real2imag.sv
+Fsource/tb_real2imag.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461530541.662389
+!s107 source/tb_real2imag.sv|
+!s90 -sv|-work|source_work|source/tb_real2imag.sv|
+!i113 0
+R7
+R8
+vtb_wcu
+R3
+!s110 1461542620
+!i10b 1
+!s100 >>lM[o2aVAimozd3^0mU;3
+IUQ<d@<Ge=KYfKKdfC@@2>3
+R4
+!s105 tb_wcu_sv_unit
+S1
+R5
+w1461542613
+8source/tb_wcu.sv
+Fsource/tb_wcu.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461542620.942282
+!s107 source/tb_wcu.sv|
+!s90 -sv|-work|source_work|source/tb_wcu.sv|
+!i113 0
+R7
+R8
+vtb_z_calculator
+R3
+!s110 1461631478
+!i10b 1
+!s100 jYlaM2^B=32F`l^2?>0Xg1
+IQMYT7leYoK<ElP7Kz]<iA0
+R4
+!s105 tb_z_calculator_sv_unit
+S1
+R5
+w1461631445
+8source/tb_z_calculator.sv
+Fsource/tb_z_calculator.sv
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1461631478.008304
+!s107 source/tb_z_calculator.sv|
+!s90 -sv|-work|source_work|source/tb_z_calculator.sv|
+!i113 0
+R7
+R8
+vwcu
+R3
+!s110 1461618645
+!i10b 1
+!s100 APb1anYF>E@Xjk2g]7A711
+I>PJz:^JPSV:W@m^YnAl9f1
+R4
+!s105 wcu_sv_unit
+S1
+R5
+w1461618196
+8source/wcu.sv
+Fsource/wcu.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461618645.605824
+!s107 source/wcu.sv|
+!s90 -sv|-work|source_work|source/wcu.sv|
+!i113 0
+R7
+R8
+vz_calculator
+R3
+R9
+!i10b 1
+!s100 W^=gTbiMdcTE17hUf27hg2
+Ia3HmEhe4U;WE2?6Q[J68b0
+R4
+!s105 z_calculator_sv_unit
+S1
+R5
+w1461517218
+8source/z_calculator.sv
+Fsource/z_calculator.sv
+L0 9
+R6
+r1
+!s85 0
+31
+!s108 1461517772.499814
+!s107 source/z_calculator.sv|
+!s90 -sv|-work|source_work|source/z_calculator.sv|
+!i113 0
+R7
+R8

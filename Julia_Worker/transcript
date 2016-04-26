@@ -1,0 +1,1106 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps source_work.tb_julia_worker 
+# Start time: 22:10:28 on Apr 25,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_julia_worker(fast)
+# Loading work.julia_worker(fast)
+# Loading work.wcu(fast)
+# Loading work.addr_calculator(fast)
+# Loading work.real2imag(fast)
+# Loading work.fixed_multiplication(fast)
+# Loading work.pixel_calculator(fast)
+# Loading work.z_calculator(fast)
+add wave *
+run 5000ns
+# ** Info: JW_ready signal received
+#    Time: 2300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 83
+# ** Info: JW_start signaled high
+#    Time: 2300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 89
+# ** Info: JW_done signal not received
+#    Time: 4900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 101
+# ** Info: JW_done signal not received
+#    Time: 7500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 101
+# ** Info: JW_done signal received
+#    Time: 10100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 98
+# ** Info: MC_busy signaled low
+#    Time: 10100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 108
+# ** Info: JW_ready signal received
+#    Time: 15300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 123
+# ** Info: JW_start signaled high
+#    Time: 15300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 129
+# ** Info: JW_done signal not received
+#    Time: 17900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 20500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 23100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 25700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 28300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 30900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 33500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 36100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 38700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 41300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 43900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 46500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 49100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 51700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 54300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 56900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 59500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 62100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 64700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 67300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 69900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 72500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 75100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 77700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 80300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 82900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 85500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 88100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 90700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 93300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 95900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 98500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 101100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 103700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 106300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 108900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 111500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 114100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 116700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 119300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 121900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 124500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 127100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 129700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 132300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 134900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 137500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 140100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 142700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 145300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 147900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 150500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 153100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 155700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 158300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 160900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 163500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 166100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 168700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 171300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 173900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 176500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 179100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 181700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 184300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 186900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 189500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 192100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 194700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 197300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 199900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 202500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 205100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 207700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 210300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 212900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 215500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 218100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 220700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 223300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 225900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 228500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 231100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 233700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 236300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 238900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 241500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 244100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 246700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 249300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 251900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 254500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 257100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 259700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 262300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 264900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 267500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 270100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 272700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 275300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 277900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 280500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 283100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 285700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 288300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 290900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 293500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 296100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 298700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 301300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 303900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 306500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 309100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 311700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 314300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 316900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 319500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 322100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 324700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 327300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 329900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 332500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 335100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 337700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 340300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 342900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 345500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 348100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 350700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 353300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 355900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 358500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 361100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 363700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 366300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 368900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 371500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 374100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 376700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 379300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 381900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 384500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 387100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 389700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 392300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 394900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 397500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 400100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 402700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 405300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 407900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 410500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 413100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 415700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 418300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 420900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 423500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 426100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 428700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 431300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 433900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 436500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 439100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 441700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 444300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 446900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 449500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 452100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 454700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 457300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 459900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 462500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 465100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 467700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 470300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 472900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 475500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 478100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 480700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 483300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 485900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 488500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 491100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 493700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 496300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 498900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 501500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 504100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 506700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 509300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 511900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 514500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 517100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 519700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 522300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 524900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 527500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 530100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 532700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 535300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 537900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 540500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 543100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 545700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 548300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 550900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 553500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 556100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 558700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 561300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 563900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 566500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 569100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 571700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 574300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 576900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 579500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 582100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 584700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 587300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 589900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 592500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 595100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 597700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 600300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 602900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 605500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 608100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 610700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 613300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 615900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 618500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 621100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 623700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 626300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 628900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 631500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 634100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 636700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 639300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 641900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 644500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 647100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 649700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 652300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 654900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 657500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 660100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 662700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 665300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 667900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 670500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 673100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 675700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 678300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 680900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal received
+#    Time: 683500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 138
+# ** Info: MC_busy signaled low
+#    Time: 683500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 148
+# Causality operation skipped due to absence of debug database file
+add wave -position insertpoint  \
+sim:/tb_julia_worker/DUT/WCU/state \
+sim:/tb_julia_worker/DUT/WCU/next_state
+restart -f
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading sv_std.std
+# Loading work.tb_julia_worker(fast)
+# Loading work.julia_worker(fast)
+# Loading work.wcu(fast)
+# Loading work.addr_calculator(fast)
+# Loading work.real2imag(fast)
+# Loading work.fixed_multiplication(fast)
+# Loading work.pixel_calculator(fast)
+# Loading work.z_calculator(fast)
+run 2000ns
+# ** Info: JW_ready signal received
+#    Time: 2300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 83
+# ** Info: JW_start signaled high
+#    Time: 2300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 89
+# ** Info: JW_done signal not received
+#    Time: 4900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 101
+# ** Info: JW_done signal not received
+#    Time: 7500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 101
+# ** Info: JW_done signal received
+#    Time: 10100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 98
+# ** Info: MC_busy signaled low
+#    Time: 10100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 108
+# ** Info: JW_ready signal received
+#    Time: 15300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 123
+# ** Info: JW_start signaled high
+#    Time: 15300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 129
+# ** Info: JW_done signal not received
+#    Time: 17900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 20500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 23100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 25700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 28300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 30900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 33500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 36100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 38700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 41300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 43900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 46500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 49100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 51700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 54300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 56900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 59500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 62100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 64700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 67300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 69900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 72500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 75100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 77700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 80300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 82900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 85500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 88100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 90700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 93300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 95900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 98500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 101100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 103700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 106300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 108900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 111500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 114100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 116700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 119300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 121900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 124500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 127100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 129700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 132300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 134900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 137500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 140100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 142700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 145300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 147900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 150500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 153100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 155700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 158300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 160900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 163500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 166100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 168700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 171300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 173900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 176500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 179100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 181700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 184300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 186900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 189500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 192100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 194700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 197300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 199900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 202500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 205100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 207700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 210300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 212900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 215500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 218100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 220700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 223300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 225900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 228500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 231100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 233700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 236300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 238900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 241500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 244100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 246700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 249300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 251900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 254500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 257100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 259700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 262300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 264900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 267500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 270100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 272700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 275300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 277900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 280500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 283100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 285700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 288300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 290900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 293500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 296100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 298700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 301300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 303900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 306500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 309100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 311700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 314300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 316900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 319500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 322100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 324700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 327300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 329900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 332500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 335100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 337700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 340300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 342900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 345500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 348100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 350700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 353300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 355900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 358500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 361100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 363700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 366300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 368900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 371500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 374100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 376700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 379300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 381900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 384500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 387100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 389700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 392300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 394900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 397500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 400100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 402700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 405300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 407900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 410500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 413100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 415700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 418300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 420900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 423500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 426100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 428700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 431300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 433900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 436500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 439100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 441700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 444300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 446900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 449500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 452100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 454700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 457300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 459900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 462500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 465100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 467700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 470300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 472900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 475500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 478100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 480700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 483300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 485900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 488500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 491100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 493700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 496300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 498900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 501500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 504100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 506700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 509300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 511900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 514500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 517100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 519700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 522300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 524900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 527500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 530100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 532700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 535300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 537900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 540500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 543100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 545700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 548300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 550900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 553500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 556100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 558700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 561300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 563900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 566500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 569100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 571700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 574300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 576900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 579500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 582100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 584700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 587300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 589900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 592500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 595100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 597700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 600300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 602900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 605500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 608100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 610700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 613300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 615900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 618500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 621100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 623700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 626300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 628900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 631500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 634100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 636700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 639300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 641900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 644500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 647100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 649700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 652300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 654900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 657500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 660100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 662700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 665300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 667900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 670500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 673100 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 675700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 678300 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal not received
+#    Time: 680900 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 141
+# ** Info: JW_done signal received
+#    Time: 683500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 138
+# ** Info: MC_busy signaled low
+#    Time: 683500 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 148
+# End time: 22:25:53 on Apr 25,2016, Elapsed time: 0:15:25
+# Errors: 0, Warnings: 1
