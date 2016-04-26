@@ -43,12 +43,11 @@ int main(int argc, char * argv[])
 		return 0;
 	}
 
-	
 	if(argc != 3){
 		printf("usage: ./app <a int> <b int>");
 		return 1;
 	}
-	runCustomLogic(hPCIe, pcie_bars[0], CRA, a, b);
+	runCustomLogic(hPCIe, pcie_bars[0], CRA, argv[1], argv[2]);
 	
 	//test CRA
 	test32(hPCIe, CRA);			// Test the Configuration Registers for reads and writes
@@ -62,7 +61,8 @@ int main(int argc, char * argv[])
 }
 //runs custom logic
 void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr, float a, float b){
-
+	DWORD a_int = (DWORD)(int)a;
+	DWORD a_fxp = float2fxpt(a);
 	return;
 }
 
@@ -70,7 +70,7 @@ DWORD float2fxpt(float x){
     int x_int = (int)x;
     float x_fp = x-x_int;
     
-    printf("%d",x_int);
+    //printf("%d",x_int);
     int i;
     int tmp = 0;
     
@@ -83,7 +83,7 @@ DWORD float2fxpt(float x){
         x_fp-=(int)x_fp;
         
     }
-    printf("%d",tmp);
+    //printf("%d",tmp);
     DWORD ret = (DWORD)tmp
     return ret;
 }

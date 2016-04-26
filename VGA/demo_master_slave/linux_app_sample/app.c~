@@ -22,6 +22,7 @@ PCIE_BAR pcie_bars[] = { PCIE_BAR0, PCIE_BAR1 , PCIE_BAR2 , PCIE_BAR3 , PCIE_BAR
 void test32( PCIE_HANDLE hPCIe, DWORD addr );
 void testDMA( PCIE_HANDLE hPCIe, DWORD addr);
 void runCustomLogic( PCIE_HANDLE hPCIe, DWORD addr,int a,int b);
+DWORD float2fxpt(float x);
 
 int main(int argc, char * argv[])
 {
