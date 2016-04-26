@@ -1,0 +1,144 @@
+// $Id: $
+// File name:   dispatcher.sv
+// Created:     4/26/2016
+// Author:      Alan Moretton
+// Lab Section: 337-05
+// Version:     1.0  Initial Design Entry
+// Description: the disptacher state logic
+module dispatcher
+
+#(
+parameter NUM_X_BITS = 10,
+parameter NUM_Y_BITS = 10
+)
+ 
+(
+	input wire clk,
+	input wire n_reset,
+	input wire [NUM_X_BITS-1:0] x,
+	input wire [NUM_Y_BITS-1:0] y,
+	input wire y_rollover,
+	input wire [15:0] done, //list of done workers
+
+	output reg [3:0] select_worker,
+	output reg start
+);
+
+	typedef enum bit [2:0] {idle, find, dispatch, jw_start, finished} stateType;
+
+	stateType state;
+	stateType nxt_state;
+
+	always_ff @ (negedge n_reset, posedge clk)
+	begin
+		if(n_reset == 1'b0)
+			state <= idle;
+		else
+		begin
+			state <= nxt_state;
+		end
+	end
+
+	always_comb
+	begin
+		nxt_state = state;
+
+		start = 0;
+
+		case(state)
+			idle: begin
+				if(done == 1'b0)
+					nxt_state = idle;
+				else
+					nxt_state = find;
+			end
+
+			find: begin
+				if(~done) //if all bits of done are zero, all workers are busy
+					nxt_state = find;
+				else if(y_rollover == 1)
+					nxt_state = finished;
+				else
+					nxt_state = dispatch;
+			end
+				
+			dispatch: begin
+				if(done[15] == 1'b1) begin
+					select_worker = 4'b0000;
+					nxt_state = jw_start;
+				end
+				else if(done[14] == 1'b1) begin
+					select_worker = 4'b0001;
+					nxt_state = jw_start;
+				end
+				else if(done[13] == 1'b1) begin
+					select_worker = 4'b0010;
+					nxt_state = jw_start;
+				end
+				else if(done[12] == 1'b1) begin
+					select_worker = 4'b0011;
+					nxt_state = jw_start;
+				end
+				else if(done[11] == 1'b1) begin
+					select_worker = 4'b0100;
+					nxt_state = jw_start;
+				end
+				else if(done[10] == 1'b1) begin
+					select_worker = 4'b0101;
+					nxt_state = jw_start;
+				end
+				else if(done[9] == 1'b1) begin
+					select_worker = 4'b0110;
+					nxt_state = jw_start;
+				end
+				else if(done[8] == 1'b1) begin
+					select_worker = 4'b0111;
+					nxt_state = jw_start;
+				end
+				else if(done[7] == 1'b1) begin
+					select_worker = 4'b1000;
+					nxt_state = jw_start;
+				end
+				else if(done[6] == 1'b1) begin
+					select_worker = 4'b1001;
+					nxt_state = jw_start;
+				end
+				else if(done[5] == 1'b1) begin
+					select_worker = 4'b1010;
+					nxt_state = jw_start;
+				end
+				else if(done[4] == 1'b1) begin
+					select_worker = 4'b1011;
+					nxt_state = jw_start;
+				end
+				else if(done[3] == 1'b1) begin
+					select_worker = 4'b1100;
+					nxt_state = jw_start;
+				end
+				else if(done[2] == 1'b1) begin
+					select_worker = 4'b1101;
+					nxt_state = jw_start;
+				end
+				else if(done[1] == 1'b1) begin
+					select_worker = 4'b1110;
+					nxt_state = jw_start;
+				end
+				else if(done[0] == 1'b1) begin
+					select_worker = 4'b1111;
+					nxt_state = jw_start;
+				end
+			end
+
+			jw_start: begin
+				start = 1;
+				nxt_state = find;
+			end
+			finished: begin
+				if(n_reset == 1'b1)
+					nxt_state = idle;
+				else
+					nxt_state = finished;
+			end
+		endcase
+	end
+endmodule 
