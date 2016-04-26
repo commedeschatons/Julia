@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: ip-generate --project-directory=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave --output-directory=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie --report-file=bsf:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.bsf --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=EP4CGX150DF31C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie.qsys
+Info: ip-generate --project-directory=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave --output-directory=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie --report-file=bsf:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.bsf --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=EP4CGX150DF31C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie.qsys
 Progress: Loading demo_master_slave/amm_master_qsys_with_pcie.qsys
 Progress: Reading input file
 Progress: Adding altpll_qsys [altpll 14.0]
@@ -74,7 +74,7 @@ Info: ip-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: ip-generate --project-directory=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave --output-directory=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis --file-set=QUARTUS_SYNTH --report-file=html:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.html --report-file=sopcinfo:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie.sopcinfo --report-file=cmp:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.cmp --report-file=qip:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.qip --report-file=svd:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.svd --report-file=regmap:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.regmap --report-file=xml:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.xml --report-file=debuginfo:/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=EP4CGX150DF31C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie.qsys --language=VERILOG
+Info: ip-generate --project-directory=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave --output-directory=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis --file-set=QUARTUS_SYNTH --report-file=html:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.html --report-file=sopcinfo:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie.sopcinfo --report-file=cmp:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.cmp --report-file=qip:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.qip --report-file=svd:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.svd --report-file=regmap:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.regmap --report-file=xml:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/amm_master_qsys_with_pcie.xml --report-file=debuginfo:/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.debuginfo --system-info=DEVICE_FAMILY="Cyclone IV GX" --system-info=DEVICE=EP4CGX150DF31C7 --system-info=DEVICE_SPEEDGRADE=7 --component-file=/home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie.qsys --language=VERILOG
 Progress: Loading demo_master_slave/amm_master_qsys_with_pcie.qsys
 Progress: Reading input file
 Progress: Adding altpll_qsys [altpll 14.0]
@@ -106,7 +106,7 @@ Warning: amm_master_qsys_with_pcie.amm_master_qsys_with_pcie: Module dependency 
 Info: amm_master_qsys_with_pcie.pcie_ip:  Rx Master BAR 1_0 mapped to 7 -bit Avalon-MM address
 Info: amm_master_qsys_with_pcie.pcie_ip:  Rx Master BAR 2 mapped to 15 -bit Avalon-MM address
 Warning: amm_master_qsys_with_pcie.pcie_ip.pcie_ip: Module dependency loop involving: "pcie_internal_hip" (altera_pcie_internal_hard_ip_qsys 14.0)
-Warning: amm_master_qsys_with_pcie.pcie_ip.pcie_ip: Module dependency loop involving: "avalon_clk" (altera_clock_bridge 14.0), "pcie_internal_hip" (altera_pcie_internal_hard_ip_qsys 14.0)
+Warning: amm_master_qsys_with_pcie.pcie_ip.pcie_ip: Module dependency loop involving: "pcie_internal_hip" (altera_pcie_internal_hard_ip_qsys 14.0), "avalon_clk" (altera_clock_bridge 14.0)
 Info: amm_master_qsys_with_pcie.pcie_ip.pcie_internal_hip:  Txs Address width is 31
 Info: amm_master_qsys_with_pcie.pcie_ip.pcie_internal_hip: Application clock frequency is 125 Mhz 
 Warning: amm_master_qsys_with_pcie.pcie_ip.pcie_internal_hip.app_msi_ack: Interface has no signals
@@ -168,11 +168,11 @@ Info: altpll_qsys: "amm_master_qsys_with_pcie" instantiated altpll "altpll_qsys"
 Info: custom_module: "amm_master_qsys_with_pcie" instantiated custom_module "custom_module"
 Info: pcie_ip: "amm_master_qsys_with_pcie" instantiated altera_pcie_hard_ip "pcie_ip"
 Info: sdram: Starting RTL generation for module 'amm_master_qsys_with_pcie_sdram'
-Info: sdram:   Generation command is [exec /package/eda/altera/altera14.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera14.0/quartus/linux64/perl/lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=amm_master_qsys_with_pcie_sdram --dir=/tmp/alt6916_4520745633919420738.dir/0005_sdram_gen/ --quartus_dir=/package/eda/altera/altera14.0/quartus --verilog --config=/tmp/alt6916_4520745633919420738.dir/0005_sdram_gen//amm_master_qsys_with_pcie_sdram_component_configuration.pl  --do_build_sim=0  ]
+Info: sdram:   Generation command is [exec /package/eda/altera/altera14.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera14.0/quartus/linux64/perl/lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller -- /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_new_sdram_controller/generate_rtl.pl --name=amm_master_qsys_with_pcie_sdram --dir=/tmp/alt6917_5237271123930043221.dir/0005_sdram_gen/ --quartus_dir=/package/eda/altera/altera14.0/quartus --verilog --config=/tmp/alt6917_5237271123930043221.dir/0005_sdram_gen//amm_master_qsys_with_pcie_sdram_component_configuration.pl  --do_build_sim=0  ]
 Info: sdram: Done RTL generation for module 'amm_master_qsys_with_pcie_sdram'
 Info: sdram: "amm_master_qsys_with_pcie" instantiated altera_avalon_new_sdram_controller "sdram"
 Info: sgdma: Starting RTL generation for module 'amm_master_qsys_with_pcie_sgdma'
-Info: sgdma:   Generation command is [exec /package/eda/altera/altera14.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera14.0/quartus/linux64/perl/lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma -- /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma/generate_rtl.pl --name=amm_master_qsys_with_pcie_sgdma --dir=/tmp/alt6916_4520745633919420738.dir/0006_sgdma_gen/ --quartus_dir=/package/eda/altera/altera14.0/quartus --verilog --config=/tmp/alt6916_4520745633919420738.dir/0006_sgdma_gen//amm_master_qsys_with_pcie_sgdma_component_configuration.pl  --do_build_sim=0  ]
+Info: sgdma:   Generation command is [exec /package/eda/altera/altera14.0/quartus/linux64/perl/bin/perl -I /package/eda/altera/altera14.0/quartus/linux64/perl/lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/europa -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin/perl_lib -I /package/eda/altera/altera14.0/quartus/sopc_builder/bin -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/common -I /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma -- /package/eda/altera/altera14.0/quartus/../ip/altera/sopc_builder_ip/altera_avalon_sgdma/generate_rtl.pl --name=amm_master_qsys_with_pcie_sgdma --dir=/tmp/alt6917_5237271123930043221.dir/0006_sgdma_gen/ --quartus_dir=/package/eda/altera/altera14.0/quartus --verilog --config=/tmp/alt6917_5237271123930043221.dir/0006_sgdma_gen//amm_master_qsys_with_pcie_sgdma_component_configuration.pl  --do_build_sim=0  ]
 Info: sgdma: Done RTL generation for module 'amm_master_qsys_with_pcie_sgdma'
 Info: sgdma: "amm_master_qsys_with_pcie" instantiated altera_avalon_sgdma "sgdma"
 Info: video_dual_clock_buffer_0: Starting Generation of the Dual Clock Buffer
@@ -208,9 +208,9 @@ Info: router_006: "mm_interconnect_0" instantiated altera_merlin_router "router_
 Info: router_007: "mm_interconnect_0" instantiated altera_merlin_router "router_007"
 Info: router_008: "mm_interconnect_0" instantiated altera_merlin_router "router_008"
 Info: video_pixel_buffer_dma_0_avalon_pixel_dma_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "video_pixel_buffer_dma_0_avalon_pixel_dma_master_limiter"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: sdram_s1_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sdram_s1_burst_adapter"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_002"
@@ -218,40 +218,40 @@ Info: cmd_demux_003: "mm_interconnect_0" instantiated altera_merlin_demultiplexe
 Info: cmd_demux_005: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_005"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: cmd_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_002"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_002: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_002"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_002: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_002"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_003: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_003"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sgdma_m_read_to_sdram_s1_cmd_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sgdma_m_read_to_sdram_s1_cmd_width_adapter"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: crosser: "mm_interconnect_0" instantiated altera_avalon_st_handshake_clock_crosser "crosser"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: router: "mm_interconnect_1" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_1" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_1" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_1" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: router: "mm_interconnect_2" instantiated altera_merlin_router "router"
 Info: router_001: "mm_interconnect_2" instantiated altera_merlin_router "router_001"
 Info: cmd_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "cmd_mux"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_2" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_mux: "mm_interconnect_2" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file /home/ecegrid/a/mg151/Desktop/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file /home/ecegrid/a/mg151/PROJECT/Julia/VGA/demo_master_slave/amm_master_qsys_with_pcie/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: amm_master_qsys_with_pcie: Done "amm_master_qsys_with_pcie" with 61 modules, 101 files
 Info: ip-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

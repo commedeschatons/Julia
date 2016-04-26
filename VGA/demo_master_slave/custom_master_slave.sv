@@ -55,14 +55,18 @@ logic new_data_flag;
 typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
-assign display_data = csr_registers[0];//slave_address
+logic [31:0] debug;
+assign display_data = debug;//slave_address csr_registers[0]
 
 //INPUT/OUTPUT LOGICS
 logic start_sig;		//signal that tells the program to start
 logic nxt_start;
+logic [2:0] nxt_arg;
 logic [2:0] arg_count;
 logic [21:0] a;
 logic [21:0] b;
+
+
 
 assign a = {csr_registers[0][10:0],csr_registers[1][10:0]};
 assign b = {csr_registers[2][10:0],csr_registers[3][10:0]};
@@ -72,13 +76,15 @@ always_ff @ ( posedge clk ) begin
   	begin
     		slave_readdata <= 32'h0;
  	      	csr_registers <= '0;
+		nxt_arg = '0;
   	end
   else 
+	nxt_arg = arg_count;
   	begin
   	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
   	  	begin
   	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
-		   arg_count = arg_count + 1;
+		   nxt_arg = arg_count + 1;
   	  	end
   	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
   	    	begin
@@ -92,15 +98,18 @@ end
 //start_signal
 always_ff @ (posedge clk) begin
 	start_sig <= nxt_start;
-	
+	arg_count <= nxt_arg;
 	if(!reset_n) begin
 		nxt_start <= 0;
 		start_sig <= 0;
 		arg_count <=2'b0;
+		debug <= '0;
 	end
 	else if (arg_count > 3'b011) begin
 		nxt_start <= 1;
+		debug <= 32'hFFFFFFFF;
 		arg_count <= 2'b0;
+
 	end else
 		nxt_start <=0;
 end
