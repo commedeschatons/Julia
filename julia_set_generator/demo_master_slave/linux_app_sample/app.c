@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <memory.h>
+#include <time.h>
+#include <unistd.h>
 
 #include "PCIE.h"
 
@@ -87,9 +89,18 @@ void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr, float a, float b){
 			printf("test FAILED: read did not return success");
 			return;
 		}
-		printf("Testing register %d at addr %x with value %x: ", i, addr+(4*i), args[i]);
-		printf("Test: expected %x, received %x\n", args[i], readVal);
+		printf("wrote register %d at addr %x with value %x: ", i, addr+(4*i), args[i]);
+		printf("expected %x, received %x\n", args[i], readVal);
 	}
+
+	sleep(1);
+
+	bPass = PCIE_Read32( hPCIe, pcie_bars[0], addr+(15), &readVal);
+	if (!bPass){
+		printf("test FAILED: read did not return success");
+		return;
+	}
+	printf("testing complete flag %x: ", readVal);
 	return;
 }
 
