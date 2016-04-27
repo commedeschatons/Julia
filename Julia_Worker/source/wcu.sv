@@ -8,18 +8,20 @@
 
 module wcu
   (
-   input       clk,
-   input       n_rst,
-   input       JW_start,
-   input       MC_busy,
-   input calc_done,
-   output reg      JW_ready ,
-   output reg       JW_done,
+   input      clk,
+   input      n_rst,
+   input      JW_start,
+   input      MC_busy,
+   input      calc_done,
+   input      convert_done,
+   output reg convert_start, 
+   output reg JW_ready ,
+   output reg JW_done,
    output reg calc_start
    );
 
    typedef enum bit[2:0]
-		{IDLE, ASK_WAIT, CALC, WRITE_WAIT} wcu_state;
+		{IDLE, ASK_WAIT, CONVERT, CALC1, CALC2, WRITE_WAIT} wcu_state;
 
    wcu_state state;
    wcu_state next_state;
@@ -44,7 +46,8 @@ module wcu
 	   JW_ready = 0;
 	   JW_done = 0;
 	   calc_start = 0;
-
+	   convert_start = 0;
+	   
 	   next_state = ASK_WAIT;
 	end
 	
@@ -52,24 +55,49 @@ module wcu
 	   JW_ready = 1;
 	   JW_done = 0;
 	   calc_start = 0;
-
+	   convert_start = 0;
+	   
 	   if(JW_start == 1'b1) begin
-	      next_state = CALC;
+	      next_state = CONVERT;
 	   end else begin
 	      next_state = ASK_WAIT;
 	   end
 	end
+
+	CONVERT: begin
+	   JW_ready = 0;
+	   JW_done = 0;
+	   calc_start = 0;
+	   convert_start = 1;
+
+	   if(convert_done == 1'b1) begin
+	      next_state = CALC1;
+	   end else begin
+	      next_state = CONVERT;
+	   end
+	end
 	
-	CALC: begin
+	CALC1: begin
 	   JW_ready = 0;
 	   JW_done = 0;
 	   calc_start = 1;
+	   convert_start = 0;
+	   
+	   next_state = CALC2;
 
+	end
+
+	CALC2: begin
+	   JW_ready = 0;
+	   JW_done = 0;
+	   calc_start = 1;
+	   convert_start = 0;
+	   
 	   if(calc_done == 1'b1) begin
 	      next_state = WRITE_WAIT;
 	   end
 	   else begin
-	      next_state = CALC;
+	      next_state = CALC2;
 	   end
 	end
 
@@ -77,6 +105,7 @@ module wcu
 	   JW_ready = 0;
 	   JW_done = 1;
 	   calc_start = 1;
+	   convert_start = 0;	   
 
 	   if(MC_busy == 1'b0) begin
 	      next_state = ASK_WAIT;

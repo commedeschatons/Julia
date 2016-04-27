@@ -24,7 +24,7 @@ module tb_pixel_calculator ();
 
    integer testcase;
 
-   pixel_calculator #(ITERATIONS,WIDTH,FRACTIONAL,INTEGRAL) DUT
+   pixel_calculator DUT
       (
        .clk(tb_clk),
        .n_rst(tb_n_rst),
@@ -57,19 +57,48 @@ module tb_pixel_calculator ();
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-
+	tb_calc_start = 0;
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 	tb_calc_start = 1;
-	
+	tb_iteration_in = 0;
+/* //MOST RECENT TEST CASE	1
 	tb_z_real_in = 22'd2048;  // decimal  1.0
 	tb_z_imag_in = 20'd1024;   // decimal  0.5
 	tb_c_real_in = -20'd1024;  // decimal -0.5
 	tb_c_imag_in = 20'd1024;   // decimal  0.5
-	tb_iteration_in = 0;
-
+*/
+	tb_z_real_in = 22'd640;   // decimal  0.2
+	tb_z_imag_in = 22'd64;   // decimal  0.1
+	tb_c_real_in = 20'd512;   // decimal  0.5
+	tb_c_imag_in = 20'd512;   // decimal  0.5
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-	
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+/*	
         //TEST CASE 1	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -164,7 +193,7 @@ module tb_pixel_calculator ();
 	tb_c_imag_in = 20'd512;   // decimal  0.5
 
 	tb_iteration_in = 0;	
-	
+*/	
 	
      end
    

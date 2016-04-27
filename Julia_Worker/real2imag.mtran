@@ -1,0 +1,117 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work.tb_real2imag 
+# Start time: 15:10:17 on Apr 27,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.tb_real2imag(fast)
+# Loading work.real2imag(fast)
+# Loading work.fixed_multiplication_1(fast)
+# Loading work.fixed_multiplication_1_DW_mult_tc_1(fast)
+# Loading work.fixed_multiplication_0(fast)
+# Loading work.fixed_multiplication_0_DW_mult_tc_1(fast)
+# Loading work.flex_counter(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.fax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.hax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xnor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai22x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# Loading ieee.math_real(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr(metastabilitywrapperarch)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.mux2x1(behavioral)#1
+# ** Warning: (vsim-8822) mapped/real2imag.v(125): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U91
+# ** Warning: (vsim-8822) mapped/real2imag.v(126): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U92
+# ** Warning: (vsim-8822) mapped/real2imag.v(127): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U93
+# ** Warning: (vsim-8822) mapped/real2imag.v(128): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U94
+# ** Warning: (vsim-8822) mapped/real2imag.v(129): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U95
+# ** Warning: (vsim-8822) mapped/real2imag.v(130): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U96
+# ** Warning: (vsim-8822) mapped/real2imag.v(131): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U97
+# ** Warning: (vsim-8822) mapped/real2imag.v(132): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U98
+# ** Warning: (vsim-8822) mapped/real2imag.v(133): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U99
+# ** Warning: (vsim-8822) mapped/real2imag.v(134): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mreal/mult_23/U100
+# ** Warning: (vsim-8822) mapped/real2imag.v(1074): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U91
+# ** Warning: (vsim-8822) mapped/real2imag.v(1075): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U92
+# ** Warning: (vsim-8822) mapped/real2imag.v(1076): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U93
+# ** Warning: (vsim-8822) mapped/real2imag.v(1077): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U94
+# ** Warning: (vsim-8822) mapped/real2imag.v(1078): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U95
+# ** Warning: (vsim-8822) mapped/real2imag.v(1079): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U96
+# ** Warning: (vsim-8822) mapped/real2imag.v(1080): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U97
+# ** Warning: (vsim-8822) mapped/real2imag.v(1081): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U98
+# ** Warning: (vsim-8822) mapped/real2imag.v(1082): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U99
+# ** Warning: (vsim-8822) mapped/real2imag.v(1083): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_real2imag/DUT/Mimag/mult_23/U100
+add wave *
+add wave -position insertpoint  \
+sim:/tb_real2imag/DUT/rollover_flag
+add wave -position insertpoint  \
+sim:/tb_real2imag/DUT/count_out
+run 200ns
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[0] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[1] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[2] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[3] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/rollover_flag_reg
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[0] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[1] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[2] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/\count_out_reg[3] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_real2imag/DUT/FLEX_COUNTER/rollover_flag_reg
+# Causality operation skipped due to absence of debug database file
+# End time: 15:13:29 on Apr 27,2016, Elapsed time: 0:03:12
+# Errors: 0, Warnings: 31

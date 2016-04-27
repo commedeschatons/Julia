@@ -27,20 +27,30 @@ module julia_worker
     input signed [WIDTH-1:0] c_real_in,
     input signed [WIDTH-1:0] c_imag_in
    );
-   
-   reg [PIXELBITS-1:0] 	     pixel_size = 8;
-   reg [31:0] 		     offset = 32'h08000000; //32'h08000000
-   reg [7:0] 		     iteration_in = 0;
+
+   reg [PIXELBITS-1:0] 	     pixel_size;
+   reg [31:0] 		     offset;
+   reg [7:0] 		     iteration_in;
 
    reg [WIDTH-1:0] 	    z_real_out;
    reg [WIDTH-1:0] 	    z_imag_out;
    reg [WIDTH-1:0] 	    size_squared_out;
+   reg 			    convert_start;
+   reg 			    convert_done;
    reg 	      calc_start;
    reg 	      calc_done;
    reg [WIDTH-1:0] z_real_in;
    reg [WIDTH-1:0] z_imag_in;
    reg [31:0] 	   address;
    
+   reg [31:0] 	   color;
+
+   always_comb begin
+      pixel_size = 8;
+      offset = 32'h08000000; //starting address in the sdram
+      iteration_in = 0;
+   end
+
    wcu WCU
      (
       .clk(clk),
@@ -50,10 +60,12 @@ module julia_worker
       .JW_ready(JW_ready),
       .JW_done(JW_done),
       .calc_start(calc_start),
-      .calc_done(calc_done)
+      .calc_done(calc_done),
+      .convert_start(convert_start),
+      .convert_done(convert_done)
       );
    
-   addr_calculator #(PIXELBITS) ADDR_CALCULATOR
+   addr_calculator ADDR_CALCULATOR
      (
       .x(x),
       .y(y),
@@ -62,15 +74,19 @@ module julia_worker
       .address(address)
       );
 
-   real2imag #(WIDTH,FRACTIONAL,INTEGRAL) REAL2IMAG
+   real2imag REAL2IMAG
      (
+      .clk(clk),
+      .n_rst(n_rst),
       .x(x),
       .y(y),
+      .convert_start(convert_start),
+      .convert_done(convert_done),
       .z_real_out(z_real_in),
       .z_imag_out(z_imag_in)
       );
 
-   pixel_calculator #(ITERATIONS,WIDTH,FRACTIONAL,INTEGRAL) PIXEL_CALCULATOR
+   pixel_calculator PIXEL_CALCULATOR
      (
       .clk(clk),
       .n_rst(n_rst),
@@ -87,4 +103,10 @@ module julia_worker
       .pixel(pixel)
       );
 
+   pixel2color PIXEL2COLOR
+     (
+      .pixel(pixel),
+      .color(color)
+      );
+   
 endmodule

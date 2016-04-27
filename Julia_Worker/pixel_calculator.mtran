@@ -1,0 +1,412 @@
+# //  Questa Sim-64
+# //  Version 10.3b linux_x86_64 May 29 2014
+# //
+# //  Copyright 1991-2014 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work.tb_pixel_calculator 
+# Start time: 17:21:05 on Apr 27,2016
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading sv_std.std
+# Loading work.tb_pixel_calculator(fast)
+# Loading work.pixel_calculator(fast)
+# Loading work.z_calculator(fast)
+# Loading work.fixed_multiplication_4(fast)
+# Loading work.fixed_multiplication_4_DW_mult_tc_1(fast)
+# Loading work.fixed_multiplication_3(fast)
+# Loading work.fixed_multiplication_3_DW_mult_tc_1(fast)
+# Loading work.fixed_multiplication_2(fast)
+# Loading work.fixed_multiplication_2_DW_mult_tc_1(fast)
+# Loading work.fixed_multiplication_1(fast)
+# Loading work.fixed_multiplication_1_DW_mult_tc_1(fast)
+# Loading work.fixed_multiplication_0(fast)
+# Loading work.fixed_multiplication_0_DW_mult_tc_1(fast)
+# Loading work.z_calculator_DW01_inc_0(fast)
+# Loading work.z_calculator_DW01_add_0(fast)
+# Loading work.z_calculator_DW01_add_1(fast)
+# Loading work.z_calculator_DW01_sub_0(fast)
+# Loading work.z_calculator_DW01_add_2(fast)
+# Loading work.flex_counter(fast)
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.math_real(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr(metastabilitywrapperarch)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.fax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.hax1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xnor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai22x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.mux2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi22x1(behavioral)#1
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(125): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U91
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(126): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U92
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(127): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U93
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(128): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U94
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(129): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U95
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(130): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U96
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(131): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U97
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(132): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U98
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(133): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U99
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(134): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M1/mult_23/U100
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1074): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U91
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1075): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U92
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1076): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U93
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1077): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U94
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1078): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U95
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1079): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U96
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1080): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U97
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1081): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U98
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1082): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U99
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1083): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M2/mult_23/U100
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2023): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U91
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2024): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U92
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2025): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U93
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2026): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U94
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2027): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U95
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2028): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U96
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2029): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U97
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2030): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U98
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2031): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U99
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2032): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M3/mult_23/U100
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2972): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U91
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2973): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U92
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2974): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U93
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2975): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U94
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2976): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U95
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2977): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U96
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2978): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U97
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2979): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U98
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2980): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U99
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2981): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M4/mult_23/U100
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3921): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U91
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3922): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U92
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3923): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U93
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3924): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U94
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3925): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U95
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3926): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U96
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3927): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U97
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3928): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U98
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3929): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U99
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3930): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/M5/mult_23/U100
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4779): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/add_46/U1_21
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4827): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/add_45/U1_21
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4873): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/sub_0_root_add_44/U2_21
+# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4938): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+#         Region: /tb_pixel_calculator/DUT/Z_CALCULATOR/add_1_root_add_44/U1_21
+add wave *
+run 5000ns
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/second_iter_reg
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[9] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[7] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/calc_done_reg
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[6] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[5] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[4] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[3] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[2] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[1] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[0] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[0] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[1] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[2] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[3] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[4] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[5] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[6] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[7] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[8] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[9] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[10] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[11] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[12] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[13] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[14] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[15] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[16] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[17] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[18] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[19] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[20] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[21] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[0] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[1] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[2] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[3] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[4] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[5] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[6] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[7] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[8] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[10] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[11] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[12] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[13] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[14] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[15] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[16] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[17] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[18] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[19] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[20] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[21] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[0] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[1] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[2] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[3] 
+# ** Warning: DFFSR instance grabbed an invalid value and is propagating a metastable value
+#    Time: 1960 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/rollover_flag_reg
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/second_iter_reg
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[9] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[7] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/calc_done_reg
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[6] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[5] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[4] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[3] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[2] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[1] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\iteration_old_reg[0] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[0] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[1] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[2] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[3] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[4] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[5] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[6] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[7] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[8] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[9] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[10] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[11] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[12] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[13] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[14] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[15] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[16] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[17] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[18] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[19] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[20] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_imag_old_reg[21] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[0] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[1] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[2] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[3] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[4] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[5] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[6] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[7] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[8] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[10] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[11] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[12] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[13] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[14] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[15] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[16] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[17] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[18] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[19] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[20] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/\z_real_old_reg[21] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[0] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[1] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[2] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/\count_out_reg[3] 
+# ** Warning: DFFSR instance metastable output value decayed to a '1' value
+#    Time: 2100 ps  Iteration: 0  Instance: /tb_pixel_calculator/DUT/FLEX_COUNTER/rollover_flag_reg
+# Causality operation skipped due to absence of debug database file
+# End time: 17:23:40 on Apr 27,2016, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 173

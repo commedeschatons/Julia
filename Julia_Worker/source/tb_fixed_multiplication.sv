@@ -39,7 +39,6 @@ module tb_fixed_multiplication ();
 	testcase = 1;
 	tb_a = 0;
 	tb_b = 0;
-	tb_result = 0;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
@@ -48,6 +47,13 @@ module tb_fixed_multiplication ();
 	
         @(posedge tb_clk);
         #(CHECK_DELAY);
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
+
 	
         if( tb_result == 22'd4096 )
           $info("Test case 1(-1*-2): PASSED");
@@ -59,15 +65,18 @@ module tb_fixed_multiplication ();
 
         //TEST CASE 2
 	testcase = 2;
-	tb_a = 0;
-	tb_b = 0;
-	tb_result = 0;
+	tb_a = 22'b10000000000;
+	tb_b = -22'b10000000000;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_a = 22'b10000000000;
-	tb_b = -22'b10000000000;
 
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
+        @(posedge tb_clk);
+        #(CHECK_DELAY);
         @(posedge tb_clk);
         #(CHECK_DELAY);
 	

@@ -20,7 +20,7 @@ module addr_calculator
 
    //[pixel_size(3bits) * [[w+1](10bits) * y(10bits) + x_inter(20bits)] ] + offset(32bits)
    
-   reg unsigned [9:0] w = 10'd641; //max_x + 1
+   reg 	       unsigned [9:0] w;
    wire unsigned [19:0] mul1;
    wire unsigned [19:0] x_inter;
    wire unsigned [19:0] add1;
@@ -31,6 +31,7 @@ module addr_calculator
    assign add1 = mul1 + x_inter;
    assign mul2 = add1 * pixel_size;
    always_comb begin
+      w = 10'd641; //max_x + 1
       address = mul2 + offset;
    end
       

@@ -13,8 +13,11 @@ module real2imag
     INTEGRAL = 11
    )
    (
-    input unsigned [9:0] x, //has to be 10 bits
-    input unsigned [9:0] y,
+    input 		      clk, n_rst,
+    input 		      unsigned [9:0] x, //has to be 10 bits
+    input 		      unsigned [9:0] y,
+    input 		      convert_start,
+    output 		      convert_done,
     output signed [WIDTH-1:0] z_real_out,
     output signed [WIDTH-1:0] z_imag_out
     );
@@ -27,10 +30,15 @@ module real2imag
    wire signed [WIDTH - 1:0] y_fixedp;
    wire signed [WIDTH - 1:0] z_real_inter;
    wire signed [WIDTH - 1:0] z_imag_inter;
+
+   reg 			     clear;
+   reg [3:0] 		     count_out;
+   reg 			     rollover_flag;
+			     
    //reg unsigned [9:0] 		     x_reg;
    //reg unsigned [9:0] 		     y_reg;
 
-
+//OLD FORMULA(MIGHT BE RIGHT) => [3/w * (x - w/2)]
    //FORMULA =>  (x-w/2) / (0.5 * w * zoom) + moveX => [(2/w) * x - 1]
    //FORMULA =>  (y-h/2) / (0.5 * h * zoom) + moveY => [(2/h) * y - 1]
    //assume zoom=1, moveX=moveY=0
@@ -53,7 +61,20 @@ module real2imag
    assign z_imag_out = z_imag_inter - 22'd2048;
    
    //#(FRACTIONAL,INTEGRAL)
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) Mreal(.a(22'd7), .b(x_fixedp), .result(z_real_inter));
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) Mimag(.a(22'd8), .b(y_fixedp), .result(z_imag_inter));
+   fixed_multiplication Mreal(.a(22'd7), .b(x_fixedp), .result(z_real_inter));
+   fixed_multiplication Mimag(.a(22'd8), .b(y_fixedp), .result(z_imag_inter));
 
+   flex_counter FLEX_COUNTER
+     (
+      .clk(clk),
+      .n_rst(n_rst),
+      .clear(clear),
+      .count_enable(convert_start),
+      .rollover_val(4'd3),
+      .count_out(count_out),
+      .rollover_flag(rollover_flag)
+      );
+
+   assign convert_done = (rollover_flag == 1'b1 && count_out == 4'b0011) ? 1'b1 : 1'b0;
+   
 endmodule
