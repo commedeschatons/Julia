@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : K-2015.06-SP1
-// Date      : Wed Apr 27 17:25:43 2016
+// Date      : Wed Apr 27 18:40:08 2016
 /////////////////////////////////////////////////////////////
 
 
@@ -47,6 +47,472 @@ module wcu ( clk, n_rst, JW_start, MC_busy, calc_done, convert_done,
   NOR2X1 U29 ( .A(state[2]), .B(n17), .Y(n20) );
   INVX1 U30 ( .A(state[0]), .Y(n17) );
   NOR2X1 U31 ( .A(state[0]), .B(state[2]), .Y(n13) );
+endmodule
+
+
+module addr_calculator_DW01_add_0 ( A, B, CI, SUM, CO );
+  input [31:0] A;
+  input [31:0] B;
+  output [31:0] SUM;
+  input CI;
+  output CO;
+  wire   n1, n2, n3, n4, n5, n6, n7, n8;
+  wire   [31:1] carry;
+
+  FAX1 U1_23 ( .A(A[23]), .B(B[23]), .C(carry[23]), .YC(carry[24]), .YS(
+        SUM[23]) );
+  FAX1 U1_22 ( .A(A[22]), .B(B[22]), .C(carry[22]), .YC(carry[23]), .YS(
+        SUM[22]) );
+  FAX1 U1_21 ( .A(A[21]), .B(B[21]), .C(carry[21]), .YC(carry[22]), .YS(
+        SUM[21]) );
+  FAX1 U1_20 ( .A(A[20]), .B(B[20]), .C(carry[20]), .YC(carry[21]), .YS(
+        SUM[20]) );
+  FAX1 U1_19 ( .A(A[19]), .B(B[19]), .C(carry[19]), .YC(carry[20]), .YS(
+        SUM[19]) );
+  FAX1 U1_18 ( .A(A[18]), .B(B[18]), .C(carry[18]), .YC(carry[19]), .YS(
+        SUM[18]) );
+  FAX1 U1_17 ( .A(A[17]), .B(B[17]), .C(carry[17]), .YC(carry[18]), .YS(
+        SUM[17]) );
+  FAX1 U1_16 ( .A(A[16]), .B(B[16]), .C(carry[16]), .YC(carry[17]), .YS(
+        SUM[16]) );
+  FAX1 U1_15 ( .A(A[15]), .B(B[15]), .C(carry[15]), .YC(carry[16]), .YS(
+        SUM[15]) );
+  FAX1 U1_14 ( .A(A[14]), .B(B[14]), .C(carry[14]), .YC(carry[15]), .YS(
+        SUM[14]) );
+  FAX1 U1_13 ( .A(A[13]), .B(B[13]), .C(carry[13]), .YC(carry[14]), .YS(
+        SUM[13]) );
+  FAX1 U1_12 ( .A(A[12]), .B(B[12]), .C(carry[12]), .YC(carry[13]), .YS(
+        SUM[12]) );
+  FAX1 U1_11 ( .A(A[11]), .B(B[11]), .C(carry[11]), .YC(carry[12]), .YS(
+        SUM[11]) );
+  FAX1 U1_10 ( .A(A[10]), .B(B[10]), .C(carry[10]), .YC(carry[11]), .YS(
+        SUM[10]) );
+  FAX1 U1_9 ( .A(A[9]), .B(B[9]), .C(carry[9]), .YC(carry[10]), .YS(SUM[9]) );
+  FAX1 U1_8 ( .A(A[8]), .B(B[8]), .C(carry[8]), .YC(carry[9]), .YS(SUM[8]) );
+  FAX1 U1_7 ( .A(A[7]), .B(B[7]), .C(carry[7]), .YC(carry[8]), .YS(SUM[7]) );
+  FAX1 U1_6 ( .A(A[6]), .B(B[6]), .C(carry[6]), .YC(carry[7]), .YS(SUM[6]) );
+  FAX1 U1_5 ( .A(A[5]), .B(B[5]), .C(carry[5]), .YC(carry[6]), .YS(SUM[5]) );
+  FAX1 U1_4 ( .A(A[4]), .B(B[4]), .C(carry[4]), .YC(carry[5]), .YS(SUM[4]) );
+  FAX1 U1_3 ( .A(A[3]), .B(B[3]), .C(carry[3]), .YC(carry[4]), .YS(SUM[3]) );
+  FAX1 U1_2 ( .A(A[2]), .B(B[2]), .C(carry[2]), .YC(carry[3]), .YS(SUM[2]) );
+  FAX1 U1_1 ( .A(A[1]), .B(B[1]), .C(n3), .YC(carry[2]), .YS(SUM[1]) );
+  AND2X2 U1 ( .A(n6), .B(B[29]), .Y(n1) );
+  AND2X2 U2 ( .A(n7), .B(B[27]), .Y(n2) );
+  AND2X2 U3 ( .A(B[0]), .B(A[0]), .Y(n3) );
+  AND2X2 U4 ( .A(carry[24]), .B(B[24]), .Y(n4) );
+  AND2X2 U5 ( .A(n4), .B(B[25]), .Y(n5) );
+  AND2X2 U6 ( .A(n2), .B(B[28]), .Y(n6) );
+  AND2X2 U7 ( .A(n5), .B(B[26]), .Y(n7) );
+  AND2X2 U8 ( .A(n1), .B(B[30]), .Y(n8) );
+  XOR2X1 U9 ( .A(B[31]), .B(n8), .Y(SUM[31]) );
+  XOR2X1 U10 ( .A(n1), .B(B[30]), .Y(SUM[30]) );
+  XOR2X1 U11 ( .A(n6), .B(B[29]), .Y(SUM[29]) );
+  XOR2X1 U12 ( .A(n2), .B(B[28]), .Y(SUM[28]) );
+  XOR2X1 U13 ( .A(n7), .B(B[27]), .Y(SUM[27]) );
+  XOR2X1 U14 ( .A(n5), .B(B[26]), .Y(SUM[26]) );
+  XOR2X1 U15 ( .A(n4), .B(B[25]), .Y(SUM[25]) );
+  XOR2X1 U16 ( .A(carry[24]), .B(B[24]), .Y(SUM[24]) );
+  XOR2X1 U17 ( .A(B[0]), .B(A[0]), .Y(SUM[0]) );
+endmodule
+
+
+module addr_calculator_DW_mult_uns_2 ( a, b, product );
+  input [19:0] a;
+  input [3:0] b;
+  output [23:0] product;
+  wire   n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16,
+         n17, n18, n19, n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30,
+         n31, n32, n33, n34, n35, n36, n37, n38, n39, n40, n41, n42, n43, n44,
+         n45, n46, n47, n48, n49, n50, n51, n52, n53, n54, n55, n56, n57, n58,
+         n59, n60, n61, n62, n63, n64, n65, n66, n67, n68, n69, n70, n71, n72,
+         n73, n74, n75, n76, n77, n78, n79, n80, n81, n82, n83, n84, n85, n86,
+         n87, n88, n89, n90, n91, n92, n93, n94, n95, n96, n97, n98, n99, n100,
+         n101, n102, n103, n104, n105, n106, n107, n108, n109, n110, n111,
+         n112, n113, n114, n115, n116, n117, n118, n119, n120, n121, n122,
+         n123, n124, n125, n126, n127, n128, n129, n130, n131, n132, n133,
+         n134, n135, n136, n137, n138, n139, n140, n141, n142, n143, n144,
+         n145, n146, n147, n148, n149, n150, n151, n152, n153, n154, n155,
+         n156, n157, n158, n159, n160, n161, n162, n163, n164, n165, n166,
+         n167, n168, n169, n170, n171, n172, n173, n174, n175, n176, n177,
+         n178, n179, n180, n181, n182, n183, n184, n185, n186, n187, n188,
+         n189, n190, n191, n192, n193, n194, n195, n196, n197, n198, n199,
+         n200, n201, n202, n203, n204, n205, n206, n207, n208, n209;
+  assign product[23] = n9;
+
+  FAX1 U10 ( .A(n107), .B(n31), .C(n10), .YC(n9), .YS(product[22]) );
+  FAX1 U11 ( .A(n32), .B(n33), .C(n11), .YC(n10), .YS(product[21]) );
+  FAX1 U12 ( .A(n34), .B(n37), .C(n12), .YC(n11), .YS(product[20]) );
+  FAX1 U13 ( .A(n41), .B(n38), .C(n13), .YC(n12), .YS(product[19]) );
+  FAX1 U14 ( .A(n45), .B(n42), .C(n14), .YC(n13), .YS(product[18]) );
+  FAX1 U15 ( .A(n49), .B(n46), .C(n15), .YC(n14), .YS(product[17]) );
+  FAX1 U16 ( .A(n53), .B(n50), .C(n16), .YC(n15), .YS(product[16]) );
+  FAX1 U17 ( .A(n57), .B(n54), .C(n17), .YC(n16), .YS(product[15]) );
+  FAX1 U18 ( .A(n61), .B(n58), .C(n18), .YC(n17), .YS(product[14]) );
+  FAX1 U19 ( .A(n65), .B(n62), .C(n19), .YC(n18), .YS(product[13]) );
+  FAX1 U20 ( .A(n69), .B(n66), .C(n20), .YC(n19), .YS(product[12]) );
+  FAX1 U21 ( .A(n73), .B(n70), .C(n21), .YC(n20), .YS(product[11]) );
+  FAX1 U22 ( .A(n77), .B(n74), .C(n22), .YC(n21), .YS(product[10]) );
+  FAX1 U23 ( .A(n81), .B(n78), .C(n23), .YC(n22), .YS(product[9]) );
+  FAX1 U24 ( .A(n85), .B(n82), .C(n24), .YC(n23), .YS(product[8]) );
+  FAX1 U25 ( .A(n89), .B(n86), .C(n25), .YC(n24), .YS(product[7]) );
+  FAX1 U26 ( .A(n93), .B(n90), .C(n26), .YC(n25), .YS(product[6]) );
+  FAX1 U27 ( .A(n97), .B(n94), .C(n27), .YC(n26), .YS(product[5]) );
+  FAX1 U28 ( .A(n101), .B(n98), .C(n28), .YC(n27), .YS(product[4]) );
+  FAX1 U29 ( .A(n104), .B(n102), .C(n29), .YC(n28), .YS(product[3]) );
+  FAX1 U30 ( .A(n146), .B(n30), .C(n106), .YC(n29), .YS(product[2]) );
+  HAX1 U31 ( .A(n166), .B(n185), .YC(n30), .YS(product[1]) );
+  FAX1 U32 ( .A(n127), .B(n108), .C(n35), .YC(n31), .YS(n32) );
+  FAX1 U33 ( .A(n128), .B(n36), .C(n39), .YC(n33), .YS(n34) );
+  HAX1 U34 ( .A(n147), .B(n109), .YC(n35), .YS(n36) );
+  FAX1 U35 ( .A(n167), .B(n43), .C(n40), .YC(n37), .YS(n38) );
+  FAX1 U36 ( .A(n129), .B(n110), .C(n148), .YC(n39), .YS(n40) );
+  FAX1 U37 ( .A(n168), .B(n47), .C(n44), .YC(n41), .YS(n42) );
+  FAX1 U38 ( .A(n130), .B(n111), .C(n149), .YC(n43), .YS(n44) );
+  FAX1 U39 ( .A(n169), .B(n51), .C(n48), .YC(n45), .YS(n46) );
+  FAX1 U40 ( .A(n131), .B(n112), .C(n150), .YC(n47), .YS(n48) );
+  FAX1 U41 ( .A(n170), .B(n55), .C(n52), .YC(n49), .YS(n50) );
+  FAX1 U42 ( .A(n132), .B(n113), .C(n151), .YC(n51), .YS(n52) );
+  FAX1 U43 ( .A(n171), .B(n59), .C(n56), .YC(n53), .YS(n54) );
+  FAX1 U44 ( .A(n133), .B(n114), .C(n152), .YC(n55), .YS(n56) );
+  FAX1 U45 ( .A(n172), .B(n63), .C(n60), .YC(n57), .YS(n58) );
+  FAX1 U46 ( .A(n134), .B(n115), .C(n153), .YC(n59), .YS(n60) );
+  FAX1 U47 ( .A(n173), .B(n67), .C(n64), .YC(n61), .YS(n62) );
+  FAX1 U48 ( .A(n135), .B(n116), .C(n154), .YC(n63), .YS(n64) );
+  FAX1 U49 ( .A(n174), .B(n71), .C(n68), .YC(n65), .YS(n66) );
+  FAX1 U50 ( .A(n136), .B(n117), .C(n155), .YC(n67), .YS(n68) );
+  FAX1 U51 ( .A(n175), .B(n75), .C(n72), .YC(n69), .YS(n70) );
+  FAX1 U52 ( .A(n137), .B(n118), .C(n156), .YC(n71), .YS(n72) );
+  FAX1 U53 ( .A(n176), .B(n79), .C(n76), .YC(n73), .YS(n74) );
+  FAX1 U54 ( .A(n138), .B(n119), .C(n157), .YC(n75), .YS(n76) );
+  FAX1 U55 ( .A(n177), .B(n83), .C(n80), .YC(n77), .YS(n78) );
+  FAX1 U56 ( .A(n139), .B(n120), .C(n158), .YC(n79), .YS(n80) );
+  FAX1 U57 ( .A(n178), .B(n87), .C(n84), .YC(n81), .YS(n82) );
+  FAX1 U58 ( .A(n140), .B(n121), .C(n159), .YC(n83), .YS(n84) );
+  FAX1 U59 ( .A(n179), .B(n91), .C(n88), .YC(n85), .YS(n86) );
+  FAX1 U60 ( .A(n141), .B(n122), .C(n160), .YC(n87), .YS(n88) );
+  FAX1 U61 ( .A(n180), .B(n95), .C(n92), .YC(n89), .YS(n90) );
+  FAX1 U62 ( .A(n142), .B(n123), .C(n161), .YC(n91), .YS(n92) );
+  FAX1 U63 ( .A(n181), .B(n99), .C(n96), .YC(n93), .YS(n94) );
+  FAX1 U64 ( .A(n143), .B(n124), .C(n162), .YC(n95), .YS(n96) );
+  FAX1 U65 ( .A(n182), .B(n103), .C(n100), .YC(n97), .YS(n98) );
+  FAX1 U66 ( .A(n144), .B(n125), .C(n163), .YC(n99), .YS(n100) );
+  FAX1 U67 ( .A(n183), .B(n164), .C(n105), .YC(n101), .YS(n102) );
+  HAX1 U68 ( .A(n145), .B(n126), .YC(n103), .YS(n104) );
+  HAX1 U69 ( .A(n184), .B(n165), .YC(n105), .YS(n106) );
+  NOR2X1 U70 ( .A(n186), .B(n8), .Y(n107) );
+  NOR2X1 U71 ( .A(n187), .B(n8), .Y(n108) );
+  NOR2X1 U72 ( .A(n188), .B(n8), .Y(n109) );
+  NOR2X1 U73 ( .A(n189), .B(n8), .Y(n110) );
+  NOR2X1 U74 ( .A(n190), .B(n8), .Y(n111) );
+  NOR2X1 U75 ( .A(n191), .B(n8), .Y(n112) );
+  NOR2X1 U76 ( .A(n192), .B(n8), .Y(n113) );
+  NOR2X1 U77 ( .A(n193), .B(n8), .Y(n114) );
+  NOR2X1 U78 ( .A(n194), .B(n8), .Y(n115) );
+  NOR2X1 U79 ( .A(n195), .B(n8), .Y(n116) );
+  NOR2X1 U80 ( .A(n196), .B(n7), .Y(n117) );
+  NOR2X1 U81 ( .A(n197), .B(n7), .Y(n118) );
+  NOR2X1 U82 ( .A(n198), .B(n7), .Y(n119) );
+  NOR2X1 U83 ( .A(n199), .B(n7), .Y(n120) );
+  NOR2X1 U84 ( .A(n200), .B(n7), .Y(n121) );
+  NOR2X1 U85 ( .A(n201), .B(n7), .Y(n122) );
+  NOR2X1 U86 ( .A(n202), .B(n7), .Y(n123) );
+  NOR2X1 U87 ( .A(n203), .B(n7), .Y(n124) );
+  NOR2X1 U88 ( .A(n204), .B(n7), .Y(n125) );
+  NOR2X1 U89 ( .A(n205), .B(n7), .Y(n126) );
+  NOR2X1 U90 ( .A(n186), .B(n6), .Y(n127) );
+  NOR2X1 U91 ( .A(n187), .B(n6), .Y(n128) );
+  NOR2X1 U92 ( .A(n188), .B(n6), .Y(n129) );
+  NOR2X1 U93 ( .A(n189), .B(n6), .Y(n130) );
+  NOR2X1 U94 ( .A(n190), .B(n6), .Y(n131) );
+  NOR2X1 U95 ( .A(n191), .B(n6), .Y(n132) );
+  NOR2X1 U96 ( .A(n192), .B(n6), .Y(n133) );
+  NOR2X1 U97 ( .A(n193), .B(n6), .Y(n134) );
+  NOR2X1 U98 ( .A(n194), .B(n6), .Y(n135) );
+  NOR2X1 U99 ( .A(n195), .B(n6), .Y(n136) );
+  NOR2X1 U100 ( .A(n196), .B(n5), .Y(n137) );
+  NOR2X1 U101 ( .A(n197), .B(n5), .Y(n138) );
+  NOR2X1 U102 ( .A(n198), .B(n5), .Y(n139) );
+  NOR2X1 U103 ( .A(n199), .B(n5), .Y(n140) );
+  NOR2X1 U104 ( .A(n200), .B(n5), .Y(n141) );
+  NOR2X1 U105 ( .A(n201), .B(n5), .Y(n142) );
+  NOR2X1 U106 ( .A(n202), .B(n5), .Y(n143) );
+  NOR2X1 U107 ( .A(n203), .B(n5), .Y(n144) );
+  NOR2X1 U108 ( .A(n204), .B(n5), .Y(n145) );
+  NOR2X1 U109 ( .A(n205), .B(n5), .Y(n146) );
+  NOR2X1 U110 ( .A(n186), .B(n4), .Y(n147) );
+  NOR2X1 U111 ( .A(n187), .B(n4), .Y(n148) );
+  NOR2X1 U112 ( .A(n188), .B(n4), .Y(n149) );
+  NOR2X1 U113 ( .A(n189), .B(n4), .Y(n150) );
+  NOR2X1 U114 ( .A(n190), .B(n4), .Y(n151) );
+  NOR2X1 U115 ( .A(n191), .B(n4), .Y(n152) );
+  NOR2X1 U116 ( .A(n192), .B(n4), .Y(n153) );
+  NOR2X1 U117 ( .A(n193), .B(n4), .Y(n154) );
+  NOR2X1 U118 ( .A(n194), .B(n4), .Y(n155) );
+  NOR2X1 U119 ( .A(n195), .B(n4), .Y(n156) );
+  NOR2X1 U120 ( .A(n196), .B(n3), .Y(n157) );
+  NOR2X1 U121 ( .A(n197), .B(n3), .Y(n158) );
+  NOR2X1 U122 ( .A(n198), .B(n3), .Y(n159) );
+  NOR2X1 U123 ( .A(n199), .B(n3), .Y(n160) );
+  NOR2X1 U124 ( .A(n200), .B(n3), .Y(n161) );
+  NOR2X1 U125 ( .A(n201), .B(n3), .Y(n162) );
+  NOR2X1 U126 ( .A(n202), .B(n3), .Y(n163) );
+  NOR2X1 U127 ( .A(n203), .B(n3), .Y(n164) );
+  NOR2X1 U128 ( .A(n204), .B(n3), .Y(n165) );
+  NOR2X1 U129 ( .A(n205), .B(n3), .Y(n166) );
+  NOR2X1 U130 ( .A(n186), .B(n2), .Y(n167) );
+  NOR2X1 U131 ( .A(n187), .B(n2), .Y(n168) );
+  NOR2X1 U132 ( .A(n188), .B(n2), .Y(n169) );
+  NOR2X1 U133 ( .A(n189), .B(n2), .Y(n170) );
+  NOR2X1 U134 ( .A(n190), .B(n2), .Y(n171) );
+  NOR2X1 U135 ( .A(n191), .B(n2), .Y(n172) );
+  NOR2X1 U136 ( .A(n192), .B(n2), .Y(n173) );
+  NOR2X1 U137 ( .A(n193), .B(n2), .Y(n174) );
+  NOR2X1 U138 ( .A(n194), .B(n2), .Y(n175) );
+  NOR2X1 U139 ( .A(n195), .B(n2), .Y(n176) );
+  NOR2X1 U140 ( .A(n196), .B(n1), .Y(n177) );
+  NOR2X1 U141 ( .A(n197), .B(n1), .Y(n178) );
+  NOR2X1 U142 ( .A(n198), .B(n1), .Y(n179) );
+  NOR2X1 U143 ( .A(n199), .B(n1), .Y(n180) );
+  NOR2X1 U144 ( .A(n200), .B(n1), .Y(n181) );
+  NOR2X1 U145 ( .A(n201), .B(n1), .Y(n182) );
+  NOR2X1 U146 ( .A(n202), .B(n1), .Y(n183) );
+  NOR2X1 U147 ( .A(n203), .B(n1), .Y(n184) );
+  NOR2X1 U148 ( .A(n204), .B(n1), .Y(n185) );
+  NOR2X1 U149 ( .A(n205), .B(n1), .Y(product[0]) );
+  INVX2 U176 ( .A(a[16]), .Y(n189) );
+  INVX2 U177 ( .A(a[14]), .Y(n191) );
+  INVX2 U178 ( .A(a[12]), .Y(n193) );
+  INVX2 U179 ( .A(a[15]), .Y(n190) );
+  INVX2 U180 ( .A(a[13]), .Y(n192) );
+  INVX2 U181 ( .A(a[19]), .Y(n186) );
+  INVX2 U182 ( .A(a[10]), .Y(n195) );
+  INVX2 U183 ( .A(a[11]), .Y(n194) );
+  INVX2 U184 ( .A(a[18]), .Y(n187) );
+  INVX2 U185 ( .A(a[17]), .Y(n188) );
+  BUFX2 U186 ( .A(n208), .Y(n3) );
+  BUFX2 U187 ( .A(n209), .Y(n1) );
+  BUFX2 U188 ( .A(n207), .Y(n5) );
+  BUFX2 U189 ( .A(n206), .Y(n7) );
+  BUFX2 U190 ( .A(n209), .Y(n2) );
+  BUFX2 U191 ( .A(n207), .Y(n6) );
+  BUFX2 U192 ( .A(n206), .Y(n8) );
+  BUFX2 U193 ( .A(n208), .Y(n4) );
+  INVX2 U194 ( .A(a[7]), .Y(n198) );
+  INVX2 U195 ( .A(a[2]), .Y(n203) );
+  INVX2 U196 ( .A(a[8]), .Y(n197) );
+  INVX2 U197 ( .A(a[1]), .Y(n204) );
+  INVX2 U198 ( .A(a[3]), .Y(n202) );
+  INVX2 U199 ( .A(a[4]), .Y(n201) );
+  INVX2 U200 ( .A(a[5]), .Y(n200) );
+  INVX2 U201 ( .A(a[6]), .Y(n199) );
+  INVX2 U202 ( .A(a[9]), .Y(n196) );
+  INVX2 U203 ( .A(a[0]), .Y(n205) );
+  INVX2 U204 ( .A(b[1]), .Y(n208) );
+  INVX2 U205 ( .A(b[0]), .Y(n209) );
+  INVX2 U206 ( .A(b[2]), .Y(n207) );
+  INVX2 U207 ( .A(b[3]), .Y(n206) );
+endmodule
+
+
+module addr_calculator ( x, y, pixel_size, offset, address );
+  input [9:0] x;
+  input [9:0] y;
+  input [3:0] pixel_size;
+  input [31:0] offset;
+  output [31:0] address;
+  wire   \mul2[9] , \mul2[8] , \mul2[7] , \mul2[6] , \mul2[5] , \mul2[4] ,
+         \mul2[3] , \mul2[2] , \mul2[23] , \mul2[22] , \mul2[21] , \mul2[20] ,
+         \mul2[1] , \mul2[19] , \mul2[18] , \mul2[17] , \mul2[16] , \mul2[15] ,
+         \mul2[14] , \mul2[13] , \mul2[12] , \mul2[11] , \mul2[10] , \mul2[0] ,
+         \mul1[6] , \mul1[5] , \mul1[4] , \mul1[3] , \mul1[2] , \mul1[1] ,
+         \mul1[0] , \add1[9] , \add1[8] , \add1[7] , \add1[6] , \add1[5] ,
+         \add1[4] , \add1[3] , \add1[2] , \add1[1] , \add1[19] , \add1[18] ,
+         \add1[17] , \add1[16] , \add1[15] , \add1[14] , \add1[13] ,
+         \add1[12] , \add1[11] , \add1[10] , \add1[0] , n1, n2, n3, n5, n6, n7,
+         n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19, n20, n21,
+         n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33, n34, n35,
+         n36, n37, n38, n39, n40, n41, n42, n43, n44, n45, n46, n47, n48, n49,
+         n50, n51, n52, n53, n54, n55, n56, n57, n58, n59, n60, n61, n62, n63,
+         n64, n65, n66, n67, n68, n69, n70, n71, n72, n73, n74, n75, n76, n77,
+         n78, n79, n80, n81, n82, n83, n84, n85, n86, n87, n88, n89, n90, n91,
+         n92, n93, n94, n95, n96, n97, n98, n99, n100, n101, n102, n103, n104,
+         n105, n106, n107, n108, n109, n110, n111, n112, n113, n114, n115,
+         n116, n117, n118, n119, n120, n121, n122, n123, n124, n125, n126,
+         n127, n128, n129, n130, n131, n132;
+  assign \mul1[6]  = y[6];
+  assign \mul1[5]  = y[5];
+  assign \mul1[4]  = y[4];
+  assign \mul1[3]  = y[3];
+  assign \mul1[2]  = y[2];
+  assign \mul1[1]  = y[1];
+  assign \mul1[0]  = y[0];
+
+  addr_calculator_DW01_add_0 add_35 ( .A({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, \mul2[23] , \mul2[22] , \mul2[21] , \mul2[20] , \mul2[19] , 
+        \mul2[18] , \mul2[17] , \mul2[16] , \mul2[15] , \mul2[14] , \mul2[13] , 
+        \mul2[12] , \mul2[11] , \mul2[10] , \mul2[9] , \mul2[8] , \mul2[7] , 
+        \mul2[6] , \mul2[5] , \mul2[4] , \mul2[3] , \mul2[2] , \mul2[1] , 
+        \mul2[0] }), .B(offset), .CI(1'b0), .SUM(address) );
+  addr_calculator_DW_mult_uns_2 mult_32 ( .a({\add1[19] , \add1[18] , 
+        \add1[17] , \add1[16] , \add1[15] , \add1[14] , \add1[13] , \add1[12] , 
+        \add1[11] , \add1[10] , \add1[9] , \add1[8] , \add1[7] , \add1[6] , 
+        \add1[5] , \add1[4] , \add1[3] , \add1[2] , \add1[1] , \add1[0] }), 
+        .b(pixel_size), .product({\mul2[23] , \mul2[22] , \mul2[21] , 
+        \mul2[20] , \mul2[19] , \mul2[18] , \mul2[17] , \mul2[16] , \mul2[15] , 
+        \mul2[14] , \mul2[13] , \mul2[12] , \mul2[11] , \mul2[10] , \mul2[9] , 
+        \mul2[8] , \mul2[7] , \mul2[6] , \mul2[5] , \mul2[4] , \mul2[3] , 
+        \mul2[2] , \mul2[1] , \mul2[0] }) );
+  XOR2X1 U3 ( .A(n1), .B(n2), .Y(\add1[9] ) );
+  XOR2X1 U4 ( .A(n3), .B(x[9]), .Y(n2) );
+  XOR2X1 U5 ( .A(n5), .B(n6), .Y(\add1[8] ) );
+  XOR2X1 U7 ( .A(n7), .B(x[8]), .Y(n5) );
+  XOR2X1 U8 ( .A(n8), .B(n9), .Y(\add1[7] ) );
+  XOR2X1 U9 ( .A(n10), .B(x[7]), .Y(n8) );
+  XOR2X1 U10 ( .A(n11), .B(n12), .Y(\add1[6] ) );
+  XOR2X1 U11 ( .A(x[6]), .B(\mul1[6] ), .Y(n12) );
+  XOR2X1 U12 ( .A(n13), .B(n14), .Y(\add1[5] ) );
+  XOR2X1 U13 ( .A(x[5]), .B(\mul1[5] ), .Y(n14) );
+  XOR2X1 U14 ( .A(n15), .B(n16), .Y(\add1[4] ) );
+  XOR2X1 U15 ( .A(x[4]), .B(\mul1[4] ), .Y(n16) );
+  XOR2X1 U16 ( .A(n17), .B(n18), .Y(\add1[3] ) );
+  XOR2X1 U17 ( .A(x[3]), .B(\mul1[3] ), .Y(n18) );
+  XOR2X1 U18 ( .A(n19), .B(n20), .Y(\add1[2] ) );
+  XOR2X1 U19 ( .A(x[2]), .B(n21), .Y(n19) );
+  XOR2X1 U20 ( .A(n22), .B(n23), .Y(\add1[1] ) );
+  XOR2X1 U21 ( .A(x[1]), .B(n24), .Y(n23) );
+  OAI22X1 U22 ( .A(n25), .B(n26), .C(n27), .D(n28), .Y(\add1[19] ) );
+  XOR2X1 U23 ( .A(n28), .B(n27), .Y(\add1[18] ) );
+  XOR2X1 U24 ( .A(n26), .B(y[9]), .Y(n27) );
+  OAI21X1 U25 ( .A(n29), .B(n30), .C(y[8]), .Y(n26) );
+  NAND3X1 U26 ( .A(n31), .B(n32), .C(n33), .Y(n28) );
+  INVX1 U27 ( .A(n34), .Y(n33) );
+  XOR2X1 U28 ( .A(n32), .B(n35), .Y(\add1[17] ) );
+  NOR2X1 U29 ( .A(n36), .B(n34), .Y(n35) );
+  XOR2X1 U30 ( .A(n30), .B(n37), .Y(n32) );
+  XOR2X1 U31 ( .A(y[8]), .B(n29), .Y(n37) );
+  NOR2X1 U32 ( .A(n38), .B(n25), .Y(n29) );
+  OAI21X1 U33 ( .A(n39), .B(n40), .C(n41), .Y(n30) );
+  OAI21X1 U34 ( .A(n42), .B(n43), .C(n44), .Y(n41) );
+  INVX1 U35 ( .A(n43), .Y(n40) );
+  XOR2X1 U36 ( .A(n34), .B(n36), .Y(\add1[16] ) );
+  INVX1 U37 ( .A(n31), .Y(n36) );
+  XOR2X1 U38 ( .A(n45), .B(n43), .Y(n31) );
+  XNOR2X1 U39 ( .A(n38), .B(y[9]), .Y(n43) );
+  XOR2X1 U40 ( .A(n42), .B(n44), .Y(n45) );
+  NOR2X1 U41 ( .A(n46), .B(n47), .Y(n44) );
+  INVX1 U42 ( .A(n39), .Y(n42) );
+  AOI21X1 U43 ( .A(n48), .B(n49), .C(n50), .Y(n39) );
+  INVX1 U44 ( .A(n51), .Y(n50) );
+  OAI21X1 U45 ( .A(n48), .B(n49), .C(n52), .Y(n51) );
+  NAND3X1 U46 ( .A(n53), .B(n54), .C(n55), .Y(n34) );
+  XNOR2X1 U47 ( .A(n56), .B(n54), .Y(\add1[15] ) );
+  XOR2X1 U48 ( .A(n57), .B(n49), .Y(n54) );
+  XOR2X1 U49 ( .A(n46), .B(n47), .Y(n49) );
+  INVX1 U50 ( .A(y[8]), .Y(n47) );
+  XOR2X1 U51 ( .A(n48), .B(n52), .Y(n57) );
+  NOR2X1 U52 ( .A(n58), .B(n38), .Y(n52) );
+  OAI21X1 U53 ( .A(n59), .B(n60), .C(n61), .Y(n48) );
+  OAI21X1 U54 ( .A(n62), .B(n63), .C(n64), .Y(n61) );
+  INVX1 U55 ( .A(n63), .Y(n60) );
+  NAND2X1 U56 ( .A(n55), .B(n53), .Y(n56) );
+  XOR2X1 U57 ( .A(n53), .B(n55), .Y(\add1[14] ) );
+  NOR3X1 U58 ( .A(n65), .B(n66), .C(n67), .Y(n55) );
+  XOR2X1 U59 ( .A(n68), .B(n63), .Y(n53) );
+  XNOR2X1 U60 ( .A(n58), .B(y[7]), .Y(n63) );
+  XOR2X1 U61 ( .A(n62), .B(n64), .Y(n68) );
+  NOR2X1 U62 ( .A(n46), .B(n69), .Y(n64) );
+  INVX1 U63 ( .A(n59), .Y(n62) );
+  AOI21X1 U64 ( .A(n70), .B(n71), .C(n72), .Y(n59) );
+  INVX1 U65 ( .A(n73), .Y(n72) );
+  OAI21X1 U66 ( .A(n70), .B(n71), .C(n74), .Y(n73) );
+  XNOR2X1 U67 ( .A(n66), .B(n75), .Y(\add1[13] ) );
+  NOR2X1 U68 ( .A(n65), .B(n67), .Y(n75) );
+  XNOR2X1 U69 ( .A(n76), .B(n71), .Y(n66) );
+  XOR2X1 U70 ( .A(n69), .B(n46), .Y(n71) );
+  XOR2X1 U71 ( .A(n70), .B(n74), .Y(n76) );
+  NOR2X1 U72 ( .A(n58), .B(n77), .Y(n74) );
+  OAI21X1 U73 ( .A(n78), .B(n79), .C(n80), .Y(n70) );
+  OAI21X1 U74 ( .A(n81), .B(n82), .C(n83), .Y(n80) );
+  INVX1 U75 ( .A(n82), .Y(n79) );
+  XOR2X1 U76 ( .A(n67), .B(n65), .Y(\add1[12] ) );
+  XNOR2X1 U77 ( .A(n84), .B(n82), .Y(n65) );
+  XNOR2X1 U78 ( .A(n77), .B(\mul1[5] ), .Y(n82) );
+  XOR2X1 U79 ( .A(n81), .B(n83), .Y(n84) );
+  NOR2X1 U80 ( .A(n69), .B(n21), .Y(n83) );
+  INVX1 U81 ( .A(n78), .Y(n81) );
+  AOI21X1 U82 ( .A(n85), .B(n86), .C(n87), .Y(n78) );
+  INVX1 U83 ( .A(n88), .Y(n87) );
+  OAI21X1 U84 ( .A(n85), .B(n86), .C(n89), .Y(n88) );
+  NAND3X1 U85 ( .A(n90), .B(n91), .C(n92), .Y(n67) );
+  XNOR2X1 U86 ( .A(n93), .B(n92), .Y(\add1[11] ) );
+  XOR2X1 U87 ( .A(n94), .B(n86), .Y(n92) );
+  XOR2X1 U88 ( .A(n21), .B(n69), .Y(n86) );
+  XOR2X1 U89 ( .A(n85), .B(n89), .Y(n94) );
+  NOR2X1 U90 ( .A(n77), .B(n24), .Y(n89) );
+  OAI21X1 U91 ( .A(n95), .B(n96), .C(n97), .Y(n85) );
+  OAI21X1 U92 ( .A(n98), .B(n99), .C(n100), .Y(n97) );
+  INVX1 U93 ( .A(n98), .Y(n96) );
+  INVX1 U94 ( .A(n99), .Y(n95) );
+  NAND2X1 U95 ( .A(n90), .B(n91), .Y(n93) );
+  XOR2X1 U96 ( .A(n91), .B(n90), .Y(\add1[10] ) );
+  XOR2X1 U97 ( .A(n101), .B(n98), .Y(n90) );
+  XNOR2X1 U98 ( .A(n77), .B(\mul1[1] ), .Y(n98) );
+  XOR2X1 U99 ( .A(n100), .B(n99), .Y(n101) );
+  OAI21X1 U100 ( .A(n102), .B(n103), .C(n104), .Y(n99) );
+  OAI21X1 U101 ( .A(n105), .B(n106), .C(\mul1[0] ), .Y(n104) );
+  INVX1 U102 ( .A(n106), .Y(n103) );
+  NOR2X1 U103 ( .A(n21), .B(n25), .Y(n100) );
+  INVX1 U104 ( .A(y[9]), .Y(n25) );
+  OAI21X1 U105 ( .A(n107), .B(n108), .C(n109), .Y(n91) );
+  OAI21X1 U106 ( .A(n1), .B(n3), .C(x[9]), .Y(n109) );
+  INVX1 U107 ( .A(n1), .Y(n108) );
+  XOR2X1 U108 ( .A(n110), .B(n106), .Y(n1) );
+  XNOR2X1 U109 ( .A(n21), .B(y[9]), .Y(n106) );
+  XOR2X1 U110 ( .A(n111), .B(n102), .Y(n110) );
+  INVX1 U111 ( .A(n105), .Y(n102) );
+  OAI21X1 U112 ( .A(n112), .B(n24), .C(n113), .Y(n105) );
+  OAI21X1 U113 ( .A(n114), .B(\mul1[1] ), .C(y[8]), .Y(n113) );
+  INVX1 U114 ( .A(n112), .Y(n114) );
+  INVX1 U115 ( .A(n3), .Y(n107) );
+  OAI21X1 U116 ( .A(n115), .B(n116), .C(n117), .Y(n3) );
+  OAI21X1 U117 ( .A(n6), .B(n7), .C(x[8]), .Y(n117) );
+  INVX1 U118 ( .A(n115), .Y(n7) );
+  INVX1 U119 ( .A(n116), .Y(n6) );
+  XOR2X1 U120 ( .A(n112), .B(n118), .Y(n116) );
+  XOR2X1 U121 ( .A(y[8]), .B(\mul1[1] ), .Y(n118) );
+  NAND2X1 U122 ( .A(y[7]), .B(\mul1[0] ), .Y(n112) );
+  AOI21X1 U123 ( .A(n10), .B(n9), .C(n119), .Y(n115) );
+  INVX1 U124 ( .A(n120), .Y(n119) );
+  OAI21X1 U125 ( .A(n9), .B(n10), .C(x[7]), .Y(n120) );
+  XOR2X1 U126 ( .A(n111), .B(n38), .Y(n9) );
+  INVX1 U127 ( .A(y[7]), .Y(n38) );
+  INVX1 U128 ( .A(\mul1[0] ), .Y(n111) );
+  OAI21X1 U129 ( .A(n121), .B(n46), .C(n122), .Y(n10) );
+  OAI21X1 U130 ( .A(\mul1[6] ), .B(n11), .C(x[6]), .Y(n122) );
+  INVX1 U131 ( .A(\mul1[6] ), .Y(n46) );
+  INVX1 U132 ( .A(n11), .Y(n121) );
+  OAI21X1 U133 ( .A(n123), .B(n58), .C(n124), .Y(n11) );
+  OAI21X1 U134 ( .A(\mul1[5] ), .B(n13), .C(x[5]), .Y(n124) );
+  INVX1 U135 ( .A(\mul1[5] ), .Y(n58) );
+  INVX1 U136 ( .A(n13), .Y(n123) );
+  OAI21X1 U137 ( .A(n125), .B(n69), .C(n126), .Y(n13) );
+  OAI21X1 U138 ( .A(\mul1[4] ), .B(n15), .C(x[4]), .Y(n126) );
+  INVX1 U139 ( .A(\mul1[4] ), .Y(n69) );
+  INVX1 U140 ( .A(n15), .Y(n125) );
+  OAI21X1 U141 ( .A(n127), .B(n77), .C(n128), .Y(n15) );
+  OAI21X1 U142 ( .A(\mul1[3] ), .B(n17), .C(x[3]), .Y(n128) );
+  INVX1 U143 ( .A(\mul1[3] ), .Y(n77) );
+  INVX1 U144 ( .A(n17), .Y(n127) );
+  OAI21X1 U145 ( .A(n20), .B(n21), .C(n129), .Y(n17) );
+  OAI21X1 U146 ( .A(\mul1[2] ), .B(n130), .C(x[2]), .Y(n129) );
+  INVX1 U147 ( .A(\mul1[2] ), .Y(n21) );
+  INVX1 U148 ( .A(n130), .Y(n20) );
+  OAI21X1 U149 ( .A(n24), .B(n22), .C(n131), .Y(n130) );
+  OAI21X1 U150 ( .A(n132), .B(\mul1[1] ), .C(x[1]), .Y(n131) );
+  INVX1 U151 ( .A(n22), .Y(n132) );
+  NAND2X1 U152 ( .A(x[0]), .B(\mul1[0] ), .Y(n22) );
+  INVX1 U153 ( .A(\mul1[1] ), .Y(n24) );
+  XOR2X1 U154 ( .A(x[0]), .B(\mul1[0] ), .Y(\add1[0] ) );
 endmodule
 
 
@@ -2971,13 +3437,13 @@ module fixed_multiplication_4_DW_mult_tc_1 ( a, b, product );
   BUFX2 U869 ( .A(n997), .Y(n5) );
   BUFX2 U870 ( .A(n996), .Y(n11) );
   BUFX2 U871 ( .A(n995), .Y(n17) );
-  BUFX2 U872 ( .A(n993), .Y(n29) );
-  BUFX2 U873 ( .A(n991), .Y(n41) );
-  BUFX2 U874 ( .A(n990), .Y(n47) );
-  BUFX2 U875 ( .A(n989), .Y(n53) );
-  BUFX2 U876 ( .A(n988), .Y(n59) );
-  BUFX2 U877 ( .A(n994), .Y(n23) );
-  BUFX2 U878 ( .A(n992), .Y(n35) );
+  BUFX2 U872 ( .A(n994), .Y(n23) );
+  BUFX2 U873 ( .A(n993), .Y(n29) );
+  BUFX2 U874 ( .A(n992), .Y(n35) );
+  BUFX2 U875 ( .A(n991), .Y(n41) );
+  BUFX2 U876 ( .A(n990), .Y(n47) );
+  BUFX2 U877 ( .A(n989), .Y(n53) );
+  BUFX2 U878 ( .A(n988), .Y(n59) );
   BUFX2 U879 ( .A(n66), .Y(n65) );
   BUFX2 U880 ( .A(n1007), .Y(n3) );
   BUFX2 U881 ( .A(n991), .Y(n42) );
@@ -3920,14 +4386,14 @@ module fixed_multiplication_3_DW_mult_tc_1 ( a, b, product );
   BUFX2 U869 ( .A(n997), .Y(n5) );
   BUFX2 U870 ( .A(n996), .Y(n11) );
   BUFX2 U871 ( .A(n995), .Y(n17) );
-  BUFX2 U872 ( .A(n994), .Y(n23) );
+  BUFX2 U872 ( .A(n66), .Y(n65) );
   BUFX2 U873 ( .A(n993), .Y(n29) );
   BUFX2 U874 ( .A(n992), .Y(n35) );
   BUFX2 U875 ( .A(n991), .Y(n41) );
   BUFX2 U876 ( .A(n990), .Y(n47) );
-  BUFX2 U877 ( .A(n989), .Y(n53) );
-  BUFX2 U878 ( .A(n988), .Y(n59) );
-  BUFX2 U879 ( .A(n66), .Y(n65) );
+  BUFX2 U877 ( .A(n994), .Y(n23) );
+  BUFX2 U878 ( .A(n989), .Y(n53) );
+  BUFX2 U879 ( .A(n988), .Y(n59) );
   BUFX2 U880 ( .A(n1007), .Y(n3) );
   BUFX2 U881 ( .A(n991), .Y(n42) );
   BUFX2 U882 ( .A(n1001), .Y(n40) );
@@ -5818,12 +6284,12 @@ module fixed_multiplication_1_DW_mult_tc_1 ( a, b, product );
   BUFX2 U869 ( .A(n997), .Y(n5) );
   BUFX2 U870 ( .A(n996), .Y(n11) );
   BUFX2 U871 ( .A(n995), .Y(n17) );
-  BUFX2 U872 ( .A(n994), .Y(n23) );
-  BUFX2 U873 ( .A(n993), .Y(n29) );
-  BUFX2 U874 ( .A(n992), .Y(n35) );
-  BUFX2 U875 ( .A(n991), .Y(n41) );
-  BUFX2 U876 ( .A(n990), .Y(n47) );
-  BUFX2 U877 ( .A(n989), .Y(n53) );
+  BUFX2 U872 ( .A(n993), .Y(n29) );
+  BUFX2 U873 ( .A(n992), .Y(n35) );
+  BUFX2 U874 ( .A(n991), .Y(n41) );
+  BUFX2 U875 ( .A(n990), .Y(n47) );
+  BUFX2 U876 ( .A(n989), .Y(n53) );
+  BUFX2 U877 ( .A(n994), .Y(n23) );
   BUFX2 U878 ( .A(n988), .Y(n59) );
   BUFX2 U879 ( .A(n1007), .Y(n3) );
   BUFX2 U880 ( .A(n991), .Y(n42) );
@@ -6762,16 +7228,16 @@ module fixed_multiplication_0_DW_mult_tc_1 ( a, b, product );
   BUFX2 U864 ( .A(n1004), .Y(n22) );
   BUFX2 U865 ( .A(n1003), .Y(n28) );
   BUFX2 U866 ( .A(n1002), .Y(n34) );
-  BUFX2 U867 ( .A(n66), .Y(n65) );
-  BUFX2 U868 ( .A(n996), .Y(n11) );
-  BUFX2 U869 ( .A(n995), .Y(n17) );
-  BUFX2 U870 ( .A(n994), .Y(n23) );
-  BUFX2 U871 ( .A(n993), .Y(n29) );
-  BUFX2 U872 ( .A(n992), .Y(n35) );
-  BUFX2 U873 ( .A(n991), .Y(n41) );
-  BUFX2 U874 ( .A(n990), .Y(n47) );
-  BUFX2 U875 ( .A(n989), .Y(n53) );
-  BUFX2 U876 ( .A(n988), .Y(n59) );
+  BUFX2 U867 ( .A(n996), .Y(n11) );
+  BUFX2 U868 ( .A(n995), .Y(n17) );
+  BUFX2 U869 ( .A(n993), .Y(n29) );
+  BUFX2 U870 ( .A(n992), .Y(n35) );
+  BUFX2 U871 ( .A(n990), .Y(n47) );
+  BUFX2 U872 ( .A(n989), .Y(n53) );
+  BUFX2 U873 ( .A(n988), .Y(n59) );
+  BUFX2 U874 ( .A(n66), .Y(n65) );
+  BUFX2 U875 ( .A(n994), .Y(n23) );
+  BUFX2 U876 ( .A(n991), .Y(n41) );
   BUFX2 U877 ( .A(n991), .Y(n42) );
   BUFX2 U878 ( .A(n1001), .Y(n40) );
   BUFX2 U879 ( .A(n990), .Y(n48) );
@@ -7829,23 +8295,41 @@ module pixel2color ( pixel, color );
 endmodule
 
 
-module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, JW_ready, JW_done, 
-        pixel, c_real_in, c_imag_in );
+module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, c_real_in, 
+        c_imag_in, JW_ready, JW_done, color, address );
   input [9:0] x;
   input [9:0] y;
-  output [7:0] pixel;
   input [21:0] c_real_in;
   input [21:0] c_imag_in;
+  output [31:0] color;
+  output [31:0] address;
   input clk, n_rst, JW_start, MC_busy;
   output JW_ready, JW_done;
   wire   calc_start, calc_done, convert_start, convert_done;
   wire   [21:0] z_real_in;
   wire   [21:0] z_imag_in;
+  wire   [7:0] pixel;
+  wire   SYNOPSYS_UNCONNECTED__0, SYNOPSYS_UNCONNECTED__1, 
+        SYNOPSYS_UNCONNECTED__2, SYNOPSYS_UNCONNECTED__3, 
+        SYNOPSYS_UNCONNECTED__4, SYNOPSYS_UNCONNECTED__5, 
+        SYNOPSYS_UNCONNECTED__6, SYNOPSYS_UNCONNECTED__7;
+  assign color[31] = 1'b0;
+  assign color[30] = 1'b0;
+  assign color[29] = 1'b0;
+  assign color[28] = 1'b0;
+  assign color[27] = 1'b0;
+  assign color[26] = 1'b0;
+  assign color[25] = 1'b0;
+  assign color[24] = 1'b0;
 
   wcu WCU ( .clk(clk), .n_rst(n_rst), .JW_start(JW_start), .MC_busy(MC_busy), 
         .calc_done(calc_done), .convert_done(convert_done), .convert_start(
         convert_start), .JW_ready(JW_ready), .JW_done(JW_done), .calc_start(
         calc_start) );
+  addr_calculator ADDR_CALCULATOR ( .x(x), .y(y), .pixel_size({1'b1, 1'b0, 
+        1'b0, 1'b0}), .offset({1'b0, 1'b0, 1'b0, 1'b0, 1'b1, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 
+        1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .address(address) );
   real2imag REAL2IMAG ( .clk(clk), .n_rst(n_rst), .x(x), .y(y), 
         .convert_start(convert_start), .convert_done(convert_done), 
         .z_real_out(z_real_in), .z_imag_out(z_imag_in) );
@@ -7854,6 +8338,10 @@ module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, JW_ready, JW_done,
         c_real_in), .c_imag_in(c_imag_in), .iteration_in({1'b0, 1'b0, 1'b0, 
         1'b0, 1'b0, 1'b0, 1'b0, 1'b0}), .pixel(pixel), .calc_done(calc_done)
          );
-  pixel2color PIXEL2COLOR ( .pixel(pixel) );
+  pixel2color PIXEL2COLOR ( .pixel(pixel), .color({SYNOPSYS_UNCONNECTED__0, 
+        SYNOPSYS_UNCONNECTED__1, SYNOPSYS_UNCONNECTED__2, 
+        SYNOPSYS_UNCONNECTED__3, SYNOPSYS_UNCONNECTED__4, 
+        SYNOPSYS_UNCONNECTED__5, SYNOPSYS_UNCONNECTED__6, 
+        SYNOPSYS_UNCONNECTED__7, color[23:0]}) );
 endmodule
 

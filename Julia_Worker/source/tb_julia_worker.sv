@@ -11,7 +11,7 @@ module tb_julia_worker ();
    localparam  WIDTH = 22;
    localparam  FRACTIONAL = 11;
    localparam  INTEGRAL = 11;
-   localparam  PIXELBITS = 4;
+   localparam  PIXELBITS = 6;
 
    reg tb_clk;
    reg tb_n_rst;
@@ -21,7 +21,8 @@ module tb_julia_worker ();
    reg 	     tb_MC_busy;
    reg 	     tb_JW_ready;
    reg 	     tb_JW_done;
-   reg [7:0] tb_pixel;
+   reg [31:0] tb_color;
+   reg [31:0] tb_address;
    reg [WIDTH-1:0] tb_c_real_in;
    reg [WIDTH-1:0] tb_c_imag_in;
 
@@ -37,7 +38,8 @@ module tb_julia_worker ();
        .MC_busy(tb_MC_busy),
        .JW_ready(tb_JW_ready),
        .JW_done(tb_JW_done),
-       .pixel(tb_pixel),
+       .address(tb_address),
+       .color(tb_color),
        .c_real_in(tb_c_real_in),
        .c_imag_in(tb_c_imag_in)
        );

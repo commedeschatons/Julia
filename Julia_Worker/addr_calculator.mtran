@@ -9,7 +9,7 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work.tb_addr_calculator 
-# Start time: 15:18:56 on Apr 27,2016
+# Start time: 19:29:58 on Apr 27,2016
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.tb_addr_calculator(fast)
@@ -40,5 +40,6 @@
 add wave *
 run 200ns
 # Causality operation skipped due to absence of debug database file
-# End time: 15:20:48 on Apr 27,2016, Elapsed time: 0:01:52
+exit
+# End time: 19:33:21 on Apr 27,2016, Elapsed time: 0:03:23
 # Errors: 0, Warnings: 1
