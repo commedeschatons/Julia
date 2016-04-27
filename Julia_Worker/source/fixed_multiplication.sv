@@ -8,25 +8,24 @@
 
 module fixed_multiplication //11bits of fractional values, 11bits of integer values, total of 22 bits
   #(
+    WIDTH = 22,
     FRACTIONAL = 11,
     INTEGRAL = 11
    )
    (
-    a, b, result
+    input signed [WIDTH-1:0] a,//MSB for sign, the other 21 bits for magnitude
+    input signed [WIDTH-1:0] b,
+    output signed [WIDTH-1:0] result//22 bits
     );
 
-   parameter width = FRACTIONAL + INTEGRAL;
-
-   input signed [width - 1:0] a; //MSB for sign, the other 21 bits for magnitude
-   input signed [width - 1:0] b;
-   output signed [width - 1:0] result; //22 bits
-
-   wire signed [width * 2 - 2:0] ab; //MSB for sign, the other 42 bits for magnitude
-
-   assign ab = a * b;
+   reg signed [WIDTH * 2 - 2:0] ab; //MSB for sign, the other 42 bits for magnitude
+   always_comb begin
+      ab = a *b;
+   end
+//   assign ab = a * b;
 
    //Take the 22 bits sandwiched between the 4 bits result
-   assign result = ab[width + FRACTIONAL -1:FRACTIONAL];
+   assign result = ab[WIDTH + FRACTIONAL -1:FRACTIONAL];
    
 endmodule
 

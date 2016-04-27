@@ -23,7 +23,7 @@ module tb_z_calculator ();
 
    integer testcase;
 
-   z_calculator #(WIDTH,FRACTIONAL,INTEGRAL) DUT
+   z_calculator DUT
      ( 
        .z_real_in(tb_z_real_in),
        .z_imag_in(tb_z_imag_in),
@@ -75,6 +75,22 @@ module tb_z_calculator ();
         //TEST CASE 2
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 
 	testcase = 2;
 
@@ -91,6 +107,26 @@ module tb_z_calculator ();
         //TEST CASE 3
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 
 	testcase = 3;
 
@@ -101,12 +137,56 @@ module tb_z_calculator ();
         //TEST CASE 4
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 
 	testcase = 4;
 
 	tb_z_real_in = tb_z_real_out;
 	tb_z_imag_in = tb_z_imag_out;
 	tb_iteration_in = tb_iteration_out;
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	
 
      end
    

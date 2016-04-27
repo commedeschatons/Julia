@@ -17,7 +17,7 @@ module tb_addr_calculator ();
 
    integer testcase;
 
-   addr_calculator #(PIXELBITS) DUT
+   addr_calculator DUT
      ( 
        .x( tb_x ),
        .y( tb_y ),
@@ -43,24 +43,32 @@ module tb_addr_calculator ();
 	testcase = 1;
 	tb_x = 0;
 	tb_y = 0;
-	tb_offset = 32'h3E8; //'d1000
+	tb_offset = 32'h08000000; //'d1000
 
 	//expected
 	//address:'h3E8
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
 
 	testcase = 2;
 	tb_x = 10'd2; //(1,2)
 	tb_y = 10'd1;
-	tb_offset = 32'h3E8;
+	tb_offset = 32'h08000000;
 
 	//expected
 	//address:'h1800
 	
         @(posedge tb_clk);
         #(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
 	
      end
    

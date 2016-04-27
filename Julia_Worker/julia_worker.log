@@ -1,0 +1,929 @@
+Synthesizing design: julia_worker.sv
+dc_shell-t -x "source -echo do_mapping.tcl"
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+               Version K-2015.06-SP1 for linux64 - Jul 21, 2015 
+                                        
+                    Copyright (c) 1988 - 2015 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ecegrid/a/mg122/.synopsys_dv_prefs.tcl
+# Step 1:  Read in the source file
+analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv addr_calculator.sv real2imag.sv wcu.sv pixel_calculator.sv julia_worker.sv}
+Running PRESTO HDLC
+Compiling source file ./source/pixel2color.sv
+Compiling source file ./source/z_calculator.sv
+Compiling source file ./source/fixed_multiplication.sv
+Compiling source file ./source/flex_counter.sv
+Compiling source file ./source/addr_calculator.sv
+Compiling source file ./source/real2imag.sv
+Compiling source file ./source/wcu.sv
+Compiling source file ./source/pixel_calculator.sv
+Compiling source file ./source/julia_worker.sv
+Presto compilation completed successfully.
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/dw_foundation.sldb'
+elaborate julia_worker -lib WORK
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/gtech.db'
+Loading db file '/package/eda/synopsys/syn-K-2015.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'osu05_stdcells'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'julia_worker'.
+Information: Building the design 'wcu'. (HDL-193)
+
+Statistics for case statements in always block at line 38 in file
+	'./source/wcu.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            44            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine wcu line 29 in file
+		'./source/wcu.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine wcu line 38 in file
+		'./source/wcu.sv'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  convert_start_reg  | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Warning:  ./source/wcu.sv:38: Netlist for always_comb block contains a latch. (ELAB-974)
+Presto compilation completed successfully.
+Information: Building the design 'addr_calculator'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'real2imag'. (HDL-193)
+Warning:  ./source/real2imag.sv:57: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./source/real2imag.sv:58: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./source/real2imag.sv:60: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./source/real2imag.sv:61: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully.
+Information: Building the design 'pixel_calculator'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pixel_calculator line 60 in file
+		'./source/pixel_calculator.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    calc_done_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  iteration_old_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   z_real_old_reg    | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   z_imag_old_reg    | Flip-flop |  22   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   second_iter_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'pixel2color'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'fixed_multiplication'. (HDL-193)
+Warning:  ./source/fixed_multiplication.sv:28: signed to unsigned part selection occurs. (VER-318)
+Presto compilation completed successfully.
+Information: Building the design 'flex_counter'. (HDL-193)
+
+Inferred memory devices in process
+	in routine flex_counter line 29 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    count_out_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine flex_counter line 55 in file
+		'./source/flex_counter.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  rollover_flag_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'z_calculator'. (HDL-193)
+Warning:  ./source/z_calculator.sv:48: signed to unsigned conversion occurs. (VER-318)
+Presto compilation completed successfully.
+uniquify
+Information: Uniquified 7 instances of design 'fixed_multiplication'. (OPT-1056)
+Information: Uniquified 2 instances of design 'flex_counter'. (OPT-1056)
+# Step 2: Set design constraints
+# Uncomment below to set timing, area, power, etc. constraints
+# set_max_delay <delay> -from "<input>" -to "<output>"
+# set_max_area <area>
+# set_max_total_power <power> mW
+# Step 3: Compile the design
+compile -map_effort medium
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.1 |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.1 |     *     |
+============================================================================
+
+
+Information: There are 375 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'pixel2color'
+  Processing 'flex_counter_0'
+Information: Added key list 'DesignWare' to design 'flex_counter_0'. (DDB-72)
+  Processing 'fixed_multiplication_0'
+  Processing 'z_calculator'
+  Processing 'pixel_calculator'
+  Processing 'real2imag'
+  Processing 'addr_calculator'
+  Processing 'wcu'
+  Processing 'julia_worker'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'julia_worker' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'pixel2color_DW01_cmp2_0'
+  Processing 'pixel2color_DW01_cmp2_1'
+  Processing 'pixel2color_DW01_cmp2_2'
+  Processing 'pixel2color_DW01_cmp2_3'
+  Processing 'pixel2color_DW01_cmp2_4'
+  Processing 'pixel2color_DW01_cmp2_5'
+  Processing 'pixel2color_DW01_cmp2_6'
+  Processing 'pixel2color_DW01_cmp2_7'
+  Processing 'pixel2color_DW01_cmp2_8'
+  Processing 'pixel2color_DW01_cmp2_9'
+  Processing 'pixel2color_DW01_cmp2_10'
+  Processing 'pixel_calculator_DW01_cmp6_0'
+  Processing 'flex_counter_0_DW01_dec_0'
+  Mapping 'flex_counter_0_DW_mult_uns_0'
+  Processing 'z_calculator_DW01_inc_0'
+  Processing 'z_calculator_DW01_add_0'
+  Processing 'z_calculator_DW01_add_1'
+  Processing 'z_calculator_DW01_sub_0'
+  Processing 'z_calculator_DW01_add_2'
+  Mapping 'fixed_multiplication_0_DW_mult_tc_0'
+  Mapping 'fixed_multiplication_1_DW_mult_tc_0'
+  Mapping 'fixed_multiplication_2_DW_mult_tc_0'
+  Mapping 'fixed_multiplication_3_DW_mult_tc_0'
+  Mapping 'fixed_multiplication_4_DW_mult_tc_0'
+  Processing 'real2imag_DW01_sub_0'
+  Processing 'real2imag_DW01_sub_1'
+  Processing 'flex_counter_1_DW01_dec_0'
+  Mapping 'flex_counter_1_DW_mult_uns_0'
+  Mapping 'fixed_multiplication_5_DW_mult_tc_0'
+  Mapping 'fixed_multiplication_6_DW_mult_tc_0'
+  Mapping 'addr_calculator_DW_mult_uns_0'
+  Processing 'addr_calculator_DW01_add_1'
+  Mapping 'addr_calculator_DW_mult_uns_1'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'addr_calculator'. (DDB-72)
+  Structuring 'flex_counter_0'
+  Mapping 'flex_counter_0'
+  Structuring 'z_calculator'
+  Mapping 'z_calculator'
+  Structuring 'flex_counter_1'
+  Mapping 'flex_counter_1'
+  Structuring 'pixel2color'
+  Mapping 'pixel2color'
+  Structuring 'pixel_calculator'
+  Mapping 'pixel_calculator'
+  Structuring 'real2imag'
+  Mapping 'real2imag'
+  Structuring 'wcu'
+  Mapping 'wcu'
+Information: Added key list 'DesignWare' to design 'julia_worker'. (DDB-72)
+Information: Removing unused design 'addr_calculator'. (OPT-1055)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:11 3956076.0      0.00       0.0       5.3                          
+    0:00:11 3956076.0      0.00       0.0       5.3                          
+    0:00:11 3956076.0      0.00       0.0       5.3                          
+    0:00:11 3956076.0      0.00       0.0       5.3                          
+    0:00:11 3956076.0      0.00       0.0       5.3                          
+    0:00:11 3516588.0      0.00       0.0       4.5                          
+    0:00:11 3516588.0      0.00       0.0       4.5                          
+    0:00:11 3516588.0      0.00       0.0       4.5                          
+    0:00:12 3516588.0      0.00       0.0       4.5                          
+    0:00:12 3516588.0      0.00       0.0       4.5                          
+    0:00:12 3517164.0      0.00       0.0       2.5                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:12 3517452.0      0.00       0.0       0.0                          
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+# Step 4: Output reports
+report_timing -path full -delay max -max_paths 1 -nworst 1 > reports/julia_worker.rep
+report_area >> reports/julia_worker.rep
+report_power -hier >> reports/julia_worker.rep
+# Step 5: Output final VHDL and Verilog files
+write_file -format verilog -hierarchy -output "mapped/julia_worker.v"
+Writing verilog file '/home/ecegrid/a/mg122/ece337/project/Julia_Worker/mapped/julia_worker.v'.
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_6 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_5 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_4 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module fixed_multiplication_0 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 1 nets to module z_calculator using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+echo "\nScript Done\n"
+
+Script Done
+
+echo "\nChecking Design\n"
+
+Checking Design
+
+check_design
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP1
+Date:        Wed Apr 27 17:25:43 2016
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    203
+    Undriven outputs (LINT-5)                                      12
+    Unconnected ports (LINT-28)                                   163
+    Feedthrough (LINT-29)                                           1
+    Shorted outputs (LINT-31)                                      19
+    Constant outputs (LINT-52)                                      8
+
+Cells                                                             186
+    Cells do not drive (LINT-1)                                     1
+    Connected to power or ground (LINT-32)                         90
+    Nets connected to multiple pins on same cell (LINT-33)         95
+
+Nets                                                               12
+    Undriven nets (LINT-3)                                         12
+--------------------------------------------------------------------------------
+
+Warning: In design 'julia_worker', cell 'PIXEL2COLOR' does not drive any nets. (LINT-1)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[11]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[10]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[9]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[8]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[7]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[6]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[5]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[4]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[3]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[2]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[1]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[0]' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[11]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[10]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[9]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[8]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[7]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[6]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[5]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[4]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[3]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[2]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[1]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', output port 'SUM[0]' is not driven. (LINT-5)
+Warning: In design 'z_calculator_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_1', port 'A[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_5_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_4_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_3_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_2_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_1_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[40]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[39]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[38]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[37]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[36]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[35]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[34]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[33]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'fixed_multiplication_0_DW_mult_tc_1', port 'product[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'z_calculator_DW01_add_1', input port 'B[0]' is connected directly to output port 'SUM[0]'. (LINT-29)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[24]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[25]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[26]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[27]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[28]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[29]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to output port 'color[30]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[23]' is connected directly to output port 'color[19]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[22]' is connected directly to output port 'color[18]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[21]' is connected directly to output port 'color[17]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[20]' is connected directly to output port 'color[16]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[15]' is connected directly to output port 'color[11]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[14]' is connected directly to output port 'color[10]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[13]' is connected directly to output port 'color[9]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[12]' is connected directly to output port 'color[8]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[7]' is connected directly to output port 'color[3]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[6]' is connected directly to output port 'color[2]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[5]' is connected directly to output port 'color[1]'. (LINT-31)
+Warning: In design 'pixel2color', output port 'color[4]' is connected directly to output port 'color[0]'. (LINT-31)
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[7]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[6]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[5]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[4]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[3]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[2]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[1]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'iteration_in[0]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[21]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[20]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[19]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[18]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[17]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[16]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[15]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[14]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[13]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[12]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[11]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[10]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[9]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[8]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[7]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[6]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[5]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[3]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[2]' is connected to logic 1. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[1]' is connected to logic 1. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[0]' is connected to logic 1. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[21]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[10]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[9]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[8]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[7]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[6]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[5]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[4]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[3]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[2]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[1]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[0]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[21]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[20]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[19]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[18]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[17]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[16]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[15]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[14]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[13]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[12]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[11]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[10]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[9]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[8]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[7]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[6]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[5]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[4]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[3]' is connected to logic 1. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[2]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[1]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'a[0]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[21]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[10]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[9]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[8]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[7]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[6]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[5]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[4]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[3]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[2]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[1]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'Mimag' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[0]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clear' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 0. 
+Warning: In design 'real2imag', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'real2imag', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 1. 
+Warning: In design 'pixel_calculator', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[3]' is connected to logic 0. 
+Warning: In design 'pixel_calculator', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[2]' is connected to logic 1. 
+Warning: In design 'pixel_calculator', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[1]' is connected to logic 1. 
+Warning: In design 'pixel_calculator', a pin on submodule 'FLEX_COUNTER' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rollover_val[0]' is connected to logic 1. 
+Warning: In design 'z_calculator', a pin on submodule 'add_46' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'z_calculator', a pin on submodule 'add_45' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[0]' is connected to logic 0. 
+Warning: In design 'z_calculator', a pin on submodule 'add_45' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'z_calculator', a pin on submodule 'sub_0_root_add_44' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'z_calculator', a pin on submodule 'add_1_root_add_44' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'PIXEL_CALCULATOR'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'iteration_in[7]', 'iteration_in[6]'', 'iteration_in[5]', 'iteration_in[4]', 'iteration_in[3]', 'iteration_in[2]', 'iteration_in[1]', 'iteration_in[0]'.
+Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'a[21]', 'a[20]'', 'a[19]', 'a[18]', 'a[17]', 'a[16]', 'a[15]', 'a[14]', 'a[13]', 'a[12]', 'a[11]', 'a[10]', 'a[9]', 'a[8]', 'a[7]', 'a[6]', 'a[5]', 'a[4]', 'a[3]', 'b[21]', 'b[10]', 'b[9]', 'b[8]', 'b[7]', 'b[6]', 'b[5]', 'b[4]', 'b[3]', 'b[2]', 'b[1]', 'b[0]'.
+Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'a[2]', 'a[1]'', 'a[0]'.
+Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mimag'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'a[21]', 'a[20]'', 'a[19]', 'a[18]', 'a[17]', 'a[16]', 'a[15]', 'a[14]', 'a[13]', 'a[12]', 'a[11]', 'a[10]', 'a[9]', 'a[8]', 'a[7]', 'a[6]', 'a[5]', 'a[4]', 'a[2]', 'a[1]', 'a[0]', 'b[21]', 'b[10]', 'b[9]', 'b[8]', 'b[7]', 'b[6]', 'b[5]', 'b[4]', 'b[3]', 'b[2]', 'b[1]', 'b[0]'.
+Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'rollover_val[3]', 'rollover_val[2]''.
+Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[1]', 'rollover_val[0]''.
+Warning: In design 'pixel_calculator', the same net is connected to more than one pin on submodule 'FLEX_COUNTER'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'rollover_val[2]', 'rollover_val[1]'', 'rollover_val[0]'.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[21]' is connected to pins 'a[21]', 'b[21]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[20]' is connected to pins 'a[20]', 'b[20]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[19]' is connected to pins 'a[19]', 'b[19]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[18]' is connected to pins 'a[18]', 'b[18]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[17]' is connected to pins 'a[17]', 'b[17]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[16]' is connected to pins 'a[16]', 'b[16]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[15]' is connected to pins 'a[15]', 'b[15]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[14]' is connected to pins 'a[14]', 'b[14]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[13]' is connected to pins 'a[13]', 'b[13]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[12]' is connected to pins 'a[12]', 'b[12]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[11]' is connected to pins 'a[11]', 'b[11]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[10]' is connected to pins 'a[10]', 'b[10]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[9]' is connected to pins 'a[9]', 'b[9]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[8]' is connected to pins 'a[8]', 'b[8]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[7]' is connected to pins 'a[7]', 'b[7]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[6]' is connected to pins 'a[6]', 'b[6]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[5]' is connected to pins 'a[5]', 'b[5]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[4]' is connected to pins 'a[4]', 'b[4]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[3]' is connected to pins 'a[3]', 'b[3]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[2]' is connected to pins 'a[2]', 'b[2]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[1]' is connected to pins 'a[1]', 'b[1]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M1'. (LINT-33)
+   Net 'z_real_in[0]' is connected to pins 'a[0]', 'b[0]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[21]' is connected to pins 'a[21]', 'b[21]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[20]' is connected to pins 'a[20]', 'b[20]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[19]' is connected to pins 'a[19]', 'b[19]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[18]' is connected to pins 'a[18]', 'b[18]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[17]' is connected to pins 'a[17]', 'b[17]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[16]' is connected to pins 'a[16]', 'b[16]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[15]' is connected to pins 'a[15]', 'b[15]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[14]' is connected to pins 'a[14]', 'b[14]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[13]' is connected to pins 'a[13]', 'b[13]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[12]' is connected to pins 'a[12]', 'b[12]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[11]' is connected to pins 'a[11]', 'b[11]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[10]' is connected to pins 'a[10]', 'b[10]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[9]' is connected to pins 'a[9]', 'b[9]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[8]' is connected to pins 'a[8]', 'b[8]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[7]' is connected to pins 'a[7]', 'b[7]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[6]' is connected to pins 'a[6]', 'b[6]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[5]' is connected to pins 'a[5]', 'b[5]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[4]' is connected to pins 'a[4]', 'b[4]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[3]' is connected to pins 'a[3]', 'b[3]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[2]' is connected to pins 'a[2]', 'b[2]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[1]' is connected to pins 'a[1]', 'b[1]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M2'. (LINT-33)
+   Net 'z_imag_in[0]' is connected to pins 'a[0]', 'b[0]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[21]' is connected to pins 'a[21]', 'b[21]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[20]' is connected to pins 'a[20]', 'b[20]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[19]' is connected to pins 'a[19]', 'b[19]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[18]' is connected to pins 'a[18]', 'b[18]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[17]' is connected to pins 'a[17]', 'b[17]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[16]' is connected to pins 'a[16]', 'b[16]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[15]' is connected to pins 'a[15]', 'b[15]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[14]' is connected to pins 'a[14]', 'b[14]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[13]' is connected to pins 'a[13]', 'b[13]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[12]' is connected to pins 'a[12]', 'b[12]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[11]' is connected to pins 'a[11]', 'b[11]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[10]' is connected to pins 'a[10]', 'b[10]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[9]' is connected to pins 'a[9]', 'b[9]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[8]' is connected to pins 'a[8]', 'b[8]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[7]' is connected to pins 'a[7]', 'b[7]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[6]' is connected to pins 'a[6]', 'b[6]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[5]' is connected to pins 'a[5]', 'b[5]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[4]' is connected to pins 'a[4]', 'b[4]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[3]' is connected to pins 'a[3]', 'b[3]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[2]' is connected to pins 'a[2]', 'b[2]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[1]' is connected to pins 'a[1]', 'b[1]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M4'. (LINT-33)
+   Net 'z_real_out[0]' is connected to pins 'a[0]', 'b[0]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[21]' is connected to pins 'a[21]', 'b[21]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[20]' is connected to pins 'a[20]', 'b[20]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[19]' is connected to pins 'a[19]', 'b[19]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[18]' is connected to pins 'a[18]', 'b[18]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[17]' is connected to pins 'a[17]', 'b[17]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[16]' is connected to pins 'a[16]', 'b[16]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[15]' is connected to pins 'a[15]', 'b[15]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[14]' is connected to pins 'a[14]', 'b[14]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[13]' is connected to pins 'a[13]', 'b[13]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[12]' is connected to pins 'a[12]', 'b[12]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[11]' is connected to pins 'a[11]', 'b[11]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[10]' is connected to pins 'a[10]', 'b[10]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[9]' is connected to pins 'a[9]', 'b[9]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[8]' is connected to pins 'a[8]', 'b[8]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[7]' is connected to pins 'a[7]', 'b[7]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[6]' is connected to pins 'a[6]', 'b[6]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[5]' is connected to pins 'a[5]', 'b[5]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[4]' is connected to pins 'a[4]', 'b[4]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[3]' is connected to pins 'a[3]', 'b[3]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[2]' is connected to pins 'a[2]', 'b[2]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[1]' is connected to pins 'a[1]', 'b[1]''.
+Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
+   Net 'z_imag_out[0]' is connected to pins 'a[0]', 'b[0]''.
+Warning: In design 'pixel2color', output port 'color[31]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[30]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[29]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[28]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[27]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[26]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[25]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'pixel2color', output port 'color[24]' is connected directly to 'logic 0'. (LINT-52)
+quit
+
+Thank you...
+Done
+
+

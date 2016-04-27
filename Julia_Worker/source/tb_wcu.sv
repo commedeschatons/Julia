@@ -15,6 +15,8 @@ module tb_wcu ();
    reg tb_MC_busy;
    reg tb_JW_ready;
    reg tb_JW_done;
+   reg tb_convert_start;
+   reg tb_convert_done;
 
    integer testcase;
 
@@ -27,7 +29,9 @@ module tb_wcu ();
        .JW_start(tb_JW_start),
        .MC_busy(tb_MC_busy),
        .JW_ready(tb_JW_ready),
-       .JW_done(tb_JW_done)
+       .JW_done(tb_JW_done),
+       .convert_done(tb_convert_done),
+       .convert_start(tb_convert_start)
        );
 
    // Clock generation block
@@ -42,13 +46,14 @@ module tb_wcu ();
    initial
      begin
 	testcase = 1;
-	tb_n_rst = 1;
 	tb_JW_start = 0;
 	tb_MC_busy = 1;
 	tb_calc_done = 0;
-	
+
+	tb_n_rst = 0;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	tb_n_rst = 1;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
@@ -59,6 +64,13 @@ module tb_wcu ();
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	tb_convert_done = 1;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	@(posedge tb_clk);

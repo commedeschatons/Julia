@@ -55,7 +55,7 @@ logic new_data_flag;
 typedef enum {IDLE, WRITE} state_t;
 state_t state, nextState;
 
-logic [31:0] debug;
+logic [31:0] debug = '0;
 assign display_data = debug;//slave_address csr_registers[0]
 
 //INPUT/OUTPUT LOGICS
@@ -66,25 +66,27 @@ logic [2:0] arg_count;
 logic [21:0] a;
 logic [21:0] b;
 
-
+logic wr_flag;
+logic nxt_wr;
 
 assign a = {csr_registers[0][10:0],csr_registers[1][10:0]};
 assign b = {csr_registers[2][10:0],csr_registers[3][10:0]};
 // Slave side 
 always_ff @ ( posedge clk ) begin 
+  wr_flag <= '0;
   if(!reset_n)
   	begin
     		slave_readdata <= 32'h0;
  	      	csr_registers <= '0;
-		nxt_arg = '0;
+		wr_flag <= '0;
   	end
   else 
-	nxt_arg = arg_count;
   	begin
   	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
   	  	begin
   	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
-		   nxt_arg = arg_count + 1;
+		   wr_flag <= 1;
+		   
   	  	end
   	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
   	    	begin
@@ -95,24 +97,36 @@ always_ff @ ( posedge clk ) begin
   	 end
 end
 
+
+
 //start_signal
-always_ff @ (posedge clk) begin
-	start_sig <= nxt_start;
-	arg_count <= nxt_arg;
+always_ff @ (negedge clk) begin
+	arg_count <= arg_count;
+	start_sig <= '0;
+	
 	if(!reset_n) begin
-		nxt_start <= 0;
 		start_sig <= 0;
 		arg_count <=2'b0;
-		debug <= '0;
 	end
-	else if (arg_count > 3'b011) begin
-		nxt_start <= 1;
-		debug <= 32'hFFFFFFFF;
-		arg_count <= 2'b0;
-
-	end else
-		nxt_start <=0;
+	else if (wr_flag ==1) begin
+		arg_count <= arg_count + 1;
+		if(arg_count >= 2'b11) begin
+			start_sig <= 1;
+			arg_count <= '0;
+		end
+	end
 end
+
+//start signal debug timje yo
+always_ff @ (posedge clk) begin
+	if(!reset_n) 
+		debug <= '0;
+	else if (start_sig) 
+		debug <= debug+1;
+	else
+		debug <= debug;
+end
+
 // Master Side
 always_ff @ ( posedge clk ) begin 
 	
@@ -157,6 +171,53 @@ always_comb begin
 		
 	endcase
 end
+
+/*
+// Master Side
+always_ff @ ( posedge clk ) begin 
+	
+	if (!reset_n) begin 
+		address <= SDRAM_ADDR; //always start out at the base address of SDRAM, where pixel buffer is looking
+		state <= WRITE; 
+	end else begin 
+		state <= nextState;
+		address <= nextAddress;
+	end
+end
+
+//Next State Logic 
+always_comb begin 
+	nextState = state;
+	nextAddress = address;
+	master_write = 1'b0;
+	master_writedata = '0;
+	master_address = address;
+	case( state ) 
+		WRITE: begin
+			master_write = 1; //write enable must be set high to write to SDRAM
+			master_address =  address; //address in SDRAM to write to (initialized to SDRAM's base address and same place that pixel buffer is looking at)
+			master_writedata = 32'h00FF0000; //(Blue = 32'h00FF0000, Green = 32'h0000FF00, Red = 32'h000000FF)
+			if (!master_waitrequest) begin //if not currently writing, go on to next address, otherwise wait for write to finish
+				nextAddress = address + 4; // address is in hex, and each is 32 bits wide, so move up by 4 hex
+				if(nextAddress == 32'h08CD2000) //if at the end of a 640x480 image space then go to idle (no need to write the entire SDRAM over)
+				begin
+					nextState = IDLE;
+				end
+				else //else keep on writing
+				begin
+					nextState = WRITE;
+				end			
+			end
+		end 
+		
+		IDLE : 
+		begin
+			nextState = IDLE;
+		end
+		
+	endcase
+end
+*/
 
 endmodule
 

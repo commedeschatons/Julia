@@ -27,7 +27,7 @@ module tb_julia_worker ();
 
    integer testcase;
 
-   julia_worker #(FRACTIONAL,INTEGRAL,WIDTH,ITERATIONS,PIXELBITS) DUT
+   julia_worker DUT
       (
        .clk(tb_clk),
        .n_rst(tb_n_rst),
@@ -75,6 +75,10 @@ module tb_julia_worker ();
 	tb_y = 0;
 
 	tb_MC_busy = 1;
+	tb_n_rst = 0;
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	tb_n_rst = 1;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	
@@ -85,11 +89,15 @@ module tb_julia_worker ();
 	   end
 	end
 
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	
 	tb_JW_start = 1;
 	$info("JW_start signaled high");	
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
+
 
 	tb_JW_start = 0;
 
@@ -104,9 +112,16 @@ module tb_julia_worker ();
 	   end
 	end
 
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	
 	tb_MC_busy = 0;
 	$info("MC_busy signaled low");
 
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
@@ -125,6 +140,9 @@ module tb_julia_worker ();
 	   end
 	end
 
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
 	tb_JW_start = 1;
 	$info("JW_start signaled high");	
 
@@ -143,6 +161,9 @@ module tb_julia_worker ();
 	      #(CHECK_DELAY);
 	   end
 	end
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
 
 	tb_MC_busy = 0;
 	$info("MC_busy signaled low");

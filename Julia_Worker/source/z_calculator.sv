@@ -31,11 +31,11 @@ module z_calculator
    wire signed [WIDTH - 1:0] z_real_imag;
 
    //#(FRACTIONAL,INTEGRAL)
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) M1(.a(z_real_in), .b(z_real_in), .result(z_real_squared));
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) M2(.a(z_imag_in), .b(z_imag_in), .result(z_imag_squared));
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) M3(.a(z_real_in), .b(z_imag_in), .result(z_real_imag));
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) M4(.a(z_real_out), .b(z_real_out), .result(z_real_squared_new));
-   fixed_multiplication #(FRACTIONAL,INTEGRAL) M5(.a(z_imag_out), .b(z_imag_out), .result(z_imag_squared_new));   
+   fixed_multiplication M1(.a(z_real_in), .b(z_real_in), .result(z_real_squared));
+   fixed_multiplication M2(.a(z_imag_in), .b(z_imag_in), .result(z_imag_squared));
+   fixed_multiplication M3(.a(z_real_in), .b(z_imag_in), .result(z_real_imag));
+   fixed_multiplication M4(.a(z_real_out), .b(z_real_out), .result(z_real_squared_new));
+   fixed_multiplication M5(.a(z_imag_out), .b(z_imag_out), .result(z_imag_squared_new));   
 
    //Znew = (Zold)^2 + C
    //Z_new_real = (Z_old_real)^2 - (Z_old_imag)^2 + C_real
