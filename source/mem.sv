@@ -24,26 +24,38 @@ NUM_JULIA = 8;
 
 
 //internal stuff
-
+	reg [NUM_JULIA -1 :0] free_save;
 	reg [NUM_JULIA -1: 0] mask;
 	reg [31:0] sel_address_syn;
 	reg [7:0] sel_data_syn;
 	reg found;
-
+	reg release_search;
 	typedef enum 	    bit [3:0] {NEXTDONE, ASSERT, WRITE, DEASSERT} stateType;
 	stateType state;
 	stateType nextstate;
-	
+	reg [31:0] sel_address_save;
+	reg [7:0] sel_data_save;
 	
 	always_ff @(posedge clk, negedge n_rst) begin
 	
 		if (n_rst ==0) begin
 
 			state <= IDLE;
+			free <= '0;
+			release_search <= 0;
+			sel_address_save <='0;
+			sel_data_save <= '0;
+			
 		end
 		else begin
 			state <= nextstate;
-		
+			release_search <= 0;
+			if (state == ASSERT) begin
+				free_save <= mask; // save DATA immediately!
+				sel_address_save <= sel_address_syn;
+				sel_data_save <= sel_data_save;
+				release <= 1;
+			end
 		end
 	
 	end
@@ -52,7 +64,9 @@ NUM_JULIA = 8;
 	always_comb begin
 		nextstate = state;
 		write_data = '0;
-		write_
+		write_address = '0;
+		write_enable = 0;
+		free = '0;
 		case (state)
 			NEXTDONE: begin
 				if (found)
@@ -63,20 +77,20 @@ NUM_JULIA = 8;
 				if (~wait_request)
 					nextstate = WRITE; 
 				
-				write_data = sel_data_syn;
-				write_address = sel_address_syn;
+				write_data = sel_data_save;
+				write_address = sel_address_save;
 				write_enable = 1'b1;
 			end
 			WRITE: begin
 				nextstate = DEASSERT;
-				write_data = sel_data_syn;
-				write_address = sel_address_syn;
+				write_data = sel_data_save;
+				write_address = sel_address_save
 				write_enable = 1'b1;
 			end
 			DEASSERT: begin
 				//1clk
 				nextstate = NEXTDONE; 
-				
+				free = free_save;
 			end
 			
 		endcase

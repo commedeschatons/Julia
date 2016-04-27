@@ -17,6 +17,7 @@ module search
 	input wire [NUM_JULIA*32 -1:0] cataddresses,
 	input wire [NUM_JULIA*8 -1:0] catpixels,
 	input wire [NUM_JULIA -1:0] done,
+	input wire release,
 	output reg found,
 	output reg [7:0] sel_data_syn,
 	output reg [31:0] sel_address_syn,
@@ -34,7 +35,7 @@ module search
 	
 	mask_gen #(NUM_JULIA) mg (
 		.clk(clk),
-		.shift_enable(shift_enable),
+		.shift_enable(shift_enable &),
 		.n_rst(n_rst), 
 		.mask(mask)
 	);
@@ -50,14 +51,14 @@ module search
 		else begin
 			sel_data_syn <= sel_data;
 			sel_address_syn <= sel_address;
-			found <= ~shift_enable;
+			
 		end
 	
 	end
 	//address and pixel muxing
 
 	
-	
+	assign found = ~shift_enable
 	
 	
 	//pretty sure this becomes a latch lololol.
