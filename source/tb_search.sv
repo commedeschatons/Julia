@@ -26,7 +26,7 @@ module tb_search ();
 	reg found;
 	reg [31:0] sas;
 	reg [7:0] sds;
-	
+	reg rs;
 
 
 	
@@ -36,8 +36,9 @@ module tb_search ();
 		.cataddresses(ca),
 		.catpixels(cp),
 		.done(d),
-		.sel_data_syn(sds),
-		.sel_address_syn(sas),
+		.release_search(rs),
+		.sel_data(sds),
+		.sel_address(sas),
 		.found(found),
 		.mask(mask)
 	);
@@ -54,6 +55,7 @@ module tb_search ();
 	initial begin
 
 		n_rst=0;
+		rs = 0;
 		@(negedge clk);
 		//lets try some more clk periods, see wrap around
 		n_rst = 1;
@@ -85,6 +87,8 @@ module tb_search ();
 		@(posedge clk);
 		@(posedge clk);
 		@(negedge clk);
+		//release search and observe
+		rs = 1;
 		se = 1;
 		@(posedge clk);
 		@(posedge clk);
