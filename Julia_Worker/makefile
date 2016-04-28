@@ -16,7 +16,7 @@ include /home/ecegrid/a/ece337/Course_Prod/course_make_vars
 # (do not include the source folder in the name)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS
 # AND THE AUTOMATED GRADING SYSTEM
-COMPONENT_FILES	:= pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv addr_calculator.sv real2imag.sv wcu.sv pixel_calculator.sv
+COMPONENT_FILES	:= pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv real2imag.sv wcu.sv addr_calculator.sv pixel_calculator.sv
 
 # Specify the name of the top level file (do not include the source folder in the name)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS

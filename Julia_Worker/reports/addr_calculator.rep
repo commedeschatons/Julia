@@ -1,0 +1,153 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : addr_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 19:22:54 2016
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: x[0] (input port)
+  Endpoint: address[31]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  input external delay                                    0.00       0.00 r
+  x[0] (in)                                               0.00       0.00 r
+  U157/Y (NAND2X1)                                        0.18       0.18 f
+  U156/Y (INVX1)                                          0.14       0.32 r
+  U155/Y (OAI21X1)                                        0.11       0.43 f
+  U154/Y (OAI21X1)                                        0.16       0.59 r
+  U153/Y (INVX1)                                          0.29       0.88 f
+  U150/Y (OAI21X1)                                        0.28       1.16 r
+  U149/Y (INVX1)                                          0.17       1.33 f
+  U146/Y (OAI21X1)                                        0.26       1.59 r
+  U145/Y (INVX1)                                          0.16       1.75 f
+  U142/Y (OAI21X1)                                        0.26       2.01 r
+  U141/Y (INVX1)                                          0.16       2.17 f
+  U138/Y (OAI21X1)                                        0.26       2.43 r
+  U15/Y (XOR2X1)                                          0.23       2.66 f
+  mult_32/a[6] (addr_calculator_DW_mult_uns_2)            0.00       2.66 f
+  mult_32/U291/Y (INVX2)                                  0.20       2.86 r
+  mult_32/U227/Y (NOR2X1)                                 0.41       3.26 f
+  mult_32/U102/YS (FAX1)                                  0.54       3.80 f
+  mult_32/U101/YS (FAX1)                                  0.53       4.33 f
+  mult_32/U100/YS (FAX1)                                  0.59       4.92 f
+  mult_32/U32/YC (FAX1)                                   0.47       5.39 f
+  mult_32/U31/YC (FAX1)                                   0.45       5.85 f
+  mult_32/U30/YC (FAX1)                                   0.45       6.30 f
+  mult_32/U29/YC (FAX1)                                   0.45       6.76 f
+  mult_32/U28/YC (FAX1)                                   0.45       7.21 f
+  mult_32/U27/YC (FAX1)                                   0.45       7.66 f
+  mult_32/U26/YC (FAX1)                                   0.45       8.12 f
+  mult_32/U25/YC (FAX1)                                   0.45       8.57 f
+  mult_32/U24/YC (FAX1)                                   0.45       9.03 f
+  mult_32/U23/YC (FAX1)                                   0.45       9.48 f
+  mult_32/U22/YC (FAX1)                                   0.45       9.94 f
+  mult_32/U21/YC (FAX1)                                   0.45      10.39 f
+  mult_32/U20/YC (FAX1)                                   0.45      10.85 f
+  mult_32/U19/YC (FAX1)                                   0.45      11.30 f
+  mult_32/U18/YC (FAX1)                                   0.45      11.75 f
+  mult_32/U17/YC (FAX1)                                   0.45      12.21 f
+  mult_32/U16/YC (FAX1)                                   0.45      12.66 f
+  mult_32/U15/YC (FAX1)                                   0.45      13.12 f
+  mult_32/U14/YS (FAX1)                                   0.63      13.75 f
+  mult_32/product[24] (addr_calculator_DW_mult_uns_2)     0.00      13.75 f
+  add_35/A[24] (addr_calculator_DW01_add_0)               0.00      13.75 f
+  add_35/U1_24/YC (FAX1)                                  0.46      14.21 f
+  add_35/U1_25/YC (FAX1)                                  0.45      14.66 f
+  add_35/U3/Y (AND2X2)                                    0.28      14.94 f
+  add_35/U4/Y (AND2X2)                                    0.24      15.18 f
+  add_35/U5/Y (AND2X2)                                    0.24      15.43 f
+  add_35/U1/Y (AND2X2)                                    0.24      15.67 f
+  add_35/U6/Y (AND2X2)                                    0.23      15.90 f
+  add_35/U7/Y (XOR2X1)                                    0.15      16.05 f
+  add_35/SUM[31] (addr_calculator_DW01_add_0)             0.00      16.05 f
+  address[31] (out)                                       0.00      16.05 f
+  data arrival time                                                 16.05
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : addr_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 19:22:54 2016
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                          240
+Number of nets:                           773
+Number of cells:                          450
+Number of combinational cells:            447
+Number of sequential cells:                 1
+Number of macros/black boxes:               0
+Number of buf/inv:                         75
+Number of references:                      12
+
+Combinational area:             217827.000000
+Buf/Inv area:                    11664.000000
+Noncombinational area:               0.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                217827.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : addr_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 19:22:54 2016
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+addr_calculator                         170.112  156.895   70.241  327.007 100.0
+  mult_32 (addr_calculator_DW_mult_uns_2)
+                                        137.589   99.722   43.725  237.311  72.6
+  add_35 (addr_calculator_DW01_add_0)     9.826   30.573   11.073   40.399  12.4
+1

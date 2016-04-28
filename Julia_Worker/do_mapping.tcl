@@ -1,5 +1,5 @@
 # Step 1:  Read in the source file
-analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv addr_calculator.sv real2imag.sv wcu.sv pixel_calculator.sv julia_worker.sv}
+analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv real2imag.sv wcu.sv addr_calculator.sv pixel_calculator.sv julia_worker.sv}
 elaborate julia_worker -lib WORK
 uniquify
 # Step 2: Set design constraints

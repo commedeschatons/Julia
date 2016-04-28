@@ -12,7 +12,7 @@ module julia_worker
     INTEGRAL = 11,
     WIDTH = 22,
     ITERATIONS = 256,
-    PIXELBITS = 4
+    PIXELBITS = 6
     )
    (
     input 		     clk,
@@ -20,12 +20,13 @@ module julia_worker
     input [9:0] 	     x,
     input [9:0] 	     y,
     input 		     JW_start,
-    input 		     MC_busy,
+    input 		     MC_done,
+    input signed [WIDTH-1:0] c_real_in,
+    input signed [WIDTH-1:0] c_imag_in,
     output 		     JW_ready,
     output 		     JW_done,
-    output [7:0] 	     pixel,
-    input signed [WIDTH-1:0] c_real_in,
-    input signed [WIDTH-1:0] c_imag_in
+    output reg [31:0] 	     color,
+    output reg [31:0] 	     address
    );
 
    reg [PIXELBITS-1:0] 	     pixel_size;
@@ -41,12 +42,11 @@ module julia_worker
    reg 	      calc_done;
    reg [WIDTH-1:0] z_real_in;
    reg [WIDTH-1:0] z_imag_in;
-   reg [31:0] 	   address;
    
-   reg [31:0] 	   color;
+   reg [7:0] 	   pixel;
 
    always_comb begin
-      pixel_size = 8;
+      pixel_size = 6'd32;
       offset = 32'h08000000; //starting address in the sdram
       iteration_in = 0;
    end
@@ -56,7 +56,7 @@ module julia_worker
       .clk(clk),
       .n_rst(n_rst),
       .JW_start(JW_start),
-      .MC_busy(MC_busy),
+      .MC_done(MC_done),
       .JW_ready(JW_ready),
       .JW_done(JW_done),
       .calc_start(calc_start),

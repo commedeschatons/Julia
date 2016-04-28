@@ -10,72 +10,83 @@
 
 module tb_pix_inc ();
 
-	// Define parameters
-	// basic test bench parameters
-	localparam CLK_PERIOD = 2.5;
-	localparam NUM_CNT_BITS = 4;
-	localparam NUM_X_BITS = 4;
-	localparam NUM_Y_BITS = 4;
+   // Define parameters
+   // basic test bench parameters
+   localparam CLK_PERIOD = 2.5;
+   localparam NUM_CNT_BITS = 10;
 
-	// Shared Test Variables
-	reg tb_clk;
-	logic tb_n_rst;
-	logic tb_clear;
-	logic tb_enable;
-	logic [NUM_CNT_BITS-1:0] tb_x_roll;
-	logic [NUM_CNT_BITS-1:0] tb_y_roll;
-	logic [NUM_CNT_BITS-1:0] tb_count_out;
-	logic [NUM_Y_BITS-1:0] tb_x;
-	logic [NUM_Y_BITS-1:0] tb_y;
-	logic tb_done;
-	
-	// Clock generation block
-	always
-	begin
-		tb_clk = 1'b0;
-		#(CLK_PERIOD/2.0);
-		tb_clk = 1'b1;
-		#(CLK_PERIOD/2.0);
+   // Shared Test Variables
+   reg tb_clk;
+   reg tb_n_rst;
+   logic tb_clear;
+   logic tb_counter_enable;
+   logic [NUM_CNT_BITS-1:0] tb_x_max;
+   logic [NUM_CNT_BITS-1:0] tb_y_max;
+   //logic [NUM_CNT_BITS-1:0] tb_count_out;
+   logic [NUM_CNT_BITS-1:0] tb_x;
+   logic [NUM_CNT_BITS-1:0] tb_y;
+   logic 		    tb_done;
+
+   genvar 		    i;
+   
+   // Clock generation block
+   always
+     begin
+	tb_clk = 1'b0;
+	#(CLK_PERIOD/2.0);
+	tb_clk = 1'b1;
+	#(CLK_PERIOD/2.0);
+     end
+
+   pix_inc XY_CNT
+     (
+      .wr_clk(tb_clk), //wr = wrapper variable
+      .wr_n_rst(tb_n_rst),
+      .wr_counter_enable(tb_counter_enable),
+      .x_max(tb_x_max), //Preset
+      .y_max(tb_y_max), //Preset?
+      .wr_clear(tb_clear),
+      
+      .x_value(tb_x),
+      .y_value(tb_y),
+      .done(tb_done)
+      );
+/*
+  generate
+     initial begin
+	for(i = 0; i < 640; i = i + 1) begin
+	   tb_n_rst = 0;
 	end
+     end
+  endgenerate
+ */
+/*
+   initial begin
+      #(CLK_PERIOD/2.0);
+      tb_n_rst = 0;
+      tb_clear = 0;
+      tb_enable = 0;
+      tb_x_roll = 3'b100;
+      tb_y_roll = 3'b100;
 
-	pix_inc XY_CNT
-	(
-		.wr_clk(tb_clk), //wr = wrapper variable
-		.wr_n_rst(tb_n_rst),
-		.wr_counter_enable(tb_enable),
-		.x_max(tb_x_roll), //Preset
-		.y_max(tb_y_roll), //Preset?
-		.wr_clear(tb_clear),
-	
-		.x_value(tb_x),
-		.y_value(tb_y),
-		.done(tb_done)
-	);
-	
-	initial begin
-		#(CLK_PERIOD/2.0);
-		tb_n_rst = 0;
-		tb_clear = 0;
-		tb_enable = 0;
-		tb_x_roll = 3'b100;
-		tb_y_roll = 3'b100;
+      #(CLK_PERIOD/2.0);
+      tb_enable = 1'b1;
 
-		#(CLK_PERIOD/2.0);
-		tb_enable = 1'b1;
+      #(CLK_PERIOD*4);
+      tb_n_rst=1;
+      #(CLK_PERIOD*4);
+      tb_enable=1;
+      #(CLK_PERIOD*4);
+      tb_clear = 1;
+      #(CLK_PERIOD*4);
+      tb_clear = 0;
+      #(CLK_PERIOD*4);
+      //tb_enable = 0;
+      #(CLK_PERIOD*4);
+      //tb_clear = 1;
+      
+   end
 
-		#(CLK_PERIOD*4);
-		tb_n_rst=1;
-		#(CLK_PERIOD*4);
-		tb_enable=1;
-		#(CLK_PERIOD*4);
-		tb_clear = 1;
-		#(CLK_PERIOD*4);
-		tb_clear = 0;
-		#(CLK_PERIOD*4);
-		//tb_enable = 0;
-		#(CLK_PERIOD*4);
-		//tb_clear = 1;
-		
-	end
+   */
 endmodule
 

@@ -11,17 +11,18 @@ module tb_julia_worker ();
    localparam  WIDTH = 22;
    localparam  FRACTIONAL = 11;
    localparam  INTEGRAL = 11;
-   localparam  PIXELBITS = 4;
+   localparam  PIXELBITS = 6;
 
    reg tb_clk;
    reg tb_n_rst;
    reg [9:0] tb_x;
    reg [9:0] tb_y;
    reg 	     tb_JW_start = 0;
-   reg 	     tb_MC_busy;
+   reg 	     tb_MC_done;
    reg 	     tb_JW_ready;
    reg 	     tb_JW_done;
-   reg [7:0] tb_pixel;
+   reg [31:0] tb_color;
+   reg [31:0] tb_address;
    reg [WIDTH-1:0] tb_c_real_in;
    reg [WIDTH-1:0] tb_c_imag_in;
 
@@ -34,10 +35,11 @@ module tb_julia_worker ();
        .x(tb_x),
        .y(tb_y),
        .JW_start(tb_JW_start),
-       .MC_busy(tb_MC_busy),
+       .MC_done(tb_MC_done),
        .JW_ready(tb_JW_ready),
        .JW_done(tb_JW_done),
-       .pixel(tb_pixel),
+       .address(tb_address),
+       .color(tb_color),
        .c_real_in(tb_c_real_in),
        .c_imag_in(tb_c_imag_in)
        );
@@ -74,7 +76,7 @@ module tb_julia_worker ();
 	tb_x = 0;
 	tb_y = 0;
 
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	tb_n_rst = 0;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -115,20 +117,16 @@ module tb_julia_worker ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
 	$info("MC_busy signaled low");
 
-	@(posedge tb_clk);
-	#(CHECK_DELAY);
-	@(posedge tb_clk);
-	#(CHECK_DELAY);
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
 	testcase = 2;
 	tb_x = 384;
 	tb_y = 264;
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -165,13 +163,59 @@ module tb_julia_worker ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
+	$info("MC_busy signaled low");
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	testcase = 3;
+	tb_x = 100;
+	tb_y = 100;
+	tb_MC_done = 0;
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	
+	forever begin
+	   if(tb_JW_ready == 1) begin
+	      $info("JW_ready signal received");
+	      break;
+	   end
+	end
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_JW_start = 1;
+	$info("JW_start signaled high");	
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_JW_start = 0;
+
+	forever begin
+	   if(tb_JW_done == 1)begin
+	      $info("JW_done signal received");
+	      break;
+	   end else begin
+	      $info("JW_done signal not received");	      
+	      @(posedge tb_clk);
+	      #(CHECK_DELAY);
+	   end
+	end
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_MC_done = 1;
 	$info("MC_busy signaled low");
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	
      end
 

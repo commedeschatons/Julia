@@ -1,0 +1,215 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : pixel_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 20:21:02 2016
+****************************************
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: z_real_old_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: pixel[7] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  z_real_old_reg[1]/CLK (DFFSR)                           0.00       0.00 r
+  z_real_old_reg[1]/Q (DFFSR)                             1.20       1.20 f
+  Z_CALCULATOR/z_real_in[1] (z_calculator)                0.00       1.20 f
+  Z_CALCULATOR/M1/a[1] (fixed_multiplication_4)           0.00       1.20 f
+  Z_CALCULATOR/M1/mult_23/a[1] (fixed_multiplication_4_DW_mult_tc_1)
+                                                          0.00       1.20 f
+  Z_CALCULATOR/M1/mult_23/U890/Y (BUFX4)                  0.96       2.16 f
+  Z_CALCULATOR/M1/mult_23/U811/Y (INVX2)                  0.22       2.39 r
+  Z_CALCULATOR/M1/mult_23/U778/Y (OR2X2)                  0.29       2.68 r
+  Z_CALCULATOR/M1/mult_23/U732/Y (OAI22X1)                0.14       2.82 f
+  Z_CALCULATOR/M1/mult_23/U100/YC (HAX1)                  0.43       3.25 f
+  Z_CALCULATOR/M1/mult_23/U99/YC (FAX1)                   0.45       3.69 f
+  Z_CALCULATOR/M1/mult_23/U98/YC (FAX1)                   0.45       4.15 f
+  Z_CALCULATOR/M1/mult_23/U97/YC (FAX1)                   0.45       4.60 f
+  Z_CALCULATOR/M1/mult_23/U96/YC (FAX1)                   0.45       5.06 f
+  Z_CALCULATOR/M1/mult_23/U95/YC (FAX1)                   0.45       5.51 f
+  Z_CALCULATOR/M1/mult_23/U94/YC (FAX1)                   0.45       5.97 f
+  Z_CALCULATOR/M1/mult_23/U93/YC (FAX1)                   0.45       6.42 f
+  Z_CALCULATOR/M1/mult_23/U92/YC (FAX1)                   0.45       6.87 f
+  Z_CALCULATOR/M1/mult_23/U91/YC (FAX1)                   0.45       7.33 f
+  Z_CALCULATOR/M1/mult_23/U90/YC (FAX1)                   0.45       7.78 f
+  Z_CALCULATOR/M1/mult_23/U89/YS (FAX1)                   0.63       8.42 f
+  Z_CALCULATOR/M1/mult_23/product[12] (fixed_multiplication_4_DW_mult_tc_1)
+                                                          0.00       8.42 f
+  Z_CALCULATOR/M1/result[1] (fixed_multiplication_4)      0.00       8.42 f
+  Z_CALCULATOR/add_1_root_add_44/A[1] (z_calculator_DW01_add_2)
+                                                          0.00       8.42 f
+  Z_CALCULATOR/add_1_root_add_44/U1_1/YC (FAX1)           0.46       8.88 f
+  Z_CALCULATOR/add_1_root_add_44/U1_2/YC (FAX1)           0.45       9.33 f
+  Z_CALCULATOR/add_1_root_add_44/U1_3/YC (FAX1)           0.45       9.79 f
+  Z_CALCULATOR/add_1_root_add_44/U1_4/YC (FAX1)           0.45      10.24 f
+  Z_CALCULATOR/add_1_root_add_44/U1_5/YC (FAX1)           0.45      10.70 f
+  Z_CALCULATOR/add_1_root_add_44/U1_6/YC (FAX1)           0.45      11.15 f
+  Z_CALCULATOR/add_1_root_add_44/U1_7/YC (FAX1)           0.45      11.61 f
+  Z_CALCULATOR/add_1_root_add_44/U1_8/YC (FAX1)           0.45      12.06 f
+  Z_CALCULATOR/add_1_root_add_44/U1_9/YC (FAX1)           0.45      12.51 f
+  Z_CALCULATOR/add_1_root_add_44/U1_10/YC (FAX1)          0.45      12.97 f
+  Z_CALCULATOR/add_1_root_add_44/U1_11/YC (FAX1)          0.45      13.42 f
+  Z_CALCULATOR/add_1_root_add_44/U1_12/YC (FAX1)          0.45      13.88 f
+  Z_CALCULATOR/add_1_root_add_44/U1_13/YC (FAX1)          0.45      14.33 f
+  Z_CALCULATOR/add_1_root_add_44/U1_14/YC (FAX1)          0.45      14.79 f
+  Z_CALCULATOR/add_1_root_add_44/U1_15/YC (FAX1)          0.45      15.24 f
+  Z_CALCULATOR/add_1_root_add_44/U1_16/YC (FAX1)          0.45      15.70 f
+  Z_CALCULATOR/add_1_root_add_44/U1_17/YC (FAX1)          0.45      16.15 f
+  Z_CALCULATOR/add_1_root_add_44/U1_18/YS (FAX1)          0.63      16.79 f
+  Z_CALCULATOR/add_1_root_add_44/SUM[18] (z_calculator_DW01_add_2)
+                                                          0.00      16.79 f
+  Z_CALCULATOR/sub_0_root_add_44/A[18] (z_calculator_DW01_sub_0)
+                                                          0.00      16.79 f
+  Z_CALCULATOR/sub_0_root_add_44/U2_18/YC (FAX1)          0.46      17.25 f
+  Z_CALCULATOR/sub_0_root_add_44/U2_19/YS (FAX1)          0.75      18.00 f
+  Z_CALCULATOR/sub_0_root_add_44/DIFF[19] (z_calculator_DW01_sub_0)
+                                                          0.00      18.00 f
+  Z_CALCULATOR/M4/a[19] (fixed_multiplication_1)          0.00      18.00 f
+  Z_CALCULATOR/M4/mult_23/a[19] (fixed_multiplication_1_DW_mult_tc_1)
+                                                          0.00      18.00 f
+  Z_CALCULATOR/M4/mult_23/U898/Y (BUFX2)                  1.06      19.06 f
+  Z_CALCULATOR/M4/mult_23/U802/Y (INVX2)                  0.26      19.32 r
+  Z_CALCULATOR/M4/mult_23/U354/Y (OR2X2)                  0.30      19.62 r
+  Z_CALCULATOR/M4/mult_23/U322/Y (OAI22X1)                0.13      19.75 f
+  Z_CALCULATOR/M4/mult_23/U219/YS (HAX1)                  0.55      20.30 f
+  Z_CALCULATOR/M4/mult_23/U215/YS (FAX1)                  0.53      20.83 f
+  Z_CALCULATOR/M4/mult_23/U213/YS (FAX1)                  0.63      21.46 f
+  Z_CALCULATOR/M4/mult_23/U211/YS (FAX1)                  0.60      22.06 f
+  Z_CALCULATOR/M4/mult_23/U82/YS (FAX1)                   0.65      22.71 f
+  Z_CALCULATOR/M4/mult_23/product[19] (fixed_multiplication_1_DW_mult_tc_1)
+                                                          0.00      22.71 f
+  Z_CALCULATOR/M4/result[8] (fixed_multiplication_1)      0.00      22.71 f
+  Z_CALCULATOR/add_46/A[8] (z_calculator_DW01_add_0)      0.00      22.71 f
+  Z_CALCULATOR/add_46/U1_8/YC (FAX1)                      0.46      23.17 f
+  Z_CALCULATOR/add_46/U1_9/YC (FAX1)                      0.45      23.62 f
+  Z_CALCULATOR/add_46/U1_10/YC (FAX1)                     0.45      24.08 f
+  Z_CALCULATOR/add_46/U1_11/YC (FAX1)                     0.45      24.53 f
+  Z_CALCULATOR/add_46/U1_12/YC (FAX1)                     0.45      24.99 f
+  Z_CALCULATOR/add_46/U1_13/YC (FAX1)                     0.45      25.44 f
+  Z_CALCULATOR/add_46/U1_14/YC (FAX1)                     0.45      25.89 f
+  Z_CALCULATOR/add_46/U1_15/YC (FAX1)                     0.45      26.35 f
+  Z_CALCULATOR/add_46/U1_16/YC (FAX1)                     0.45      26.80 f
+  Z_CALCULATOR/add_46/U1_17/YC (FAX1)                     0.45      27.26 f
+  Z_CALCULATOR/add_46/U1_18/YC (FAX1)                     0.45      27.71 f
+  Z_CALCULATOR/add_46/U1_19/YC (FAX1)                     0.45      28.17 f
+  Z_CALCULATOR/add_46/U1_20/YC (FAX1)                     0.45      28.62 f
+  Z_CALCULATOR/add_46/U1_21/YS (FAX1)                     0.43      29.05 r
+  Z_CALCULATOR/add_46/SUM[21] (z_calculator_DW01_add_0)
+                                                          0.00      29.05 r
+  Z_CALCULATOR/U73/Y (OR2X1)                              0.18      29.24 r
+  Z_CALCULATOR/U72/Y (NOR2X1)                             0.13      29.37 f
+  Z_CALCULATOR/U24/Y (NAND3X1)                            0.64      30.00 r
+  Z_CALCULATOR/U23/Y (MUX2X1)                             0.31      30.32 r
+  Z_CALCULATOR/U22/Y (INVX1)                              0.31      30.62 f
+  Z_CALCULATOR/iteration_out[7] (z_calculator)            0.00      30.62 f
+  pixel[7] (out)                                          0.00      30.62 f
+  data arrival time                                                 30.62
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : pixel_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 20:21:02 2016
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                         1415
+Number of nets:                          6972
+Number of cells:                         4709
+Number of combinational cells:           4567
+Number of sequential cells:               125
+Number of macros/black boxes:               0
+Number of buf/inv:                        648
+Number of references:                      15
+
+Combinational area:            2461266.000000
+Buf/Inv area:                   124272.000000
+Noncombinational area:           93456.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:               2554722.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : pixel_calculator
+Version: K-2015.06-SP1
+Date   : Wed Apr 27 20:21:02 2016
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+pixel_calculator                        586.893  596.487  840.549 1.18e+03 100.0
+  FLEX_COUNTER (flex_counter)             0.340    1.010    6.086    1.350   0.1
+  Z_CALCULATOR (z_calculator)           571.161  567.249  786.968 1.14e+03  96.2
+    add_1_root_add_44 (z_calculator_DW01_add_2)
+                                          3.998    3.375    7.948    7.373   0.6
+    sub_0_root_add_44 (z_calculator_DW01_sub_0)
+                                          5.426    3.502    8.611    8.929   0.8
+    add_45 (z_calculator_DW01_add_1)      4.861    3.205    7.584    8.066   0.7
+    add_46 (z_calculator_DW01_add_0)      8.683   20.503    7.948   29.186   2.5
+    add_48 (z_calculator_DW01_inc_0)   3.71e-02    0.100    1.807    0.138   0.0
+    M5 (fixed_multiplication_0)         251.300  246.036  149.718  497.336  42.0
+      mult_23 (fixed_multiplication_0_DW_mult_tc_1)
+                                        251.300  246.036  149.718  497.336  42.0
+    M4 (fixed_multiplication_1)         253.481  246.798  149.718  500.279  42.3
+      mult_23 (fixed_multiplication_1_DW_mult_tc_1)
+                                        253.481  246.798  149.718  500.279  42.3
+    M3 (fixed_multiplication_2)          13.798   13.540  149.718   27.338   2.3
+      mult_23 (fixed_multiplication_2_DW_mult_tc_1)
+                                         13.798   13.540  149.718   27.338   2.3
+    M2 (fixed_multiplication_3)          13.314   12.939  149.718   26.253   2.2
+      mult_23 (fixed_multiplication_3_DW_mult_tc_1)
+                                         13.314   12.939  149.718   26.253   2.2
+    M1 (fixed_multiplication_4)          13.680   13.343  149.718   27.024   2.3
+      mult_23 (fixed_multiplication_4_DW_mult_tc_1)
+                                         13.680   13.343  149.718   27.024   2.3
+1

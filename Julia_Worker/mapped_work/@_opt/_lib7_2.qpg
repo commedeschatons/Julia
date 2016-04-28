@@ -1,0 +1,1644 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib
+valu
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+r1
+!s85 0
+31
+!i10b 1
+!s100 ]=4UD4UeXUomNClYonj3E2
+I852eYFeL8Si<GW=:AzPKW0
+!s105 alu_sv_unit
+S1
+R0
+Z3 w1442982492
+8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/alu.sv
+F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/alu.sv
+L0 9
+Z4 OL;L;10.3b;59
+Z5 !s108 1448389240.462401
+Z6 !s107 /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/register_file.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/flex_sreg.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath_decode.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/alu.sv|
+Z7 !s90 -sv|-work|/home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/alu.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath_decode.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/flex_sreg.sv|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/register_file.sv|
+!i113 0
+Z8 o-sv -work /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim
+Z9 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
+vdatapath
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 gc[=7XhWYOGeJSL9j^dD90
+IW_TJ4>>]MQQ4DI[bhlWbD2
+!s105 datapath_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath.sv
+F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath.sv
+L0 9
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+vdatapath_decode
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 SbJX9cRL=l4<KHa7PFgOf3
+IZ[JVVZ]3e8WCbUbgP`Va62
+!s105 datapath_decode_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath_decode.sv
+F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/datapath_decode.sv
+L0 9
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+Efifo
+Z10 w1443505830
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z13 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fifo.vhd
+Z14 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fifo.vhd
+l0
+L17
+V[GcSdUQ7Z<Wi;1f1bcXe33
+!s100 9gA5U2n=5iH;;=__aj4zc1
+Z15 OL;C;10.3b;59
+31
+Z16 !s110 1448389256
+!i10b 1
+Z17 !s108 1448389256.092725
+Z18 !s90 -work|/home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fiforam.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fifo.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_encoder.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_out_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tcu.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_timer.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tx_fifo.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tx_sr.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_usb_transmitter.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/read_fifo_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/read_ptr.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/scalable_off_chip_sram.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/simple_scale_mem.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/write_fifo_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/write_ptr.vhd|
+Z19 !s107 /home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/write_ptr.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/write_fifo_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/simple_scale_mem.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/scalable_off_chip_sram.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/read_ptr.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/read_fifo_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_usb_transmitter.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tx_sr.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tx_fifo.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_timer.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tcu.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_out_ctrl.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_encoder.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fifo.vhd|/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fiforam.vhd|
+!i113 0
+Z20 o-work /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim
+Z21 tExplicit 1 Coverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
+Artl
+R11
+R12
+DEx4 work 4 fifo 0 22 [GcSdUQ7Z<Wi;1f1bcXe33
+31
+R16
+l77
+L31
+V=mJH86i7UJ]Y_9Rcbl41;0
+!s100 mF@2BC3PP@U0]8f6T80MV1
+R15
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Efiforam
+R10
+Z22 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z23 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R11
+R12
+R0
+Z24 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fiforam.vhd
+Z25 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/fiforam.vhd
+l0
+L19
+V;4Sa:QZThdES]YU:Um5_;3
+!s100 TWT31F@hz>eN1KI6a=joW3
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Artl
+R22
+R23
+R11
+R12
+DEx4 work 7 fiforam 0 22 ;4Sa:QZThdES]YU:Um5_;3
+31
+R16
+l34
+L30
+VJLeI?DBz]Nh1A?XRA`H2R2
+!s100 YzhNVgcS6OoK_n6R[ZX8b2
+R15
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+vflex_sreg
+R1
+R2
+r1
+!s85 0
+31
+!i10b 1
+!s100 S6lO>6>4Ji34MaJ4l<PAh1
+IM8?o26_Fhn1dH9nJfY_Qe3
+!s105 flex_sreg_sv_unit
+S1
+R0
+R3
+8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/flex_sreg.sv
+F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/flex_sreg.sv
+L0 9
+R4
+R5
+R6
+R7
+!i113 0
+R8
+R9
+Elab7_encoder
+Z26 w1445281360
+R11
+R12
+R0
+Z27 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_encoder.vhd
+Z28 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_encoder.vhd
+l0
+L13
+VDEd>@m>]Ig9Bj;R7Mi@]P0
+!s100 g3=0VUX?bnU?e9XF<CZgG1
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Asimple_arch
+R11
+R12
+DEx4 work 12 lab7_encoder 0 22 DEd>@m>]Ig9Bj;R7Mi@]P0
+l29
+L24
+V]IzmLUG;HlCKnmKaA7^zo1
+!s100 1kDVoH^HCE@3gkfem_U9@0
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Elab7_out_ctrl
+R26
+R11
+R12
+R0
+Z29 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_out_ctrl.vhd
+Z30 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_out_ctrl.vhd
+l0
+L13
+VX[6bm8;AikcdnEi4HDC`O1
+!s100 I`AP@4:WEL[hz4B>ZQ`7:0
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Asimple_arch
+R11
+R12
+DEx4 work 13 lab7_out_ctrl 0 22 X[6bm8;AikcdnEi4HDC`O1
+l36
+L25
+VCXz[Leh:eBVn7MbFXQP8c2
+!s100 JPdXP_F1z?T2:i;KdSkCU3
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Elab7_tcu
+R26
+R11
+R12
+R0
+Z31 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tcu.vhd
+Z32 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tcu.vhd
+l0
+L13
+V?DTSJj32[I`AmPkmlY9[03
+!s100 olCAjEUVBmP9>>[;Me;Ad0
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Amain_arch
+R11
+R12
+DEx4 work 8 lab7_tcu 0 22 ?DTSJj32[I`AmPkmlY9[03
+l48
+L33
+V1Fnch@8aZSCD<YM;2EQmJ3
+!s100 Jf6g9c=`>c;AiZ97mHcoS3
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Elab7_timer
+R26
+R11
+R12
+R0
+Z33 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_timer.vhd
+Z34 F/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_timer.vhd
+l0
+L13
+VMic]iI7C`>Pa@F<`dYA:P3
+!s100 g:J9bIj`gKBa_4czgf[o_1
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Amain_arch
+R11
+R12
+DEx4 work 10 lab7_timer 0 22 Mic]iI7C`>Pa@F<`dYA:P3
+l34
+L25
+V:`4C6KdeIN?GFXOG3XBz?2
+!s100 i1DVXYQ3ZgdY@GVCD6>k@0
+R15
+31
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Elab7_tx_fifo
+R26
+R11
+R12
+R0
+Z35 8/home/ecegrid/a/ece337/Course_Prod/IP_Libs/Lab_IP_Lib/Source/lab7_tx_fifo.vhd
+Z36 m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ecegrid/a/mg122/ece337/project/Julia_Worker
+T_opt
+!s110 1461818888
+V7R8@5NFG:39<^GC@Ri;Co1
+04 15 4 work tb_julia_worker fast 0
+=1-3417eba0940e-57219607-ba318-5222
+Z1 o-quiet -auto_acc_if_foreign -work mapped_work -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim +acc
+n@_opt
+Z2 OL;O;10.3b;59
+T_opt1
+!s110 1461799799
+Vf]<[LMj;:5mMP@ej53[z:1
+04 18 4 work tb_addr_calculator fast 0
+=1-3417eba0940e-57214b77-131c6-33f6
+R1
+n@_opt1
+R2
+R0
+T_opt2
+!s110 1461802877
+V`?1Zl9;8mazK0]GM5AORU1
+04 19 4 work tb_pixel_calculator fast 0
+=1-3417eba0940e-5721577c-c2fe5-39e7
+R1
+n@_opt2
+R2
+R0
+vaddr_calculator
+Z3 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z4 !s110 1461818876
+!i10b 1
+!s100 oK9Pkc<LiKd]702A`JG243
+IXRC9[b4o2XX`NoM9fV]:C3
+Z5 V`JN@9S9cnhjKRR_L]QIcM3
+Z6 !s105 julia_worker_v_unit
+S1
+R0
+Z7 w1461818872
+Z8 8mapped/julia_worker.v
+Z9 Fmapped/julia_worker.v
+L0 417
+Z10 OL;L;10.3b;59
+r1
+!s85 0
+31
+Z11 !s108 1461818876.288410
+Z12 !s107 mapped/julia_worker.v|
+Z13 !s90 -##implicit##push_minusfile_path##|/home/ecegrid/a/mg122/ece337/project/Julia_Worker/vlog.opt|-##implicit##pop_minusfile_path##|-sv|-work|mapped_work|mapped/julia_worker.v|
+!i113 0
+Z14 o-sv -work mapped_work
+Z15 tCoverage 63 CoverExcludeDefault 1 CoverOpt 1 CoverShortCircuit 0
+vaddr_calculator_DW01_add_0
+R3
+R4
+!i10b 1
+!s100 _@BTl?J>j[XQ`kbZfjJlU0
+I<D6z86@<OXjePGd9>Ic^R0
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 55
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+naddr_calculator_@d@w01_add_0
+vaddr_calculator_DW_mult_uns_2
+R3
+R4
+!i10b 1
+!s100 nkoinUBnUE7bZE9XBJzFn2
+I3?CNz=DNigo3HO2a2Lnb<3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 121
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+naddr_calculator_@d@w_mult_uns_2
+vfixed_multiplication_0
+R3
+R4
+!i10b 1
+!s100 ^j^JASoTA[eHXz2N_0?WB1
+I0=@OAhkA7[=WN_]>Mml@H1
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7389
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_0_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 cY?>5K@TcfYI15H8MaHgI1
+I]RdC9Ml:IUlSa_YbQ7;540
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 6472
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_0_@d@w_mult_tc_1
+vfixed_multiplication_1
+R3
+R4
+!i10b 1
+!s100 :S^T`mG4hoRkUaRL[^RD?0
+IQJ7Q=<I1ANl1KzR=X@cRY3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 6440
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_1_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 TPDA5eOV^::Ol``J^L`]P0
+ITGPD_DSPXf;9OJBcm=9ND3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 5523
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_1_@d@w_mult_tc_1
+vfixed_multiplication_2
+R3
+R4
+!i10b 1
+!s100 ZHVb^6Z]l367kY@CX^lgS3
+IH1`O1W_0OC]SAfkn3D2:A3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 5491
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_2_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 NS09>cc`kK:6Lkao2GC@N3
+I_D250]YdB7QRlK;59Zlo=3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 4574
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_2_@d@w_mult_tc_1
+vfixed_multiplication_3
+R3
+R4
+!i10b 1
+!s100 kF]0aclE?3=Oml1B[JOz^1
+I<T0`zg4>BQ2nOFgXE5YaG0
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 4542
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_3_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 7ZzV__LBWoF40OmC97oX]2
+IJ9SoMXeMeA]KefQ9IHVB10
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 3625
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_3_@d@w_mult_tc_1
+vfixed_multiplication_4
+R3
+R4
+!i10b 1
+!s100 C:oJ6jhT=MTkLD9oO;6=k0
+IIRzgn3DGQ]YPmC5:2FzSE1
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 3593
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_4_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 5Fb@@mJjB5YF?3PDjel;b3
+I33[zJl;N?PekYj]5T`8Wc1
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 2676
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_4_@d@w_mult_tc_1
+vfixed_multiplication_5
+R3
+R4
+!i10b 1
+!s100 dEEGWmcVBSOWQMQ01`8f[3
+IY8;YXF62DCg?9_3bJ_j8K0
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 2485
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_5_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 ^fo;EVBA]OX@3i@BHd8QN0
+I2FKi@PY4GNLOX1]iSHnz@2
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 1568
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_5_@d@w_mult_tc_1
+vfixed_multiplication_6
+R3
+R4
+!i10b 1
+!s100 Y9Y6Zob4^_D[0K[Pi:nWa1
+IQhMPXGTdNNbz2ID9NXmV03
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 1536
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vfixed_multiplication_6_DW_mult_tc_1
+R3
+R4
+!i10b 1
+!s100 V6b<MlH_A>GLdI>o;kVAQ1
+IYKg[eh=P7;QDY[OWPI6>h2
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 619
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nfixed_multiplication_6_@d@w_mult_tc_1
+vflex_counter
+R3
+!s110 1461802866
+!i10b 1
+!s100 7Ti]m[E9Czd2S4HZJl2]i2
+IfD:LAz=21Mg37X^nU1J]B2
+R5
+!s105 pixel_calculator_v_unit
+S1
+R0
+w1461802862
+8mapped/pixel_calculator.v
+Fmapped/pixel_calculator.v
+L0 5090
+R10
+r1
+!s85 0
+31
+!s108 1461802866.157055
+!s107 mapped/pixel_calculator.v|
+!s90 -##implicit##push_minusfile_path##|/home/ecegrid/a/mg122/ece337/project/Julia_Worker/vlog.opt|-##implicit##pop_minusfile_path##|-sv|-work|mapped_work|mapped/pixel_calculator.v|
+!i113 0
+R14
+R15
+vflex_counter_0
+R3
+R4
+!i10b 1
+!s100 km5RZ>m0B`<Z3D3]CdleH3
+IOB?`nN4=cN1A^BVa@82f62
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7784
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vflex_counter_1
+R3
+R4
+!i10b 1
+!s100 mWMQ5>oa^]Yja`CmUW<942
+Ie[9^5cS7g8eJVEJLc^MA[2
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 2517
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vjulia_worker
+R3
+R4
+!i10b 1
+!s100 DGVGQeeLQEWHmdZ<bEE[E2
+I4O`J2b6=khjkAc22enjaL2
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 8398
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vpixel2color
+R3
+R4
+!i10b 1
+!s100 @6g<o:^<HHcIF1cIQX9AW2
+I?]?bi_BMN@eZm^j<De4c`3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 8285
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vpixel_calculator
+R3
+R4
+!i10b 1
+!s100 UVDXfLNeD`AVh>zN@GJ2n1
+IZ:>Z8K`ib><jGNGK8F`h:3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7849
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vreal2imag
+R3
+R4
+!i10b 1
+!s100 ?7DU6o8DR6hC1?oVnLG@`2
+Ik^]d;mnnIl]<EQ_gJlgMf1
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 2582
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vtb_addr_calculator
+R3
+!s110 1461799789
+!i10b 1
+!s100 bDZPaeW2TL3:XiN;?TN260
+IeTFY>cYKn9V<GRo1H]82F0
+R5
+!s105 tb_addr_calculator_sv_unit
+S1
+R0
+w1461799653
+8source/tb_addr_calculator.sv
+Fsource/tb_addr_calculator.sv
+L0 3
+R10
+r1
+!s85 0
+31
+!s108 1461799789.256614
+!s107 source/tb_addr_calculator.sv|
+!s90 -##implicit##push_minusfile_path##|/home/ecegrid/a/mg122/ece337/project/Julia_Worker/vlog.opt|-##implicit##pop_minusfile_path##|-sv|-work|mapped_work|source/tb_addr_calculator.sv|
+!i113 0
+R14
+R15
+vtb_julia_worker
+R3
+!s110 1461818877
+!i10b 1
+!s100 LP`V49VO06VIPHIY3YBf@0
+ID[^29<;4i5R<iYkOjGa5R3
+R5
+!s105 tb_julia_worker_sv_unit
+S1
+R0
+w1461818752
+8source/tb_julia_worker.sv
+Fsource/tb_julia_worker.sv
+L0 3
+R10
+r1
+!s85 0
+31
+!s108 1461818877.343407
+!s107 source/tb_julia_worker.sv|
+!s90 -##implicit##push_minusfile_path##|/home/ecegrid/a/mg122/ece337/project/Julia_Worker/vlog.opt|-##implicit##pop_minusfile_path##|-sv|-work|mapped_work|source/tb_julia_worker.sv|
+!i113 0
+R14
+R15
+vtb_pixel_calculator
+R3
+!s110 1461802867
+!i10b 1
+!s100 z`^cV1=z3PboQG4nnmBIG3
+I:LPW1fJ5`;1Y3:XoIJGQP2
+R5
+!s105 tb_pixel_calculator_sv_unit
+S1
+R0
+w1461779531
+8source/tb_pixel_calculator.sv
+Fsource/tb_pixel_calculator.sv
+L0 3
+R10
+r1
+!s85 0
+31
+!s108 1461802866.974242
+!s107 source/tb_pixel_calculator.sv|
+!s90 -##implicit##push_minusfile_path##|/home/ecegrid/a/mg122/ece337/project/Julia_Worker/vlog.opt|-##implicit##pop_minusfile_path##|-sv|-work|mapped_work|source/tb_pixel_calculator.sv|
+!i113 0
+R14
+R15
+vwcu
+R3
+R4
+!i10b 1
+!s100 4hk_fSghfK`eb^YE4L3OU1
+IFUjF]fNcThojhSgJAo?5>3
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 8
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vz_calculator
+R3
+R4
+!i10b 1
+!s100 KXEk[@lP6<_PEI5HGQdE]3
+IED>G7<K3nF6`f`Ce]@Y2?2
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7669
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+vz_calculator_DW01_add_0
+R3
+R4
+!i10b 1
+!s100 A3eemFC1a;I`h^7B@HU>k3
+I7?8DGFQDGg92[^VQESnh@0
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7438
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nz_calculator_@d@w01_add_0
+vz_calculator_DW01_add_1
+R3
+R4
+!i10b 1
+!s100 2F]7Ji8Bg@^W2BMBg:n7A1
+I;hg>AO]JlTJm2^_HmkPWI1
+R5
+R6
+S1
+R0
+R7
+R8
+R9
+L0 7510
+R10
+r1
+!s85 0
+31
+R11
+R12
+R13
+!i113 0
+R14
+R15
+nz_calculator_@d@w01_add_1
+vz_calculator_DW01_add_2
+R3
+R4
+!i10b 1
+!s100 QA0BUGY_?1dHi_hd^9o_M3
+IOhb[:ENj8;d9a>2n5W2BA1
+R5
+R6
+S1
+R0
+R7
+R8m255
+K4
+z2
+!s8c locked
+!s95 MTI
+cModel Technology Builtin Library
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+Z0 d/u/qa/buildsites/10.3b/builds/linux/modeltech
+Pfixed_float_types
+Z1 OL;C;10.3b;59
+33
+Z2 !s110 1401423755
+!i10b 1
+Z3 OP;C;10.3b;59
+Z4 w1400782215
+Z5 d$MODEL_TECH/..
+8vhdl_src/ieee/fixed_float_types.vhdl
+Fvhdl_src/ieee/fixed_float_types.vhdl
+l0
+L40
+VJoVc:0L4XeXcaE?c:FVe62
+!s100 JoVc:0L4XeXcaE?c:FVe62
+Z6 OE;C;10.3b;59
+!s108 1401423755.177405
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/fixed_float_types.vhdl|
+!s107 vhdl_src/ieee/fixed_float_types.vhdl|
+!i113 1
+Z7 o-debug -2008 -work ieee -dirpath {$MODEL_TECH/..} -nowarn 3
+Z8 tExplicit 1
+Pfixed_generic_pkg
+Z9 DPx4 ieee 17 fixed_float_types 0 22 JoVc:0L4XeXcaE?c:FVe62
+Z10 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+R1
+33
+b1
+!i109 1
+R2
+!i10b 1
+R3
+R4
+R5
+8vhdl_src/ieee/fixed_generic_pkg.vhdl
+Fvhdl_src/ieee/fixed_generic_pkg.vhdl
+l0
+L46
+V`=cI_4Mf07Y0RE[dTgE=F2
+!s100 `=cI_4Mf07Y0RE[dTgE=F2
+R6
+!s108 1401423755.290262
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/fixed_generic_pkg.vhdl|
+!s107 vhdl_src/ieee/fixed_generic_pkg.vhdl|
+!i113 1
+R7
+R8
+Bbody
+DPx4 work 17 fixed_generic_pkg 0 22 `=cI_4Mf07Y0RE[dTgE=F2
+Z13 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R9
+R10
+R11
+R12
+R1
+33
+!i109 1
+R2
+!i10b 1
+R3
+8vhdl_src/ieee/fixed_generic_pkg-body.vhdl
+Fvhdl_src/ieee/fixed_generic_pkg-body.vhdl
+l0
+L43
+V1OB>@cS:GBkHTK^gK1Nzm1
+!s100 1OB>@cS:GBkHTK^gK1Nzm1
+R6
+!s108 1401423755.426230
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/fixed_generic_pkg-body.vhdl|
+!s107 vhdl_src/ieee/fixed_generic_pkg-body.vhdl|
+!i113 1
+R7
+R8
+Z14 nbody
+Pfixed_pkg
+R9
+R10
+R11
+R12
+Z15 DBx4 ieee 17 fixed_generic_pkg 4 body 22 1OB>@cS:GBkHTK^gK1Nzm1
+R1
+33
+!i109 2
+R2
+!i10b 1
+R3
+R4
+R5
+8vhdl_src/ieee/fixed_pkg.vhdl
+Fvhdl_src/ieee/fixed_pkg.vhdl
+l0
+L42
+V6nURH]dUY5@T6S0eLDXJe2
+!s100 6nURH]dUY5@T6S0eLDXJe2
+R6
+!s108 1401423755.715315
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/fixed_pkg.vhdl|
+!s107 vhdl_src/ieee/fixed_pkg.vhdl|
+!i113 1
+R7
+R8
+Pfloat_generic_pkg
+R15
+R9
+R10
+R11
+R12
+R1
+33
+b1
+!i109 1
+R2
+!i10b 1
+R3
+R4
+R5
+8vhdl_src/ieee/float_generic_pkg.vhdl
+Fvhdl_src/ieee/float_generic_pkg.vhdl
+l0
+L46
+VH9F2dgFW`hn13SQYDoo_R2
+!s100 H9F2dgFW`hn13SQYDoo_R2
+R6
+!s108 1401423755.907754
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/float_generic_pkg.vhdl|
+!s107 vhdl_src/ieee/float_generic_pkg.vhdl|
+!i113 1
+R7
+R8
+Bbody
+DPx4 work 17 float_generic_pkg 0 22 H9F2dgFW`hn13SQYDoo_R2
+R15
+R9
+R10
+R11
+R12
+R1
+33
+!i109 1
+Z16 !s110 1401423756
+!i10b 1
+R3
+8vhdl_src/ieee/float_generic_pkg-body.vhdl
+Fvhdl_src/ieee/float_generic_pkg-body.vhdl
+l0
+L40
+VWN9:YIQ]Fc2f32ANi3<g`0
+!s100 WN9:YIQ]Fc2f32ANi3<g`0
+R6
+!s108 1401423756.030058
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/float_generic_pkg-body.vhdl|
+!s107 vhdl_src/ieee/float_generic_pkg-body.vhdl|
+!i113 1
+R7
+R8
+R14
+Pfloat_pkg
+DPx4 ieee 9 fixed_pkg 0 22 6nURH]dUY5@T6S0eLDXJe2
+R15
+R9
+R10
+R11
+R12
+DBx4 ieee 17 float_generic_pkg 4 body 22 WN9:YIQ]Fc2f32ANi3<g`0
+R1
+33
+!i109 2
+R16
+!i10b 1
+R3
+R4
+R5
+8vhdl_src/ieee/float_pkg.vhdl
+Fvhdl_src/ieee/float_pkg.vhdl
+l0
+L42
+VZ81QOO3@T3iYBM^RlCZFZ1
+!s100 Z81QOO3@T3iYBM^RlCZFZ1
+R6
+!s108 1401423756.313828
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/float_pkg.vhdl|
+!s107 vhdl_src/ieee/float_pkg.vhdl|
+!i113 1
+R7
+R8
+^#ieee_bit_context
+R1
+33
+Z17 !s110 1401423758
+!i10b 0
+R3
+Z18 w1401421545
+R5
+8vhdl_src/ieee/ieee_bit_context.vhd
+Fvhdl_src/ieee/ieee_bit_context.vhd
+l0
+L1
+V8;nmf^<<Q;TXX7lB^BofF3
+!s100 8;nmf^<<Q;TXX7lB^BofF3
+R6
+!s108 1401423758.042623
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|vhdl_src/ieee/ieee_bit_context.vhd|
+!s107 vhdl_src/ieee/ieee_bit_context.vhd|
+!i113 1
+Z19 o-debug -2008 -work ieee -dirpath {$MODEL_TECH/..}
+R8
+^#ieee_std_context
+R1
+33
+R17
+!i10b 0
+R3
+R18
+R5
+8vhdl_src/ieee/ieee_std_context.vhd
+Fvhdl_src/ieee/ieee_std_context.vhd
+l0
+L1
+V7m;SE_P[R@HSc<;N29LfO0
+!s100 7m;SE_P[R@HSc<;N29LfO0
+R6
+!s108 1401423758.097794
+!s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|vhdl_src/ieee/ieee_std_context.vhd|
+!s107 vhdl_src/ieee/ieee_std_context.vhd|
+!i113 1
+R19
+R8
+Pmath_complex
+R13
+R1
+33
+b1
+Z20 !s110 1401423754
+!i10b 1
+R3
+Z21 w1400782206
+R5
+Z22 8vhdl_src/ieee/1076-2code.vhd
+Z23 Fvhdl_src/ieee/1076-2code.vhd
+l0
+L671
+Z24 V5i:;_e<WQ2;?b7>BdkGQL0
+!s100 5i:;_e<WQ2;?b7>BdkGQL0
+R6
+Z25 !s108 1401423754.835913
+Z26 !s90 -debug|-2008|-mixedsvvh|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/1076-2code.vhd|
+Z27 !s107 vhdl_src/ieee/1076-2code.vhd|
+!i113 1
+Z28 o-debug -2008 -mixedsvvh -work ieee -dirpath {$MODEL_TECH/..} -nowarn 3
+R8
+Bbody
+DPx4 work 12 math_complex 0 22 5i:;_e<WQ2;?b7>BdkGQL0
+R13
+R1
+33
+R20
+!i10b 1
+R3
+l0
+L3683
+Vk=aHPM3BcE3h<U`ln^fSk0
+!s100 k=aHPM3BcE3h<U`ln^fSk0
+R6
+R25
+R26
+R27
+!i113 1
+R28
+R8
+R14
+Xmath_complex__mti__sv__equiv__implct__pack
+Z29 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+!i10b 1
+R24
+Z30 OL;L;10.3b;59
+r1
+!s85 0
+31
+Z31 OP;L;10.3b;59
+R23
+I5i:;_e<WQ2;?b7>BdkGQL0
+!s100 PQcz9j5hJoa:YzSG7dd=a3
+S1
+R0
+Z32 w1401423754
+8/u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exemptqU6d72
+L0 1
+Z33 OE;L;10.3b;59
+!s108 1401423755.082535
+!s107 /u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exemptqU6d72|
+!s90 -sv|/u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exemptqU6d72|-quiet|-work|ieee|-s|-novopt|-nolock|
+!i113 1
+Z34 o-quiet -sv -work ieee -s -nolock -L mtiAvm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Pmath_real
+R1
+33
+b1
+R20
+!i10b 1
+R3
+R21
+R5
+R22
+R23
+l0
+L48
+Z35 VSk6CSihbPL<f[^Shm]=KX0
+!s100 Sk6CSihbPL<f[^Shm]=KX0
+R6
+R25
+R26
+R27
+!i113 1
+R28
+R8
+Bbody
+DPx4 work 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+R1
+33
+R20
+!i10b 1
+R3
+l0
+L1750
+VJnC;TOd;fnn0cn=h>4Pz<0
+!s100 JnC;TOd;fnn0cn=h>4Pz<0
+R6
+R25
+R26
+R27
+!i113 1
+R28
+R8
+R14
+Xmath_real__mti__sv__equiv__implct__pack
+R29
+!i10b 1
+R35
+R30
+r1
+!s85 0
+31
+R31
+R23
+ISk6CSihbPL<f[^Shm]=KX0
+!s100 c?aGClEz34SR]8SeDlK`k1
+S1
+R0
+R32
+8/u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exempt6xAwL4
+L0 1
+R33
+!s108 1401423755.006450
+!s107 /u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exempt6xAwL4|
+!s90 -sv|/u/qa/buildsites/10.3b/builds/linux/modeltech/ieee/_data/exempt6xAwL4|-quiet|-work|ieee|-s|-novopt|-nolock|
+!i113 1
+R34
+Pnumeric_bit
+R12
+R1
+33
+b1
+R20
+!i10b 1
+R3
+Z36 w1400782216
+R5
+Z37 8vhdl_src/ieee/mti_numeric_bit.vhd
+Z38 Fvhdl_src/ieee/mti_numeric_bit.vhd
+l0
+L56
+Vd<O?S;AIQfOzoHU3FDK]23
+!s100 d<O?S;AIQfOzoHU3FDK]23
+R6
+Z39 !s108 1401423754.121875
+Z40 !s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/mti_numeric_bit.vhd|
+Z41 !s107 vhdl_src/ieee/mti_numeric_bit.vhd|
+!i113 1
+R7
+R8
+Bbody
+DPx4 work 11 numeric_bit 0 22 d<O?S;AIQfOzoHU3FDK]23
+R12
+R1
+33
+R20
+!i10b 1
+R3
+l0
+L2076
+V8D_eM[?N8NzQ87WdZSVDh1
+!s100 8D_eM[?N8NzQ87WdZSVDh1
+R6
+R39
+R40
+R41
+!i113 1
+R7
+R8
+R14
+Pnumeric_bit_unsigned
+R1
+33
+b1
+R20
+!i10b 1
+R3
+R36
+R5
+Z42 8vhdl_src/ieee/mti_numeric_bit_unsigned.vhd
+Z43 Fvhdl_src/ieee/mti_numeric_bit_unsigned.vhd
+l0
+L50
+VUo=_FXbo@j4IMIikZfQ=:3
+!s100 Uo=_FXbo@j4IMIikZfQ=:3
+R6
+Z44 !s108 1401423754.575952
+Z45 !s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/mti_numeric_bit_unsigned.vhd|
+Z46 !s107 vhdl_src/ieee/mti_numeric_bit_unsigned.vhd|
+!i113 1
+R7
+R8
+Bbody
+DPx4 work 20 numeric_bit_unsigned 0 22 Uo=_FXbo@j4IMIikZfQ=:3
+R12
+Z47 DPx4 ieee 11 numeric_bit 0 22 d<O?S;AIQfOzoHU3FDK]23
+R1
+33
+R20
+!i10b 1
+R3
+l0
+L834
+V[<KjB60[O3ILRz<IeWCKo0
+!s100 [<KjB60[O3ILRz<IeWCKo0
+R6
+R44
+R45
+R46
+!i113 1
+R7
+R8
+R14
+Pnumeric_std
+R11
+R12
+R1
+33
+b1
+R20
+!i10b 1
+R3
+R36
+R5
+Z48 8vhdl_src/ieee/mti_numeric_std.vhd
+Z49 Fvhdl_src/ieee/mti_numeric_std.vhd
+l0
+L66
+V:ASDNFgHXf_ih3J@9F3Ze1
+!s100 :ASDNFgHXf_ih3J@9F3Ze1
+R6
+Z50 !s108 1401423754.331241
+Z51 !s90 -debug|-2008|-work|ieee|-dirpath|$MODEL_TECH/..|-nowarn|3|vhdl_src/ieee/mti_numeric_std.vhd|
+Z52 !s107 vhdl_src/ieee/mti_numeric_std.vhd|
+!i113 1
+R7
+R8
+Bbody
+DPx4 work 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R11
+R12
+R1
+33
+R20
+!i10b 1
+R3
+l0
+L2207
+VI914AMN_?Qk;P<9Bm[VT=2
+!s100 I914AMN_?Qk;P<9Bm[VT=2
+R6
+R50
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

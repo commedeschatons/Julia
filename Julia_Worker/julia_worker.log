@@ -23,15 +23,15 @@ dc_shell-t -x "source -echo do_mapping.tcl"
 Initializing...
 Initializing gui preferences from file  /home/ecegrid/a/mg122/.synopsys_dv_prefs.tcl
 # Step 1:  Read in the source file
-analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv addr_calculator.sv real2imag.sv wcu.sv pixel_calculator.sv julia_worker.sv}
+analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv real2imag.sv wcu.sv addr_calculator.sv pixel_calculator.sv julia_worker.sv}
 Running PRESTO HDLC
 Compiling source file ./source/pixel2color.sv
 Compiling source file ./source/z_calculator.sv
 Compiling source file ./source/fixed_multiplication.sv
 Compiling source file ./source/flex_counter.sv
-Compiling source file ./source/addr_calculator.sv
 Compiling source file ./source/real2imag.sv
 Compiling source file ./source/wcu.sv
+Compiling source file ./source/addr_calculator.sv
 Compiling source file ./source/pixel_calculator.sv
 Compiling source file ./source/julia_worker.sv
 Presto compilation completed successfully.
@@ -147,7 +147,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 375 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 313 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -200,6 +200,7 @@ Information: Design 'julia_worker' has no optimization constraints set. (OPT-108
   Mapping 'flex_counter_1_DW_mult_uns_0'
   Mapping 'fixed_multiplication_5_DW_mult_tc_0'
   Mapping 'fixed_multiplication_6_DW_mult_tc_0'
+  Processing 'addr_calculator_DW01_add_0'
   Mapping 'addr_calculator_DW_mult_uns_0'
   Processing 'addr_calculator_DW01_add_1'
   Mapping 'addr_calculator_DW_mult_uns_1'
@@ -219,30 +220,30 @@ Information: Added key list 'DesignWare' to design 'addr_calculator'. (DDB-72)
   Mapping 'pixel_calculator'
   Structuring 'real2imag'
   Mapping 'real2imag'
+  Structuring 'addr_calculator'
+  Mapping 'addr_calculator'
   Structuring 'wcu'
   Mapping 'wcu'
-Information: Added key list 'DesignWare' to design 'julia_worker'. (DDB-72)
-Information: Removing unused design 'addr_calculator'. (OPT-1055)
 
                                   TOTAL                                      
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:11 3956076.0      0.00       0.0       5.3                          
-    0:00:11 3956076.0      0.00       0.0       5.3                          
-    0:00:11 3956076.0      0.00       0.0       5.3                          
-    0:00:11 3956076.0      0.00       0.0       5.3                          
-    0:00:11 3956076.0      0.00       0.0       5.3                          
-    0:00:11 3516588.0      0.00       0.0       4.5                          
-    0:00:11 3516588.0      0.00       0.0       4.5                          
-    0:00:11 3516588.0      0.00       0.0       4.5                          
-    0:00:12 3516588.0      0.00       0.0       4.5                          
-    0:00:12 3516588.0      0.00       0.0       4.5                          
-    0:00:12 3517164.0      0.00       0.0       2.5                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:09 4188978.0      0.00       0.0       5.3                          
+    0:00:09 4188978.0      0.00       0.0       5.3                          
+    0:00:09 4188978.0      0.00       0.0       5.3                          
+    0:00:09 4188978.0      0.00       0.0       5.3                          
+    0:00:09 4188978.0      0.00       0.0       5.3                          
+    0:00:09 3735090.0      0.00       0.0       4.5                          
+    0:00:09 3735090.0      0.00       0.0       4.5                          
+    0:00:09 3735090.0      0.00       0.0       4.5                          
+    0:00:09 3735090.0      0.00       0.0       4.5                          
+    0:00:09 3735090.0      0.00       0.0       4.5                          
+    0:00:09 3735594.0      0.00       0.0       2.5                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
 
 
 
@@ -253,9 +254,9 @@ Information: Removing unused design 'addr_calculator'. (OPT-1055)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -265,18 +266,18 @@ Information: Removing unused design 'addr_calculator'. (OPT-1055)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517596.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
-    0:00:12 3517452.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:09 3736026.0      0.00       0.0       0.0                          
+    0:00:10 3735234.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
+    0:00:10 3735162.0      0.00       0.0       0.0                          
 Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -292,15 +293,16 @@ report_power -hier >> reports/julia_worker.rep
 # Step 5: Output final VHDL and Verilog files
 write_file -format verilog -hierarchy -output "mapped/julia_worker.v"
 Writing verilog file '/home/ecegrid/a/mg122/ece337/project/Julia_Worker/mapped/julia_worker.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_6 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_5 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
-Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_4 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 22 nets to module fixed_multiplication_0 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 Warning: Verilog writer has added 1 nets to module z_calculator using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 8 nets to module julia_worker using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
 echo "\nScript Done\n"
 
 Script Done
@@ -314,28 +316,26 @@ check_design
 ****************************************
 check_design summary:
 Version:     K-2015.06-SP1
-Date:        Wed Apr 27 17:25:43 2016
+Date:        Thu Apr 28 00:47:52 2016
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    203
+Inputs/Outputs                                                    219
     Undriven outputs (LINT-5)                                      12
-    Unconnected ports (LINT-28)                                   163
+    Unconnected ports (LINT-28)                                   171
     Feedthrough (LINT-29)                                           1
     Shorted outputs (LINT-31)                                      19
-    Constant outputs (LINT-52)                                      8
+    Constant outputs (LINT-52)                                     16
 
-Cells                                                             186
-    Cells do not drive (LINT-1)                                     1
-    Connected to power or ground (LINT-32)                         90
-    Nets connected to multiple pins on same cell (LINT-33)         95
+Cells                                                             233
+    Connected to power or ground (LINT-32)                        135
+    Nets connected to multiple pins on same cell (LINT-33)         98
 
 Nets                                                               12
     Undriven nets (LINT-3)                                         12
 --------------------------------------------------------------------------------
 
-Warning: In design 'julia_worker', cell 'PIXEL2COLOR' does not drive any nets. (LINT-1)
 Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[11]' has no drivers.  Logic 0 assumed. (LINT-3)
 Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[10]' has no drivers.  Logic 0 assumed. (LINT-3)
 Warning: In design 'julia_worker', net 'PIXEL_CALCULATOR/Z_CALCULATOR/add_46/SUM[9]' has no drivers.  Logic 0 assumed. (LINT-3)
@@ -369,6 +369,14 @@ Warning: In design 'z_calculator_DW01_sub_0', port 'CI' is not connected to any 
 Warning: In design 'z_calculator_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
 Warning: In design 'z_calculator_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
 Warning: In design 'z_calculator_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'A[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'addr_calculator_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
 Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
 Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[42]' is not connected to any nets. (LINT-28)
 Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[41]' is not connected to any nets. (LINT-28)
@@ -543,6 +551,82 @@ Warning: In design 'pixel2color', output port 'color[7]' is connected directly t
 Warning: In design 'pixel2color', output port 'color[6]' is connected directly to output port 'color[2]'. (LINT-31)
 Warning: In design 'pixel2color', output port 'color[5]' is connected directly to output port 'color[1]'. (LINT-31)
 Warning: In design 'pixel2color', output port 'color[4]' is connected directly to output port 'color[0]'. (LINT-31)
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[5]' is connected to logic 1. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[4]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[3]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[2]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[1]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[0]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[31]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[30]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[29]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[28]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[27]' is connected to logic 1. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[26]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[25]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[24]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[23]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[22]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[21]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[20]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[19]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[18]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[17]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[16]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[15]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[14]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[13]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[12]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[11]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[10]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[9]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[8]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[7]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[6]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[5]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[4]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[3]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[2]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[1]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'offset[0]' is connected to logic 0. 
 Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'iteration_in[7]' is connected to logic 0. 
 Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
@@ -559,6 +643,20 @@ Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is conn
    Pin 'iteration_in[1]' is connected to logic 0. 
 Warning: In design 'julia_worker', a pin on submodule 'PIXEL_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'iteration_in[0]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[31]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[30]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[29]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[28]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[27]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[26]' is connected to logic 0. 
+Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
 Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'a[21]' is connected to logic 0. 
 Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
@@ -723,8 +821,14 @@ Warning: In design 'z_calculator', a pin on submodule 'sub_0_root_add_44' is con
    Pin 'CI' is connected to logic 0. 
 Warning: In design 'z_calculator', a pin on submodule 'add_1_root_add_44' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'CI' is connected to logic 0. 
+Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'ADDR_CALCULATOR'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'pixel_size[5]', 'offset[27]''.
+Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'ADDR_CALCULATOR'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'pixel_size[4]', 'pixel_size[3]'', 'pixel_size[2]', 'pixel_size[1]', 'pixel_size[0]', 'offset[31]', 'offset[30]', 'offset[29]', 'offset[28]', 'offset[26]', 'offset[25]', 'offset[24]', 'offset[23]', 'offset[22]', 'offset[21]', 'offset[20]', 'offset[19]', 'offset[18]', 'offset[17]', 'offset[16]', 'offset[15]', 'offset[14]', 'offset[13]', 'offset[12]', 'offset[11]', 'offset[10]', 'offset[9]', 'offset[8]', 'offset[7]', 'offset[6]', 'offset[5]', 'offset[4]', 'offset[3]', 'offset[2]', 'offset[1]', 'offset[0]'.
 Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'PIXEL_CALCULATOR'. (LINT-33)
    Net '*Logic0*' is connected to pins 'iteration_in[7]', 'iteration_in[6]'', 'iteration_in[5]', 'iteration_in[4]', 'iteration_in[3]', 'iteration_in[2]', 'iteration_in[1]', 'iteration_in[0]'.
+Warning: In design 'addr_calculator', the same net is connected to more than one pin on submodule 'add_35'. (LINT-33)
+   Net 'n4' is connected to pins 'A[31]', 'A[30]'', 'A[29]', 'A[28]', 'A[27]', 'A[26]', 'CI'.
 Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
    Net '*Logic0*' is connected to pins 'a[21]', 'a[20]'', 'a[19]', 'a[18]', 'a[17]', 'a[16]', 'a[15]', 'a[14]', 'a[13]', 'a[12]', 'a[11]', 'a[10]', 'a[9]', 'a[8]', 'a[7]', 'a[6]', 'a[5]', 'a[4]', 'a[3]', 'b[21]', 'b[10]', 'b[9]', 'b[8]', 'b[7]', 'b[6]', 'b[5]', 'b[4]', 'b[3]', 'b[2]', 'b[1]', 'b[0]'.
 Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
@@ -913,6 +1017,14 @@ Warning: In design 'z_calculator', the same net is connected to more than one pi
    Net 'z_imag_out[1]' is connected to pins 'a[1]', 'b[1]''.
 Warning: In design 'z_calculator', the same net is connected to more than one pin on submodule 'M5'. (LINT-33)
    Net 'z_imag_out[0]' is connected to pins 'a[0]', 'b[0]''.
+Warning: In design 'julia_worker', output port 'color[31]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[30]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[29]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[28]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[27]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[26]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[25]' is connected directly to 'logic 0'. (LINT-52)
+Warning: In design 'julia_worker', output port 'color[24]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'pixel2color', output port 'color[31]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'pixel2color', output port 'color[30]' is connected directly to 'logic 0'. (LINT-52)
 Warning: In design 'pixel2color', output port 'color[29]' is connected directly to 'logic 0'. (LINT-52)

@@ -8,7 +8,7 @@
 
 module addr_calculator
   #(
-    PIXELBITS = 4
+    PIXELBITS = 6
    )
    (
     input unsigned [9:0] x,
@@ -24,7 +24,7 @@ module addr_calculator
    wire unsigned [19:0] mul1;
    wire unsigned [19:0] x_inter;
    wire unsigned [19:0] add1;
-   wire unsigned [23:0] mul2;
+   wire unsigned [25:0] mul2;
    
    assign mul1 = w * y;
    assign x_inter = {10'd0,x};
