@@ -157,12 +157,13 @@ case(state)
 	end
 	REST: begin
 		nextstate = ASSIGN;
+		mask = '0;
 	end
 	//REST2: begin
 	//	nextstate = ASSIGN;
 	//end
 	ASSIGN: begin
-		mask = '0;
+		
 		nextstate = SEARCH;
 		inc = 1;
 	end
