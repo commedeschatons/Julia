@@ -1,7 +1,7 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : K-2015.06-SP1
-// Date      : Thu Apr 28 00:10:59 2016
+// Date      : Thu Apr 28 17:01:22 2016
 /////////////////////////////////////////////////////////////
 
 
@@ -324,16 +324,14 @@ module pix_inc ( wr_clk, wr_n_rst, wr_counter_enable, x_max, y_max, wr_clear,
   output [9:0] y_value;
   input wr_clk, wr_n_rst, wr_counter_enable, wr_clear;
   output done;
-  wire   x_flag, y_flag, count_enable, n3;
+  wire   x_flag, y_flag;
 
   flex_x XCNT ( .clk(wr_clk), .n_rst(wr_n_rst), .clear(wr_clear), 
-        .count_enable(count_enable), .rollover_val(x_max), .count_out(x_value), 
-        .rollover_flag(x_flag) );
+        .count_enable(wr_counter_enable), .rollover_val(x_max), .count_out(
+        x_value), .rollover_flag(x_flag) );
   flex_y YCNT ( .clk(wr_clk), .n_rst(wr_n_rst), .clear(wr_clear), 
         .count_enable(x_flag), .rollover_val(y_max), .count_out(y_value), 
         .rollover_flag(y_flag) );
-  INVX1 U5 ( .A(n3), .Y(done) );
-  AND2X1 U6 ( .A(wr_counter_enable), .B(n3), .Y(count_enable) );
-  NAND2X1 U7 ( .A(y_flag), .B(x_flag), .Y(n3) );
+  AND2X1 U2 ( .A(y_flag), .B(x_flag), .Y(done) );
 endmodule
 

@@ -13,17 +13,17 @@ input logic start,
 input logic [15:0] jw_dp_ready,
 
 output logic [15:0] dp_jw_start,
-output reg [15:0] [9:0] x_reg,
-output reg [15:0] [9:0] y_reg
+output reg [9:0] x_reg [0:15],
+output reg [9:0] y_reg [0:15]
 );
 
 typedef enum bit [2:0] {IDLE,SEARCH,REST,REST2,ASSIGN,DONE} stateType;
 stateType state,nextstate;
 
 reg [9:0] x;
-reg [15:0][9:0] x_nxt;
+reg [9:0] x_nxt [0:15];
 reg [9:0] y;
-reg [15:0][9:0] y_nxt;
+reg [9:0] y_nxt [0:15];
 reg [15:0] mask;
 reg inc;
 
@@ -49,9 +49,13 @@ always_ff @ (negedge n_rst, posedge clk)
 	begin
 		if(n_rst == 1'b0) begin
 			state <= IDLE;
-			x_reg <= '0;
-			y_reg <= '0;
+//			x_reg <= '0;
+//			y_reg <= '0;
 			dp_jw_start <= '0;
+		   for(int i = 0; i < 16; i = i + 1) begin
+		      x_reg[i] <= '0;
+		      y_reg[i] <= '0;
+		   end
 		end else begin
 			state <= nextstate;
 			x_reg <= x_nxt;
@@ -65,8 +69,13 @@ begin
 nextstate = state;
 case(state)
 	IDLE: begin
-	x_nxt = '0;
-	y_nxt = '0;
+	   for(int i = 0; i < 16; i = i + 1) begin
+	      x_nxt[i] <= '0;
+	      y_nxt[i] <= '0;
+	   end
+
+//	x_nxt = '0;
+//	y_nxt = '0;
 	mask = '0;
 	if(start==1) 
 		nextstate = SEARCH;
