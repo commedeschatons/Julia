@@ -51,15 +51,14 @@ module tb_pix_inc ();
       .y_value(tb_y),
       .done(tb_done)
       );
-/*
+
   generate
      initial begin
-	for(i = 0; i < 640; i = i + 1) begin
+	for(i = 0; i < 640; i = i+1) begin
 	   tb_n_rst = 0;
 	end
      end
   endgenerate
- */
 /*
    initial begin
       #(CLK_PERIOD/2.0);

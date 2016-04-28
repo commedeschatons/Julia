@@ -14,6 +14,7 @@ module tb_pix_inc ();
    // basic test bench parameters
    localparam CLK_PERIOD = 2.5;
    localparam NUM_CNT_BITS = 10;
+   localparam CHECK_DELAY =1;
 
    // Shared Test Variables
    reg tb_clk;
@@ -51,15 +52,39 @@ module tb_pix_inc ();
       .y_value(tb_y),
       .done(tb_done)
       );
-/*
-  generate
-     initial begin
-	for(i = 0; i < 640; i = i + 1) begin
-	   tb_n_rst = 0;
-	end
-     end
-  endgenerate
- */
+
+   initial begin
+      tb_n_rst =1;
+      @(posedge tb_clk);
+      #(CHECK_DELAY);
+      tb_n_rst =0;
+      @(posedge tb_clk);
+      #(CHECK_DELAY);
+      tb_n_rst =1;      
+      tb_x_max = 10;
+      tb_y_max = 10;
+      tb_counter_enable = 0;
+      @(posedge tb_clk);
+      #(CHECK_DELAY);
+      tb_counter_enable = 1;
+      @(posedge tb_clk);
+      #(CHECK_DELAY);
+      tb_counter_enable = 0;
+      @(posedge tb_clk);
+      #(CHECK_DELAY);
+      
+      tb_clear = 0;
+
+   end
+
+   generate
+      for(i = 0; i < 101; i = i+1) begin      
+	 initial begin
+	    @(posedge tb_clk);
+	    #(CHECK_DELAY);
+	 end
+      end
+   endgenerate
 /*
    initial begin
       #(CLK_PERIOD/2.0);
