@@ -83,6 +83,9 @@ module tb_search ();
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);
+		@(nedgedge clk);
+		reg [NB-1:0] d = 4'b0010; //that shit was freed homy! and it went low
+		
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);

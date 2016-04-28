@@ -48,7 +48,7 @@ NUM_JULIA = 8;
 		end
 		else begin
 			state <= nextstate;
-			release_search <= 0;
+			//release_search <= 0;
 			if (state == ASSERT) begin
 				free_save <= mask; // save DATA immediately!
 				sel_address_save <= sel_address_syn;
@@ -66,7 +66,7 @@ NUM_JULIA = 8;
 		write_address = '0;
 		write_enable = 0;
 		free = '0;
-		release_search = 0;
+	//	release_search = 0;
 		case (state)
 			NEXTDONE: begin
 				if (found)
@@ -80,20 +80,20 @@ NUM_JULIA = 8;
 				write_data = sel_data_save;
 				write_address = sel_address_save;
 				write_enable = 1'b1;
-				release_search = 1;
+			//	release_search = 1;
 			end
 			WRITE: begin
 				nextstate = DEASSERT;
 				write_data = sel_data_save;
 				write_address = sel_address_save
 				write_enable = 1'b1;
-				release_search = 1;
+			//	release_search = 1;
 			end
 			DEASSERT: begin
 				//1clk
 				nextstate = NEXTDONE; 
 				free = free_save;
-				release_search =1;
+				//release_search =1;
 				
 			end
 			
@@ -109,7 +109,7 @@ NUM_JULIA = 8;
 		.catpixels(catpixels),
 		.done(done),
 		.found(found),
-		.release_search(.release_search);
+		//.release_search(.release_search);
 		.sel_data(sel_data_syn),
 		.sel_address(sel_data_syn),
 		.mask(mask)

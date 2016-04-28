@@ -17,7 +17,7 @@ module search
 	input wire [NUM_JULIA*32 -1:0] cataddresses,
 	input wire [NUM_JULIA*32 -1:0] catpixels,
 	input wire [NUM_JULIA -1:0] done,
-	input wire release_search,
+//	input wire release_search,
 	output reg found,
 	output reg [31:0] sel_data,
 	output reg [31:0] sel_address,
