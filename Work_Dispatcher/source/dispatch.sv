@@ -27,9 +27,22 @@ reg [15:0][9:0] y_nxt;
 reg [15:0] mask;
 reg inc;
 
+logic [9:0] xmax = 10'd639;
+logic [9:0] ymax = 10'd479;
+
+reg done;
+
+
 pix_inc XYCNT
 (
-
+.wr_clk(clk),
+.wr_n_rst(n_rst),
+.wr_counter_enable(inc),
+.x_max(xmax),
+.y_max(ymax),
+.x_value(x),
+.y_value(y),
+.done(done)
 );
 
 always_ff @ (negedge n_rst, posedge clk)
