@@ -20,15 +20,15 @@ module tb_dispatch ();
 
 	// Shared Test Variables
 	reg tb_clk;
-	logic tb_n_rst;
-	logic tb_start;
+	logic tb_n_rst = 1;
+	logic tb_start = 0;
 	logic [15:0] tb_jw_dp_ready;
 
 	logic [15:0] tb_dp_jw_start;
 	logic [15:0] [9:0] tb_x_reg;
 	logic [15:0] [9:0] tb_y_reg;
 
-	genvar i;
+	//genvar i;
 
 	// Clock generation block
 	always
@@ -62,28 +62,53 @@ module tb_dispatch ();
       		#(CHECK_DELAY);
       		tb_n_rst =1;      
 		tb_start = 0;
-		tb_jw_dp_ready = 16'b1111111111111111;
+		tb_jw_dp_ready = '1;
 
       		@(posedge tb_clk);
-      		#(CHECK_DELAY);
       		tb_start = 1;
+		@(posedge tb_clk);
+		tb_start = 0;
+		@(posedge tb_clk);
+		//@(posedge tb_clk);
+		#(CHECK_DELAY);
+		if (tb_dp_jw_start[0] == 1) begin
+			$info("start[0] asserted");
+			tb_jw_dp_ready[0] = 0;
+		end
+		
+		@(posedge tb_clk);
+		@(posedge tb_clk);
+      		@(posedge tb_clk);
+		#(CHECK_DELAY);
+		if (tb_dp_jw_start[1] == 1) begin
+			$info("start[1] asserted");
+			tb_jw_dp_ready[1] = 0;
+		end
+		@(posedge tb_clk);
+      		@(posedge tb_clk);
+      		@(posedge tb_clk);
+		#(CHECK_DELAY);
+		if (tb_dp_jw_start[2] == 1) begin
+			$info("start[2] asserted");
+			tb_jw_dp_ready[2] = 0;
+		end
+      		#(CHECK_DELAY);
+		//tb_jw_dp_ready[14] = 1;
+		
 
       		@(posedge tb_clk);
       		#(CHECK_DELAY);
-		tb_jw_dp_ready = 16'b0000000000000000;
-
-      		@(posedge tb_clk);
-      		#(CHECK_DELAY);
-		tb_jw_dp_ready = 16'b0000000000000001;
+		tb_jw_dp_ready[1] = 0;
+		//tb_jw_dp_ready[13] = 1;
 	
    	end
 
-   	generate
+   	/*&generate
    		for(i = 0; i < 101; i = i+1) begin      
 	 		initial begin
 	    			@(posedge tb_clk);
 	    			#(CHECK_DELAY);
 	 		end
    	   	end
-	endgenerate		
+	endgenerate	*/	
 endmodule
