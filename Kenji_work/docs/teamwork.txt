@@ -1,0 +1,23 @@
+Teamwork Report:
+1.
+Alan Moretton: 5/5
+Kenji Inoue: 10/5
+
+2.
+I spoke and worked with Alan Moretton.
+We collaborated when debugging.
+
+3.
+We met twice. Once in office hours, and once in another location.
+
+4.
+We assisted each other with debugging.
+
+5.
+Debugging.
+
+6.
+We used just the provided one.
+
+
+Other people I spoke to briefly include: Ruchit Kank and Anirudh Sivakumar. We unsuccessfully helped each other debug the code.
