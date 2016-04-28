@@ -18,7 +18,7 @@ module tb_julia_worker ();
    reg [9:0] tb_x;
    reg [9:0] tb_y;
    reg 	     tb_JW_start = 0;
-   reg 	     tb_MC_busy;
+   reg 	     tb_MC_done;
    reg 	     tb_JW_ready;
    reg 	     tb_JW_done;
    reg [31:0] tb_color;
@@ -35,7 +35,7 @@ module tb_julia_worker ();
        .x(tb_x),
        .y(tb_y),
        .JW_start(tb_JW_start),
-       .MC_busy(tb_MC_busy),
+       .MC_done(tb_MC_done),
        .JW_ready(tb_JW_ready),
        .JW_done(tb_JW_done),
        .address(tb_address),
@@ -76,7 +76,7 @@ module tb_julia_worker ();
 	tb_x = 0;
 	tb_y = 0;
 
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	tb_n_rst = 0;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -117,7 +117,7 @@ module tb_julia_worker ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
 	$info("MC_busy signaled low");
 
 	@(posedge tb_clk);
@@ -126,7 +126,7 @@ module tb_julia_worker ();
 	testcase = 2;
 	tb_x = 384;
 	tb_y = 264;
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -163,7 +163,7 @@ module tb_julia_worker ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
 	$info("MC_busy signaled low");
 
 	@(posedge tb_clk);
@@ -172,7 +172,7 @@ module tb_julia_worker ();
 	testcase = 3;
 	tb_x = 100;
 	tb_y = 100;
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
@@ -209,13 +209,13 @@ module tb_julia_worker ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
 	$info("MC_busy signaled low");
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 	
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	
      end
 

@@ -12,7 +12,7 @@ module tb_wcu ();
    reg tb_calc_start;
    reg tb_calc_done;
    reg tb_JW_start;
-   reg tb_MC_busy;
+   reg tb_MC_done;
    reg tb_JW_ready;
    reg tb_JW_done;
    reg tb_convert_start;
@@ -27,7 +27,7 @@ module tb_wcu ();
        .calc_start(tb_calc_start),
        .calc_done(tb_calc_done),
        .JW_start(tb_JW_start),
-       .MC_busy(tb_MC_busy),
+       .MC_done(tb_MC_done),
        .JW_ready(tb_JW_ready),
        .JW_done(tb_JW_done),
        .convert_done(tb_convert_done),
@@ -47,7 +47,7 @@ module tb_wcu ();
      begin
 	testcase = 1;
 	tb_JW_start = 0;
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	tb_calc_done = 0;
 
 	tb_n_rst = 0;
@@ -86,10 +86,10 @@ module tb_wcu ();
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
 
-	tb_MC_busy = 0;
+	tb_MC_done = 1;
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-	tb_MC_busy = 1;
+	tb_MC_done = 0;
 	
 	@(posedge tb_clk);
 	#(CHECK_DELAY);

@@ -11,7 +11,7 @@ module wcu
    input      clk,
    input      n_rst,
    input      JW_start,
-   input      MC_busy,
+   input      MC_done,
    input      calc_done,
    input      convert_done,
    output reg convert_start, 
@@ -107,7 +107,7 @@ module wcu
 	   calc_start = 1;
 	   convert_start = 0;	   
 
-	   if(MC_busy == 1'b0) begin
+	   if(MC_done == 1'b1) begin
 	      next_state = ASK_WAIT;
 	   end
 	   else begin

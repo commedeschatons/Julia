@@ -9,8 +9,22 @@
 # //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -Lf /home/ecegrid/a/ece337/Class0.5u/ECE337_IP/vsim -L /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work -L /home/ecegrid/a/ece337/Class0.5u/GOLD_LIB "+no_glitch_msg" -coverage -voptargs="+acc" -i -t ps mapped_work.tb_julia_worker 
-# Start time: 20:48:30 on Apr 27,2016
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 00:48:07 on Apr 28,2016
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: mapped/julia_worker.v(450): (vopt-2685) [TFMPC] - Too few port connections for 'add_35'.  Expected 5, found 4.
+# ** Warning: mapped/julia_worker.v(450): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/julia_worker.v(7706): (vopt-2685) [TFMPC] - Too few port connections for 'add_46'.  Expected 5, found 4.
+# ** Warning: mapped/julia_worker.v(7706): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/julia_worker.v(7708): (vopt-2685) [TFMPC] - Too few port connections for 'add_45'.  Expected 5, found 4.
+# ** Warning: mapped/julia_worker.v(7708): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/julia_worker.v(7709): (vopt-2685) [TFMPC] - Too few port connections for 'sub_0_root_add_44'.  Expected 5, found 4.
+# ** Warning: mapped/julia_worker.v(7709): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/julia_worker.v(7711): (vopt-2685) [TFMPC] - Too few port connections for 'add_1_root_add_44'.  Expected 5, found 4.
+# ** Warning: mapped/julia_worker.v(7711): (vopt-2718) [TFMPC] - Missing connection for port 'CO'.
+# ** Warning: mapped/julia_worker.v(8437): (vopt-2685) [TFMPC] - Too few port connections for 'PIXEL_CALCULATOR'.  Expected 13, found 10.
+# ** Warning: mapped/julia_worker.v(8437): (vopt-2718) [TFMPC] - Missing connection for port 'size_squared_out'.
+# ** Warning: mapped/julia_worker.v(8437): (vopt-2718) [TFMPC] - Missing connection for port 'z_imag_out'.
+# ** Warning: mapped/julia_worker.v(8437): (vopt-2718) [TFMPC] - Missing connection for port 'z_real_out'.
 # Loading sv_std.std
 # Loading work.tb_julia_worker(fast)
 # Loading work.julia_worker(fast)
@@ -41,7 +55,7 @@
 # Loading work.z_calculator_DW01_add_1(fast)
 # Loading work.z_calculator_DW01_sub_0(fast)
 # Loading work.z_calculator_DW01_add_2(fast)
-# Loading work.flex_counter(fast)
+# Loading work.flex_counter_0(fast)
 # Loading work.pixel2color(fast)
 # Loading std.standard
 # Loading std.textio(body)
@@ -53,175 +67,175 @@
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.prim(body)
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.dffsr_core(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.latch(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand2x1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai21x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi21x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.aoi22x1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor3x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nand3x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.mux2x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.fax1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x2(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xor2x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.hax1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx2(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx2(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.oai22x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.xnor2x1(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.nor3x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x2(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.bufx4(behavioral)#1
+# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.and2x1(behavioral)#1
 # Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.or2x1(behavioral)#1
-# Loading /home/ecegrid/a/ece337/Course_Prod/Cell_Libs/AMI_05/vhdl_work.invx4(behavioral)#1
-# ** Warning: (vsim-8822) mapped/julia_worker.v(734): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U91
-# ** Warning: (vsim-8822) mapped/julia_worker.v(735): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U92
 # ** Warning: (vsim-8822) mapped/julia_worker.v(736): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U93
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U91
 # ** Warning: (vsim-8822) mapped/julia_worker.v(737): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U94
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U92
 # ** Warning: (vsim-8822) mapped/julia_worker.v(738): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U95
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U93
 # ** Warning: (vsim-8822) mapped/julia_worker.v(739): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U96
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U94
 # ** Warning: (vsim-8822) mapped/julia_worker.v(740): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U97
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U95
 # ** Warning: (vsim-8822) mapped/julia_worker.v(741): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U98
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U96
 # ** Warning: (vsim-8822) mapped/julia_worker.v(742): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U99
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U97
 # ** Warning: (vsim-8822) mapped/julia_worker.v(743): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U98
+# ** Warning: (vsim-8822) mapped/julia_worker.v(744): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U99
+# ** Warning: (vsim-8822) mapped/julia_worker.v(745): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/REAL2IMAG/Mreal/mult_23/U100
-# ** Warning: (vsim-8822) mapped/julia_worker.v(1683): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U91
-# ** Warning: (vsim-8822) mapped/julia_worker.v(1684): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U92
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1685): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U93
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U91
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1686): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U94
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U92
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1687): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U95
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U93
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1688): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U96
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U94
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1689): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U97
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U95
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1690): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U98
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U96
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1691): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
-#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U99
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U97
 # ** Warning: (vsim-8822) mapped/julia_worker.v(1692): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U98
+# ** Warning: (vsim-8822) mapped/julia_worker.v(1693): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+#         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U99
+# ** Warning: (vsim-8822) mapped/julia_worker.v(1694): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/REAL2IMAG/Mimag/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(125): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2793): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U91
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(126): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2794): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U92
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(127): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2795): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U93
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(128): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2796): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U94
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(129): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2797): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U95
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(130): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2798): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U96
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(131): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2799): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U97
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(132): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2800): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U98
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(133): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2801): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U99
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(134): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(2802): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M1/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1074): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3742): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U91
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1075): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3743): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U92
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1076): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3744): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U93
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1077): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3745): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U94
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1078): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3746): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U95
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1079): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3747): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U96
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1080): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3748): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U97
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1081): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3749): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U98
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1082): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3750): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U99
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(1083): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(3751): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M2/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2023): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4691): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U91
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2024): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4692): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U92
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2025): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4693): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U93
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2026): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4694): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U94
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2027): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4695): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U95
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2028): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4696): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U96
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2029): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4697): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U97
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2030): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4698): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U98
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2031): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4699): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U99
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2032): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(4700): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M3/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2972): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5640): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U91
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2973): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5641): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U92
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2974): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5642): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U93
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2975): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5643): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U94
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2976): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5644): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U95
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2977): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5645): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U96
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2978): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5646): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U97
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2979): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5647): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U98
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2980): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5648): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U99
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(2981): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(5649): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3921): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6589): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U91
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3922): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6590): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U92
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3923): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6591): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U93
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3924): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6592): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U94
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3925): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6593): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U95
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3926): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6594): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U96
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3927): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6595): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U97
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3928): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6596): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U98
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3929): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6597): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U99
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(3930): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(6598): [TFMPC] - Missing Verilog connection for formal VHDL port 'YS'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/M5/mult_23/U100
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4779): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(7449): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/add_46/U1_21
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4827): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(7521): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/add_45/U1_21
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4873): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(7567): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/sub_0_root_add_44/U2_21
-# ** Warning: (vsim-8822) mapped/pixel_calculator.v(4938): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
+# ** Warning: (vsim-8822) mapped/julia_worker.v(7632): [TFMPC] - Missing Verilog connection for formal VHDL port 'YC'.
 #         Region: /tb_julia_worker/DUT/PIXEL_CALCULATOR/Z_CALCULATOR/add_1_root_add_44/U1_21
 add wave *
 run 10000ns
@@ -3951,5 +3965,5 @@ run 10000ns
 #    Time: 4848700 ps  Scope: tb_julia_worker File: source/tb_julia_worker.sv Line: 213
 # Causality operation skipped due to absence of debug database file
 exit
-# End time: 20:54:22 on Apr 27,2016, Elapsed time: 0:05:52
-# Errors: 0, Warnings: 75
+# End time: 00:50:24 on Apr 28,2016, Elapsed time: 0:02:17
+# Errors: 0, Warnings: 89

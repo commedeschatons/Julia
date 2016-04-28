@@ -1,16 +1,16 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys DC Expert(TM) in wire load mode
 // Version   : K-2015.06-SP1
-// Date      : Wed Apr 27 20:11:56 2016
+// Date      : Thu Apr 28 00:47:52 2016
 /////////////////////////////////////////////////////////////
 
 
-module wcu ( clk, n_rst, JW_start, MC_busy, calc_done, convert_done, 
+module wcu ( clk, n_rst, JW_start, MC_done, calc_done, convert_done, 
         convert_start, JW_ready, JW_done, calc_start );
-  input clk, n_rst, JW_start, MC_busy, calc_done, convert_done;
+  input clk, n_rst, JW_start, MC_done, calc_done, convert_done;
   output convert_start, JW_ready, JW_done, calc_start;
-  wire   n24, N33, N34, n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16,
-         n17, n18, n19, n20, n21;
+  wire   N34, N35, n4, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17,
+         n18, n19, n20, n21, n22, n23, n24;
   wire   [2:0] state;
   wire   [2:0] next_state;
 
@@ -20,33 +20,35 @@ module wcu ( clk, n_rst, JW_start, MC_busy, calc_done, convert_done,
         .Q(state[1]) );
   DFFSR \state_reg[2]  ( .D(next_state[2]), .CLK(clk), .R(n_rst), .S(1'b1), 
         .Q(state[2]) );
-  LATCH convert_start_reg ( .CLK(N33), .D(N34), .Q(convert_start) );
-  BUFX4 U6 ( .A(n24), .Y(calc_start) );
-  NAND2X1 U7 ( .A(n5), .B(n6), .Y(next_state[2]) );
-  AOI21X1 U8 ( .A(MC_busy), .B(JW_done), .C(n7), .Y(n5) );
-  OAI21X1 U9 ( .A(n8), .B(n9), .C(n10), .Y(next_state[1]) );
-  NOR2X1 U10 ( .A(N34), .B(n7), .Y(n10) );
-  NAND2X1 U11 ( .A(n11), .B(n12), .Y(next_state[0]) );
-  AOI21X1 U12 ( .A(convert_done), .B(n13), .C(n14), .Y(n12) );
-  OAI21X1 U13 ( .A(state[1]), .B(n15), .C(n16), .Y(n14) );
-  AOI21X1 U14 ( .A(calc_done), .B(n17), .C(n13), .Y(n15) );
-  AOI22X1 U15 ( .A(JW_ready), .B(n9), .C(state[0]), .D(n7), .Y(n11) );
-  INVX1 U16 ( .A(JW_start), .Y(n9) );
-  INVX1 U17 ( .A(n16), .Y(JW_done) );
-  AND2X1 U18 ( .A(n13), .B(state[1]), .Y(N34) );
-  INVX1 U19 ( .A(n7), .Y(N33) );
-  NOR3X1 U20 ( .A(n13), .B(calc_start), .C(JW_ready), .Y(n7) );
-  INVX1 U21 ( .A(n8), .Y(JW_ready) );
-  NAND3X1 U22 ( .A(n18), .B(n19), .C(state[0]), .Y(n8) );
-  NAND2X1 U23 ( .A(n6), .B(n16), .Y(n24) );
-  NAND3X1 U24 ( .A(state[0]), .B(n18), .C(state[2]), .Y(n16) );
-  MUX2X1 U25 ( .B(n20), .A(n21), .S(n18), .Y(n6) );
-  INVX1 U26 ( .A(state[1]), .Y(n18) );
-  NOR2X1 U27 ( .A(state[0]), .B(n19), .Y(n21) );
-  INVX1 U28 ( .A(state[2]), .Y(n19) );
-  NOR2X1 U29 ( .A(state[2]), .B(n17), .Y(n20) );
-  INVX1 U30 ( .A(state[0]), .Y(n17) );
-  NOR2X1 U31 ( .A(state[0]), .B(state[2]), .Y(n13) );
+  LATCH convert_start_reg ( .CLK(N34), .D(N35), .Q(convert_start) );
+  AND2X2 U6 ( .A(n6), .B(n9), .Y(n4) );
+  INVX4 U7 ( .A(n4), .Y(calc_start) );
+  NAND2X1 U8 ( .A(n6), .B(n7), .Y(next_state[2]) );
+  INVX1 U9 ( .A(n8), .Y(n7) );
+  OAI21X1 U10 ( .A(MC_done), .B(n9), .C(N34), .Y(n8) );
+  OAI21X1 U11 ( .A(n10), .B(n11), .C(n12), .Y(next_state[1]) );
+  NOR2X1 U12 ( .A(N35), .B(n13), .Y(n12) );
+  NAND2X1 U13 ( .A(n14), .B(n15), .Y(next_state[0]) );
+  AOI21X1 U14 ( .A(convert_done), .B(n16), .C(n17), .Y(n15) );
+  OAI21X1 U15 ( .A(state[1]), .B(n18), .C(n9), .Y(n17) );
+  AOI21X1 U16 ( .A(calc_done), .B(n19), .C(n16), .Y(n18) );
+  INVX1 U17 ( .A(n20), .Y(n16) );
+  AOI22X1 U18 ( .A(JW_ready), .B(n11), .C(state[0]), .D(n13), .Y(n14) );
+  INVX1 U19 ( .A(N34), .Y(n13) );
+  INVX1 U20 ( .A(JW_start), .Y(n11) );
+  INVX1 U21 ( .A(n10), .Y(JW_ready) );
+  INVX1 U22 ( .A(n9), .Y(JW_done) );
+  NOR2X1 U23 ( .A(n20), .B(n21), .Y(N35) );
+  NAND3X1 U24 ( .A(n20), .B(n4), .C(n10), .Y(N34) );
+  NAND3X1 U25 ( .A(n21), .B(n22), .C(state[0]), .Y(n10) );
+  NAND3X1 U26 ( .A(state[0]), .B(n21), .C(state[2]), .Y(n9) );
+  INVX1 U27 ( .A(state[1]), .Y(n21) );
+  MUX2X1 U28 ( .B(n23), .A(n24), .S(state[1]), .Y(n6) );
+  NOR2X1 U29 ( .A(state[2]), .B(n19), .Y(n24) );
+  NOR2X1 U30 ( .A(state[0]), .B(n22), .Y(n23) );
+  NAND2X1 U31 ( .A(n19), .B(n22), .Y(n20) );
+  INVX1 U32 ( .A(state[2]), .Y(n22) );
+  INVX1 U33 ( .A(state[0]), .Y(n19) );
 endmodule
 
 
@@ -5432,13 +5434,13 @@ module fixed_multiplication_2_DW_mult_tc_1 ( a, b, product );
   BUFX2 U868 ( .A(n1007), .Y(n4) );
   BUFX2 U869 ( .A(n997), .Y(n5) );
   BUFX2 U870 ( .A(n996), .Y(n11) );
-  BUFX2 U871 ( .A(n994), .Y(n23) );
-  BUFX2 U872 ( .A(n993), .Y(n29) );
-  BUFX2 U873 ( .A(n992), .Y(n35) );
-  BUFX2 U874 ( .A(n991), .Y(n41) );
-  BUFX2 U875 ( .A(n990), .Y(n47) );
-  BUFX2 U876 ( .A(n989), .Y(n53) );
-  BUFX2 U877 ( .A(n995), .Y(n17) );
+  BUFX2 U871 ( .A(n995), .Y(n17) );
+  BUFX2 U872 ( .A(n994), .Y(n23) );
+  BUFX2 U873 ( .A(n993), .Y(n29) );
+  BUFX2 U874 ( .A(n992), .Y(n35) );
+  BUFX2 U875 ( .A(n991), .Y(n41) );
+  BUFX2 U876 ( .A(n990), .Y(n47) );
+  BUFX2 U877 ( .A(n989), .Y(n53) );
   BUFX2 U878 ( .A(n988), .Y(n59) );
   BUFX2 U879 ( .A(n66), .Y(n65) );
   BUFX2 U880 ( .A(n1007), .Y(n3) );
@@ -7332,10 +7334,10 @@ module fixed_multiplication_0_DW_mult_tc_1 ( a, b, product );
   BUFX2 U870 ( .A(n993), .Y(n29) );
   BUFX2 U871 ( .A(n992), .Y(n35) );
   BUFX2 U872 ( .A(n991), .Y(n41) );
-  BUFX2 U873 ( .A(n990), .Y(n47) );
-  BUFX2 U874 ( .A(n989), .Y(n53) );
-  BUFX2 U875 ( .A(n988), .Y(n59) );
-  BUFX2 U876 ( .A(n66), .Y(n65) );
+  BUFX2 U873 ( .A(n989), .Y(n53) );
+  BUFX2 U874 ( .A(n988), .Y(n59) );
+  BUFX2 U875 ( .A(n66), .Y(n65) );
+  BUFX2 U876 ( .A(n990), .Y(n47) );
   BUFX2 U877 ( .A(n991), .Y(n42) );
   BUFX2 U878 ( .A(n1001), .Y(n40) );
   BUFX2 U879 ( .A(n990), .Y(n48) );
@@ -8393,7 +8395,7 @@ module pixel2color ( pixel, color );
 endmodule
 
 
-module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, c_real_in, 
+module julia_worker ( clk, n_rst, x, y, JW_start, MC_done, c_real_in, 
         c_imag_in, JW_ready, JW_done, color, address );
   input [9:0] x;
   input [9:0] y;
@@ -8401,7 +8403,7 @@ module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, c_real_in,
   input [21:0] c_imag_in;
   output [31:0] color;
   output [31:0] address;
-  input clk, n_rst, JW_start, MC_busy;
+  input clk, n_rst, JW_start, MC_done;
   output JW_ready, JW_done;
   wire   calc_start, calc_done, convert_start, convert_done;
   wire   [21:0] z_real_in;
@@ -8420,7 +8422,7 @@ module julia_worker ( clk, n_rst, x, y, JW_start, MC_busy, c_real_in,
   assign color[25] = 1'b0;
   assign color[24] = 1'b0;
 
-  wcu WCU ( .clk(clk), .n_rst(n_rst), .JW_start(JW_start), .MC_busy(MC_busy), 
+  wcu WCU ( .clk(clk), .n_rst(n_rst), .JW_start(JW_start), .MC_done(MC_done), 
         .calc_done(calc_done), .convert_done(convert_done), .convert_start(
         convert_start), .JW_ready(JW_ready), .JW_done(JW_done), .calc_start(
         calc_start) );

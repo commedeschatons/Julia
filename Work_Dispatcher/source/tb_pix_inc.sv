@@ -55,26 +55,17 @@ module tb_pix_inc ();
 
    initial begin
       tb_n_rst =1;
+      tb_x_max = 10;
+      tb_y_max = 10;
+      tb_counter_enable = 1;
+      tb_clear = 0;
+
       @(posedge tb_clk);
       #(CHECK_DELAY);
       tb_n_rst =0;
       @(posedge tb_clk);
       #(CHECK_DELAY);
       tb_n_rst =1;      
-      tb_x_max = 10;
-      tb_y_max = 10;
-      tb_counter_enable = 0;
-      @(posedge tb_clk);
-      #(CHECK_DELAY);
-      tb_counter_enable = 1;
-      @(posedge tb_clk);
-      #(CHECK_DELAY);
-      tb_counter_enable = 0;
-      @(posedge tb_clk);
-      #(CHECK_DELAY);
-      
-      tb_clear = 0;
-
    end
 
    generate

@@ -7,7 +7,7 @@ Report : timing
         -max_paths 1
 Design : julia_worker
 Version: K-2015.06-SP1
-Date   : Wed Apr 27 20:11:55 2016
+Date   : Thu Apr 28 00:47:51 2016
 ****************************************
 
 Operating Conditions: typical   Library: osu05_stdcells
@@ -122,7 +122,7 @@ Wire Load Model Mode: top
   PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U802/Y (INVX2)
                                                           0.26      19.32 r
   PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U354/Y (OR2X2)
-                                                          0.30      19.63 r
+                                                          0.30      19.62 r
   PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U322/Y (OAI22X1)
                                                           0.13      19.75 f
   PIXEL_CALCULATOR/Z_CALCULATOR/M4/mult_23/U219/YS (HAX1)
@@ -209,7 +209,7 @@ Wire Load Model Mode: top
 Report : area
 Design : julia_worker
 Version: K-2015.06-SP1
-Date   : Wed Apr 27 20:11:55 2016
+Date   : Thu Apr 28 00:47:51 2016
 ****************************************
 
 Library(s) Used:
@@ -217,21 +217,21 @@ Library(s) Used:
     osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
 
 Number of ports:                         2228
-Number of nets:                         10524
-Number of cells:                         7061
-Number of combinational cells:           6875
+Number of nets:                         10526
+Number of cells:                         7063
+Number of combinational cells:           6877
 Number of sequential cells:               157
 Number of macros/black boxes:               0
-Number of buf/inv:                       1008
+Number of buf/inv:                       1010
 Number of references:                       5
 
-Combinational area:            3629151.000000
-Buf/Inv area:                   189360.000000
+Combinational area:            3629034.000000
+Buf/Inv area:                   189576.000000
 Noncombinational area:          106128.000000
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (No wire load specified)
 
-Total cell area:               3735279.000000
+Total cell area:               3735162.000000
 Total area:                 undefined
 1
 Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
@@ -246,7 +246,7 @@ Report : power
         -analysis_effort low
 Design : julia_worker
 Version: K-2015.06-SP1
-Date   : Wed Apr 27 20:11:56 2016
+Date   : Thu Apr 28 00:47:52 2016
 ****************************************
 
 
@@ -272,7 +272,7 @@ Power-specific unit information :
                                        Switch   Int      Leak     Total
 Hierarchy                              Power    Power    Power    Power    %
 --------------------------------------------------------------------------------
-julia_worker                            139.754  159.140 1.23e+03  298.896 100.0
+julia_worker                            139.752  159.135 1.23e+03  298.888 100.0
   PIXEL2COLOR (pixel2color)               0.000    0.000    3.998 4.00e-06   0.0
   PIXEL_CALCULATOR (pixel_calculator)  2.54e-02    6.115  838.363    6.141   2.1
     FLEX_COUNTER (flex_counter_0)         0.000    0.512    6.086    0.512   0.2
@@ -312,5 +312,5 @@ julia_worker                            139.754  159.140 1.23e+03  298.896 100.0
                                          50.089   33.906   43.725   83.995  28.1
     add_35 (addr_calculator_DW01_add_0)
                                           0.000    7.712   11.073    7.712   2.6
-  WCU (wcu)                               0.390    0.736    3.430    1.126   0.4
+  WCU (wcu)                               0.387    0.731    3.387    1.118   0.4
 1
