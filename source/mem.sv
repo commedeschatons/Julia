@@ -6,7 +6,7 @@ When bae tells you to write the mem ctlr
 
 module mem
 #(
-NUM_JULIA = 8;
+NUM_JULIA = 8
 )
 (
 	input wire clk,
@@ -20,7 +20,7 @@ NUM_JULIA = 8;
 	output reg [31:0] write_data,
 	output reg write_enable
 	
-)
+);
 
 
 //internal stuff
@@ -29,7 +29,7 @@ NUM_JULIA = 8;
 	reg [31:0] sel_address_syn;
 	reg [31:0] sel_data_syn;
 	reg found;
-	reg release_search;
+	//reg release_search;
 	typedef enum 	    bit [3:0] {NEXTDONE, ASSERT, WRITE, DEASSERT} stateType;
 	stateType state;
 	stateType nextstate;
@@ -41,7 +41,7 @@ NUM_JULIA = 8;
 		if (n_rst ==0) begin
 
 			state <= NEXTDONE;
-			free <= '0;
+		free_save <= mask;
 			sel_address_save <='0;
 			sel_data_save <= '0;
 			
@@ -80,19 +80,20 @@ NUM_JULIA = 8;
 				write_data = sel_data_save;
 				write_address = sel_address_save;
 				write_enable = 1'b1;
+				free = free_save;
 			//	release_search = 1;
 			end
 			WRITE: begin
 				nextstate = DEASSERT;
 				write_data = sel_data_save;
-				write_address = sel_address_save
+				write_address = sel_address_save;
 				write_enable = 1'b1;
 			//	release_search = 1;
 			end
 			DEASSERT: begin
 				//1clk
 				nextstate = NEXTDONE; 
-				free = free_save;
+				
 				//release_search =1;
 				
 			end
