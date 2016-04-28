@@ -25,7 +25,7 @@ module tb_mem ();
 	//reg found;
 	//reg [31:0] sas;
 	//reg [31:0] sds;
-	reg free;
+	reg [NB-1:0]free;
 	reg [31:0] wa;
 	reg [31:0] wd;
 	reg we;
@@ -92,13 +92,13 @@ module tb_mem ();
 		@(posedge clk);
 		@(posedge clk);
 		@(negedge clk);
-		d[NB-1:0] = 4'b1001; //that shit was freed homy! and it went low
+		d[NB-1:0] = 4'b0001; //that shit was freed homy! and it went low
 		
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);
 		@(negedge clk);
-		wr=1;
+
 		@(posedge clk);
 		@(posedge clk);
 		@(posedge clk);
