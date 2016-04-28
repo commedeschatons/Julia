@@ -122,14 +122,56 @@ module tb_julia_worker ();
 
 	@(posedge tb_clk);
 	#(CHECK_DELAY);
-	@(posedge tb_clk);
-	#(CHECK_DELAY);
-	@(posedge tb_clk);
-	#(CHECK_DELAY);
 
 	testcase = 2;
 	tb_x = 384;
 	tb_y = 264;
+	tb_MC_busy = 1;
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+	
+	forever begin
+	   if(tb_JW_ready == 1) begin
+	      $info("JW_ready signal received");
+	      break;
+	   end
+	end
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_JW_start = 1;
+	$info("JW_start signaled high");	
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_JW_start = 0;
+
+	forever begin
+	   if(tb_JW_done == 1)begin
+	      $info("JW_done signal received");
+	      break;
+	   end else begin
+	      $info("JW_done signal not received");	      
+	      @(posedge tb_clk);
+	      #(CHECK_DELAY);
+	   end
+	end
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	tb_MC_busy = 0;
+	$info("MC_busy signaled low");
+
+	@(posedge tb_clk);
+	#(CHECK_DELAY);
+
+	testcase = 3;
+	tb_x = 100;
+	tb_y = 100;
 	tb_MC_busy = 1;
 
 	@(posedge tb_clk);

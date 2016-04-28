@@ -23,16 +23,16 @@ dc_shell-t -x "source -echo do_mapping.tcl"
 Initializing...
 Initializing gui preferences from file  /home/ecegrid/a/mg122/.synopsys_dv_prefs.tcl
 # Step 1:  Read in the source file
-analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv addr_calculator.sv real2imag.sv wcu.sv pixel_calculator.sv julia_worker.sv}
+analyze -format sverilog -lib WORK {pixel2color.sv z_calculator.sv fixed_multiplication.sv flex_counter.sv real2imag.sv wcu.sv pixel_calculator.sv addr_calculator.sv julia_worker.sv}
 Running PRESTO HDLC
 Compiling source file ./source/pixel2color.sv
 Compiling source file ./source/z_calculator.sv
 Compiling source file ./source/fixed_multiplication.sv
 Compiling source file ./source/flex_counter.sv
-Compiling source file ./source/addr_calculator.sv
 Compiling source file ./source/real2imag.sv
 Compiling source file ./source/wcu.sv
 Compiling source file ./source/pixel_calculator.sv
+Compiling source file ./source/addr_calculator.sv
 Compiling source file ./source/julia_worker.sv
 Presto compilation completed successfully.
 Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
@@ -147,7 +147,7 @@ Information: Evaluating DesignWare library utilization. (UISN-27)
 ============================================================================
 
 
-Information: There are 311 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+Information: There are 313 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
 
 
 
@@ -229,21 +229,21 @@ Information: Added key list 'DesignWare' to design 'addr_calculator'. (DDB-72)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:08 4132071.0      0.00       0.0       5.3                          
-    0:00:08 4132071.0      0.00       0.0       5.3                          
-    0:00:08 4132071.0      0.00       0.0       5.3                          
-    0:00:08 4132071.0      0.00       0.0       5.3                          
-    0:00:08 4132071.0      0.00       0.0       5.3                          
-    0:00:08 3682359.0      0.00       0.0       4.5                          
-    0:00:08 3682359.0      0.00       0.0       4.5                          
-    0:00:08 3682359.0      0.00       0.0       4.5                          
-    0:00:08 3682359.0      0.00       0.0       4.5                          
-    0:00:08 3682359.0      0.00       0.0       4.5                          
-    0:00:08 3682935.0      0.00       0.0       2.5                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
+    0:00:08 4188951.0      0.00       0.0       5.3                          
+    0:00:08 4188951.0      0.00       0.0       5.3                          
+    0:00:08 4188951.0      0.00       0.0       5.3                          
+    0:00:08 4188951.0      0.00       0.0       5.3                          
+    0:00:08 4188951.0      0.00       0.0       5.3                          
+    0:00:08 3735063.0      0.00       0.0       4.5                          
+    0:00:08 3735063.0      0.00       0.0       4.5                          
+    0:00:08 3735063.0      0.00       0.0       4.5                          
+    0:00:08 3735063.0      0.00       0.0       4.5                          
+    0:00:08 3735063.0      0.00       0.0       4.5                          
+    0:00:08 3735639.0      0.00       0.0       2.5                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
 
 
 
@@ -254,9 +254,9 @@ Information: Added key list 'DesignWare' to design 'addr_calculator'. (DDB-72)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -266,18 +266,18 @@ Information: Added key list 'DesignWare' to design 'addr_calculator'. (DDB-72)
    ELAPSED            WORST NEG   SETUP    DESIGN                            
     TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3683367.0      0.00       0.0       0.0                          
-    0:00:08 3682575.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
-    0:00:08 3682431.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:08 3736071.0      0.00       0.0       0.0                          
+    0:00:09 3735351.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
+    0:00:09 3735279.0      0.00       0.0       0.0                          
 Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
 
 
@@ -316,14 +316,14 @@ check_design
 ****************************************
 check_design summary:
 Version:     K-2015.06-SP1
-Date:        Wed Apr 27 18:40:08 2016
+Date:        Wed Apr 27 20:11:56 2016
 ****************************************
 
                    Name                                            Total
 --------------------------------------------------------------------------------
-Inputs/Outputs                                                    221
+Inputs/Outputs                                                    219
     Undriven outputs (LINT-5)                                      12
-    Unconnected ports (LINT-28)                                   173
+    Unconnected ports (LINT-28)                                   171
     Feedthrough (LINT-29)                                           1
     Shorted outputs (LINT-31)                                      19
     Constant outputs (LINT-52)                                     16
@@ -375,8 +375,6 @@ Warning: In design 'addr_calculator_DW01_add_0', port 'A[29]' is not connected t
 Warning: In design 'addr_calculator_DW01_add_0', port 'A[28]' is not connected to any nets. (LINT-28)
 Warning: In design 'addr_calculator_DW01_add_0', port 'A[27]' is not connected to any nets. (LINT-28)
 Warning: In design 'addr_calculator_DW01_add_0', port 'A[26]' is not connected to any nets. (LINT-28)
-Warning: In design 'addr_calculator_DW01_add_0', port 'A[25]' is not connected to any nets. (LINT-28)
-Warning: In design 'addr_calculator_DW01_add_0', port 'A[24]' is not connected to any nets. (LINT-28)
 Warning: In design 'addr_calculator_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
 Warning: In design 'addr_calculator_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
 Warning: In design 'fixed_multiplication_6_DW_mult_tc_1', port 'product[43]' is not connected to any nets. (LINT-28)
@@ -554,7 +552,11 @@ Warning: In design 'pixel2color', output port 'color[6]' is connected directly t
 Warning: In design 'pixel2color', output port 'color[5]' is connected directly to output port 'color[1]'. (LINT-31)
 Warning: In design 'pixel2color', output port 'color[4]' is connected directly to output port 'color[0]'. (LINT-31)
 Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'pixel_size[3]' is connected to logic 1. 
+   Pin 'pixel_size[5]' is connected to logic 1. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[4]' is connected to logic 0. 
+Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'pixel_size[3]' is connected to logic 0. 
 Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'pixel_size[2]' is connected to logic 0. 
 Warning: In design 'julia_worker', a pin on submodule 'ADDR_CALCULATOR' is connected to logic 1 or logic 0. (LINT-32)
@@ -653,10 +655,6 @@ Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected t
    Pin 'A[27]' is connected to logic 0. 
 Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'A[26]' is connected to logic 0. 
-Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'A[25]' is connected to logic 0. 
-Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
-   Pin 'A[24]' is connected to logic 0. 
 Warning: In design 'addr_calculator', a pin on submodule 'add_35' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'CI' is connected to logic 0. 
 Warning: In design 'real2imag', a pin on submodule 'Mreal' is connected to logic 1 or logic 0. (LINT-32)
@@ -824,13 +822,13 @@ Warning: In design 'z_calculator', a pin on submodule 'sub_0_root_add_44' is con
 Warning: In design 'z_calculator', a pin on submodule 'add_1_root_add_44' is connected to logic 1 or logic 0. (LINT-32)
    Pin 'CI' is connected to logic 0. 
 Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'ADDR_CALCULATOR'. (LINT-33)
-   Net '*Logic1*' is connected to pins 'pixel_size[3]', 'offset[27]''.
+   Net '*Logic1*' is connected to pins 'pixel_size[5]', 'offset[27]''.
 Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'ADDR_CALCULATOR'. (LINT-33)
-   Net '*Logic0*' is connected to pins 'pixel_size[2]', 'pixel_size[1]'', 'pixel_size[0]', 'offset[31]', 'offset[30]', 'offset[29]', 'offset[28]', 'offset[26]', 'offset[25]', 'offset[24]', 'offset[23]', 'offset[22]', 'offset[21]', 'offset[20]', 'offset[19]', 'offset[18]', 'offset[17]', 'offset[16]', 'offset[15]', 'offset[14]', 'offset[13]', 'offset[12]', 'offset[11]', 'offset[10]', 'offset[9]', 'offset[8]', 'offset[7]', 'offset[6]', 'offset[5]', 'offset[4]', 'offset[3]', 'offset[2]', 'offset[1]', 'offset[0]'.
+   Net '*Logic0*' is connected to pins 'pixel_size[4]', 'pixel_size[3]'', 'pixel_size[2]', 'pixel_size[1]', 'pixel_size[0]', 'offset[31]', 'offset[30]', 'offset[29]', 'offset[28]', 'offset[26]', 'offset[25]', 'offset[24]', 'offset[23]', 'offset[22]', 'offset[21]', 'offset[20]', 'offset[19]', 'offset[18]', 'offset[17]', 'offset[16]', 'offset[15]', 'offset[14]', 'offset[13]', 'offset[12]', 'offset[11]', 'offset[10]', 'offset[9]', 'offset[8]', 'offset[7]', 'offset[6]', 'offset[5]', 'offset[4]', 'offset[3]', 'offset[2]', 'offset[1]', 'offset[0]'.
 Warning: In design 'julia_worker', the same net is connected to more than one pin on submodule 'PIXEL_CALCULATOR'. (LINT-33)
    Net '*Logic0*' is connected to pins 'iteration_in[7]', 'iteration_in[6]'', 'iteration_in[5]', 'iteration_in[4]', 'iteration_in[3]', 'iteration_in[2]', 'iteration_in[1]', 'iteration_in[0]'.
 Warning: In design 'addr_calculator', the same net is connected to more than one pin on submodule 'add_35'. (LINT-33)
-   Net 'n4' is connected to pins 'A[31]', 'A[30]'', 'A[29]', 'A[28]', 'A[27]', 'A[26]', 'A[25]', 'A[24]', 'CI'.
+   Net 'n4' is connected to pins 'A[31]', 'A[30]'', 'A[29]', 'A[28]', 'A[27]', 'A[26]', 'CI'.
 Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
    Net '*Logic0*' is connected to pins 'a[21]', 'a[20]'', 'a[19]', 'a[18]', 'a[17]', 'a[16]', 'a[15]', 'a[14]', 'a[13]', 'a[12]', 'a[11]', 'a[10]', 'a[9]', 'a[8]', 'a[7]', 'a[6]', 'a[5]', 'a[4]', 'a[3]', 'b[21]', 'b[10]', 'b[9]', 'b[8]', 'b[7]', 'b[6]', 'b[5]', 'b[4]', 'b[3]', 'b[2]', 'b[1]', 'b[0]'.
 Warning: In design 'real2imag', the same net is connected to more than one pin on submodule 'Mreal'. (LINT-33)
