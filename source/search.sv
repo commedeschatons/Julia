@@ -8,7 +8,7 @@
 
 module search
 #(
-	NUM_JULIA = 8
+	NUM_JULIA = 4
 )
 (
 	
@@ -33,9 +33,9 @@ module search
 	//search state logic bloc
 	
 	
-	mask_gen #(NUM_JULIA) mg (
+	mask_gen  mg (
 		.clk(clk),
-		.shift_enable(shift_enable | release_search),
+		.shift_enable(shift_enable),
 		.n_rst(n_rst), 
 		.mask(mask)
 	);
