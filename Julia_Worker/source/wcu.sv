@@ -40,6 +40,7 @@ module wcu
       JW_ready = 0;
       JW_done = 0;
       calc_start = 0;
+      convert_start = 0;
 
       case(state)
 	IDLE: begin
