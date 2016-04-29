@@ -14,14 +14,15 @@ module tb_julia_wrapper();
 
    reg tb_clk;
    logic tb_n_rst;
+
    logic tb_start_sig;
-   logic tb_wr_done;
+   logic tb_wait_request;
    logic signed [21:0] tb_a;
    logic signed [21:0] tb_b;
+
    logic [31:0] tb_wr_addr;
    logic [31:0] tb_wr_data;
-   logic 	tb_wr_ready;
-   
+   logic 	tb_wr_enable;
 
    // Clock generation block
    always
@@ -37,30 +38,36 @@ julia_wrapper JULIA_WRAPPER
    .clk(tb_clk),
    .n_rst(tb_n_rst),
    .start_sig(tb_start_sig),
-   .wr_done(tb_wr_done),
+   .wait_request(tb_wait_request),
    .a(tb_a),
    .b(tb_b),
    .wr_addr(tb_wr_addr),
    .wr_data(tb_wr_data),
-   .wr_ready(tb_wr_ready)
+   .wr_enable(tb_wr_enable)
    );
 
    initial begin
-      tb_a = 22'd512;
-      tb_b = 22'd512;
+      tb_a = 22'd548;
+      tb_b = 22'd22;
+      tb_wait_request = 1;
+      
       tb_n_rst = 1;
       @(posedge tb_clk);
       #(CHECK_DELAY);
       tb_n_rst =0;
       @(posedge tb_clk);
-
       tb_n_rst =1;      
       #(CHECK_DELAY);
+
       tb_start_sig = 1;
 
       @(posedge tb_clk);
       #(CHECK_DELAY);
       tb_start_sig = 0;
+
+      #(CLK_PERIOD * 25);
+      tb_wait_request = 0;
+      
    end
 
 endmodule

@@ -74,21 +74,21 @@ assign b = {csr_registers[2][10:0],csr_registers[3][10:0]};
 
 logic wr_done;
 logic [31:0] wr_addr;
-logic [31:0] wr_data;
+logic [31:0] data;
 logic wr_ready;
 
 julia_wrapper JULIA(
 .clk(clk),
-.n_rst(clk),
+.n_rst(reset_n),
 
 .start_sig(start_sig),
-.wr_done,
+.wait_request(master_waitrequest),
 .a(a),
 .b(b),
 
-wr_addr(wr_addr),
-wr_data(wr_data),
-wr_ready(wr_ready),
+.wr_addr(master_address),
+.wr_data(master_writedata),
+.wr_enable(master_write)
 );
 
 
@@ -122,8 +122,7 @@ end
 
 //start_signal
 always_ff @ (negedge clk,negedge reset_n) begin
-	arg_count <= arg_count;
-	start_sig <= '0;
+
 	
 	if(!reset_n) begin
 		start_sig <= 0;
@@ -135,6 +134,9 @@ always_ff @ (negedge clk,negedge reset_n) begin
 			start_sig <= 1;
 			arg_count <= '0;
 		end
+	end else begin
+		arg_count <= arg_count;
+		start_sig <= '0;
 	end
 end
 
@@ -160,6 +162,8 @@ always_ff @ ( posedge clk ) begin
 	end
 end
 
+
+/*
 //Next State Logic 
 always_comb begin 
 	nextState = state;
@@ -192,7 +196,7 @@ always_comb begin
 		
 	endcase
 end
-
+*/
 /*
 // Master Side
 always_ff @ ( posedge clk ) begin 

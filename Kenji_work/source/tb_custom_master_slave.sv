@@ -56,7 +56,7 @@ module tb_custom_master_slave ();
 		@(negedge tb_clk);
 		tb_slave_chipselect = 1;
 		tb_slave_address = 0;
-		tb_slave_data = 32'hDEADBEEF;
+		tb_slave_data = 32'h0;//write reg 1
 		@(negedge tb_clk);
 		@(negedge tb_clk);
 		@(negedge tb_clk);
@@ -64,19 +64,19 @@ module tb_custom_master_slave ();
 		
 		@(negedge tb_clk);
 		tb_slave_write = 0;
-		tb_slave_data = 32'hBAADBEEF;
+		tb_slave_data = 32'd584;//write reg 2
 		tb_slave_address = 3'd1;
 		@(negedge tb_clk);
 		tb_slave_write = 1;
 		@(negedge tb_clk);
 		tb_slave_write = 0;
-		tb_slave_data = 32'hCA11AB1E;
+		tb_slave_data = 32'h0;//write reg 3
 		tb_slave_address = 3'd2;
 		@(negedge tb_clk);
 		tb_slave_write = 1;
 		@(negedge tb_clk);
 		tb_slave_write = 0;
-		tb_slave_data = 32'hF01DAB1E;
+		tb_slave_data = 32'd22;//write reg 4
 		tb_slave_address = 3'd3;
 		@(negedge tb_clk);
 		@(negedge tb_clk);

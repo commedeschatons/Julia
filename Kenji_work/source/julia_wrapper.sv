@@ -6,27 +6,25 @@
 // Version:     1.0  Initial Design Entry
 // Description: wrapper file for all custom module parts.
 module julia_wrapper
-(
-input wire clk,
-input wire n_rst,
+  (
+   input wire 		     clk,
+   input wire 		     n_rst,
 
-input logic start_sig,
-input logic wr_done,
-input logic signed [21:0] a,
-input logic signed [21:0] b,
+   input logic 		     start_sig,
+   input logic 		     wait_request,
+   input logic signed [21:0] a,
+   input logic signed [21:0] b,
 
-output logic [31:0] wr_addr,
-output logic [31:0] wr_data,
-output logic wr_ready,
-output logic [31:0] addr_reg_out [15:0]
-);
+   output logic [31:0] 	     wr_addr,
+   output logic [31:0] 	     wr_data,
+   output logic 	     wr_enable
 
+   );
 
 logic [15:0] dp_jw_start;  	//dispatcher->julia worker start
 logic [15:0] jw_dp_ready;	//julia worker->dispatcher ready
 	
 logic [15:0] jw_mc_done;	//julia worker->memory controller done
-logic [15:0] mc_jw_busy;	//memory controller->julia worker busy
 logic [15:0] mc_jw_done;	//memory controller->julia worker done
 
 //register to keep x and y values to
@@ -34,9 +32,29 @@ logic [9:0] x_reg [15:0];
 logic [9:0] y_reg [15:0];
 logic [31:0] color_reg [15:0];
 logic [31:0] addr_reg [15:0];
+logic [16*32 - 1:0] addr_1D;
+logic [16*32 - 1:0] color_1D;
 
-assign addr_reg_out = addr_reg;
+//assign addr_reg_out = addr_reg;
+//assign jwmcdone = jw_mc_done;
 //always @(posedge disp_jw_start)
+
+   assign addr_1D = {addr_reg[15] ,addr_reg[14],addr_reg[13],addr_reg[12],addr_reg[11],addr_reg[10],addr_reg[9],addr_reg[8],addr_reg[7],addr_reg[6],addr_reg[5],addr_reg[4],addr_reg[3],addr_reg[2],addr_reg[1],addr_reg[0]};
+   assign color_1D = {color_reg[15] ,color_reg[14],color_reg[13],color_reg[12],color_reg[11],color_reg[10],color_reg[9],color_reg[8],color_reg[7],color_reg[6],color_reg[5],color_reg[4],color_reg[3],color_reg[2],color_reg[1],color_reg[0]};   
+   
+   mem MEM
+     (
+      .clk(clk),
+      .n_rst(n_rst),
+      .wait_request(wait_request),//input
+      .cataddresses(addr_1D),
+      .catpixels(color_1D),
+      .done(jw_mc_done),
+      .free(mc_jw_done),
+      .write_address(wr_addr),
+      .write_data(wr_data),
+      .write_enable(wr_enable)
+      );
 
    dispatch DISPATCH
      (
