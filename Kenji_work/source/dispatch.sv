@@ -13,33 +13,35 @@ input logic start,
 input logic [15:0] jw_dp_ready,
 
 output logic [15:0] dp_jw_start,
-output reg [9:0] x_reg [0:15],
-output reg [9:0] y_reg [0:15]
+output reg [9:0] x_reg [15:0],
+output reg [9:0] y_reg [15:0],
+output logic incr
 );
 
-typedef enum bit [2:0] {IDLE,SEARCH,REST,REST2,ASSIGN,DONE} stateType;
+typedef enum bit [2:0] {IDLE,SEARCH,REST,ASSIGN,DONE} stateType;
 stateType state,nextstate;
 
 reg [9:0] x;
-reg [9:0] x_nxt [0:15];
+reg [9:0] x_nxt [15:0];
 reg [9:0] y;
-reg [9:0] y_nxt [0:15];
+reg [9:0] y_nxt [15:0];
 reg [15:0] mask;
-reg inc;
+logic inc;
 
-logic [9:0] xmax = 10'd639;
-logic [9:0] ymax = 10'd479;
+//logic [9:0] xmax = 10'd639;
+//logic [9:0] ymax = 10'd479;
 
 reg done;
-
+assign incr = inc;
+logic nxt_inc;
 
 pix_inc XYCNT
 (
 .wr_clk(clk),
 .wr_n_rst(n_rst),
 .wr_counter_enable(inc),
-.x_max(xmax),
-.y_max(ymax),
+.x_max(10'd639),
+.y_max(10'd479),
 .x_value(x),
 .y_value(y),
 .done(done)
@@ -49,40 +51,43 @@ always_ff @ (negedge n_rst, posedge clk)
 	begin
 		if(n_rst == 1'b0) begin
 			state <= IDLE;
-//			x_reg <= '0;
-//			y_reg <= '0;
 			dp_jw_start <= '0;
-		   for(int i = 0; i < 16; i = i + 1) begin
-		      x_reg[i] <= '0;
-		      y_reg[i] <= '0;
-		   end
+			inc<=0;
+
 		end else begin
 			state <= nextstate;
 			x_reg <= x_nxt;
 			y_reg <= y_nxt;
 			dp_jw_start <= mask;
+			inc<=nxt_inc;
 		end
 	end
 
 always_comb
 begin
 nextstate = state;
+x_nxt = x_reg;
+y_nxt = y_reg;
+nxt_inc = 0;
+mask = '0;
 case(state)
+
 	IDLE: begin
 	   for(int i = 0; i < 16; i = i + 1) begin
-	      x_nxt[i] <= '0;
-	      y_nxt[i] <= '0;
+	      x_nxt[i] = '0;
+	      y_nxt[i] = '0;
+	      nxt_inc = 0;
 	   end
-
-//	x_nxt = '0;
-//	y_nxt = '0;
-	mask = '0;
-	if(start==1) 
-		nextstate = SEARCH;
-	end
+		//mask = '0;
+		if(start==1) 
+			nextstate = SEARCH;
+		end
 
 	SEARCH: begin
-		if (jw_dp_ready[0] == 1) begin
+		nxt_inc = 0;
+		if(done==1)
+			nextstate = DONE;
+		else if (jw_dp_ready[0] == 1) begin
 			x_nxt[0] = x;
 			y_nxt[0] = y;
 			nextstate = REST;
@@ -165,25 +170,29 @@ case(state)
 		end
 	end
 	REST: begin
-		nextstate = ASSIGN;
-		mask = '0;
+		if(done==1)
+			nextstate = DONE;
+		else begin
+			nextstate = ASSIGN;
+			mask = '0;
+			nxt_inc = 1;
+		end
 	end
-	//REST2: begin
-	//	nextstate = ASSIGN;
-	//end
+
 	ASSIGN: begin
-		
-		nextstate = SEARCH;
-		inc = 1;
+		if(done==1)
+			nextstate = DONE;
+		else begin
+			nextstate = SEARCH;
+			nxt_inc = 0;
+		end
 	end
 	DONE: begin
+		nextstate = IDLE;
+		nxt_inc = 0;
 	end
 	default: begin
-		x_nxt = x_reg;
-		y_nxt = y_reg;
-		inc = 0;
-		nextstate = state;
-		mask = '0;
+		
 	end
 endcase
 end

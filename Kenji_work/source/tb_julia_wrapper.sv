@@ -60,7 +60,7 @@ julia_wrapper JULIA_WRAPPER
 
       @(posedge tb_clk);
       #(CHECK_DELAY);
-
+      tb_start_sig = 0;
    end
 
 endmodule

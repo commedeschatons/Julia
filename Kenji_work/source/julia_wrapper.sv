@@ -17,7 +17,8 @@ input logic signed [21:0] b,
 
 output logic [31:0] wr_addr,
 output logic [31:0] wr_data,
-output logic wr_ready
+output logic wr_ready,
+output logic [31:0] addr_reg_out [15:0]
 );
 
 
@@ -34,7 +35,7 @@ logic [9:0] y_reg [15:0];
 logic [31:0] color_reg [15:0];
 logic [31:0] addr_reg [15:0];
 
-
+assign addr_reg_out = addr_reg;
 //always @(posedge disp_jw_start)
 
    dispatch DISPATCH

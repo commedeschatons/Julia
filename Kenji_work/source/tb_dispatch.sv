@@ -25,8 +25,8 @@ module tb_dispatch ();
 	logic [15:0] tb_jw_dp_ready;
 
 	logic [15:0] tb_dp_jw_start;
-	logic [15:0] [9:0] tb_x_reg;
-	logic [15:0] [9:0] tb_y_reg;
+	logic [9:0] tb_x_reg [15:0];
+	logic [9:0] tb_y_reg [15:0];
 
 	//genvar i;
 
@@ -48,7 +48,8 @@ module tb_dispatch ();
 		
 		.dp_jw_start(tb_dp_jw_start),
 		.x_reg(tb_x_reg),
-		.y_reg(tb_y_reg)
+		.y_reg(tb_y_reg),
+		.incr(inc)
 	);
 
 	initial begin
