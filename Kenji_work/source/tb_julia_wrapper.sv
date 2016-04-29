@@ -47,8 +47,8 @@ julia_wrapper JULIA_WRAPPER
    );
 
    initial begin
-      tb_a = 22'd548;
-      tb_b = 22'd22;
+      tb_a = 22'd512;
+      tb_b = 22'd1024;
       tb_wait_request = 1;
       
       tb_n_rst = 1;
