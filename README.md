@@ -1,4 +1,5 @@
 # Julia
-JUlia dude
-it calculates the julia set and shit
-it doesn't actually work tho
+Julia!
+=
+Novel System Verilog code to Generate and Display a particular Julia set on the ECE337 supplied FPGA. 
+=
