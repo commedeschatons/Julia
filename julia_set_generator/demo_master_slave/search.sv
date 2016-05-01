@@ -1,9 +1,20 @@
 /*
-	when bae tells you she found the next available julia worker block
-	muxing based on <^v>
+
+	(memory) Search controller uses round robin to generate a rotating mask. 
+	The mask is constantly being compared to the concatenated done flags of all 16 julia workers (scales , though),
+	
+	When both high bits line up the search controller will pause the shifting and mux the data from the concatenated 32*NUM_JULIA data line for both pixels and addresses.
+	
+	(notice the for-loop brilliance),
+	
+	when it is determined, 
+
+
 	http://stackoverflow.com/questions/19875899/how-to-define-a-parameterized-multiplexer-using-systemverilog
 	
 	http://stackoverflow.com/questions/12504837/verilog-generate-genvar-in-an-always-block3
+	
+	Dimitri James
 */
 
 module search
@@ -14,14 +25,14 @@ module search
 	
 	input wire clk,
 	input wire n_rst,
-	input wire [NUM_JULIA*32 -1:0] cataddresses,
-	input wire [NUM_JULIA*32 -1:0] catpixels,
+	input wire [NUM_JULIA*32 -1:0] cataddresses, //concatenated data from ALL julia works
+	input wire [NUM_JULIA*32 -1:0] catpixels, // same as above, but pixel data
 	input wire [NUM_JULIA -1:0] done,
 //	input wire release_search,
 	output reg found,
 	output reg [31:0] sel_data,
 	output reg [31:0] sel_address,
-	output reg [NUM_JULIA-1:0] mask
+	output reg [NUM_JULIA-1:0] mask //output
 	);	
 	
 	//reg [31:0] sel_data;
@@ -72,9 +83,9 @@ module search
 		for (int k=0; k<NUM_JULIA; k=k+1) begin
 			if ((mask & done) == 1<<k) begin
 			
-			sel_address[31:0] = cataddresses[k*32 +: 32];
-				sel_data[31:0] = catpixels[k*32 +: 32];
-				shift_enable = 0;
+			sel_address[31:0] = cataddresses[k*32 +: 32]; //works!
+				sel_data[31:0] = catpixels[k*32 +: 32]; //Wow!
+				shift_enable = 0; //note that this will change when the Mem ctl changes the Free flag, because the done flag will fall then! and shifting will continue.
 			
 			end
 		

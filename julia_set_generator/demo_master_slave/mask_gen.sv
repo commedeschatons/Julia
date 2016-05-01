@@ -1,8 +1,11 @@
 /*
 
-	Dimitri James
-	generates the round-robin rotating mask ya know?
-	just a wrapper
+	Generates a Rotating 1-bit N-bit mask (for n bit julia workers), based on a slightly modified flexstpsr
+	to be used in the Memory Search controller.
+
+	james71@purdue.edu Dimitri James
+	
+	
 */
 
 module mask_gen
