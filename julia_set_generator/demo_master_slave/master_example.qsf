@@ -549,6 +549,28 @@ set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_desig
 set_global_assignment -name EDA_INPUT_DATA_FORMAT EDIF -section_id eda_design_synthesis
 set_global_assignment -name EDA_RUN_TOOL_AUTOMATICALLY OFF -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_FILE "Custom Files/tb_icb.sv" -section_id tb_icb
+set_global_assignment -name SYSTEMVERILOG_FILE z_calculator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE wcu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE sr_9bit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE search.sv
+set_global_assignment -name SYSTEMVERILOG_FILE real2imag.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pix_inc.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pixel_calculator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pixel2color.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mem.sv
+set_global_assignment -name SYSTEMVERILOG_FILE mask_gen.sv
+set_global_assignment -name SYSTEMVERILOG_FILE julia_wrapper.sv
+set_global_assignment -name SYSTEMVERILOG_FILE julia_worker.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flex_y.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flex_x.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flex_stp_sr.sv
+set_global_assignment -name SYSTEMVERILOG_FILE flex_counter.sv
+set_global_assignment -name SYSTEMVERILOG_FILE fixed_multiplication.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dispatch.sv
+set_global_assignment -name SYSTEMVERILOG_FILE addr_calculator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE custom_master_slave.sv
+set_global_assignment -name SYSTEMVERILOG_FILE master_example.sv
+set_global_assignment -name VERILOG_FILE SEG_HEX.v
 set_global_assignment -name SYSTEMVERILOG_FILE vga_example.sv
 set_global_assignment -name SYSTEMVERILOG_FILE custom_vga.sv
 set_global_assignment -name QIP_FILE amm_master_qsys_with_pcie/synthesis/amm_master_qsys_with_pcie.qip

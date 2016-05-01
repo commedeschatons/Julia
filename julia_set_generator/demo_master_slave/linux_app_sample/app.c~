@@ -47,11 +47,11 @@ int main(int argc, char * argv[])
 		return 0;
 	}
 
-	if(argc != 3){
-		printf("usage: ./app <a int> <b int>");
-		return 1;
-	}
-	runCustomLogic(hPCIe, CRA, atof(argv[1]), atof(argv[2]));
+	//if(argc != 3){
+	//	printf("usage: ./app <a int> <b int>");
+	//	return 1;
+	//}
+	runCustomLogic(hPCIe, CRA, 3.5, 5.4);
 	/*
 	//test CRA
 	test32(hPCIe, CRA);			// Test the Configuration Registers for reads and writes
@@ -71,10 +71,10 @@ void runCustomLogic(PCIE_HANDLE hPCIe, DWORD addr, float a, float b){
 	DWORD readVal;
 	int i;
 	printf("%d\n",(int)(a));
-	args[0] = (DWORD)((int)a);
-	args[1] = float2fxpt(a);
-	args[2] = (DWORD)((int)b);
-	args[3] = float2fxpt(b);
+	args[0] = (DWORD)0;
+	args[1] = (DWORD)584;
+	args[2] = (DWORD)0;
+	args[3] = (DWORD)22;
 	
 	for(i = 0;i < NUMARGS;i++){
 		bPass = PCIE_Write32( hPCIe, pcie_bars[0], addr+(4*i), args[i]);

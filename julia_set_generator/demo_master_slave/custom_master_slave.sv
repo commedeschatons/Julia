@@ -71,6 +71,27 @@ logic nxt_wr;
 
 assign a = {csr_registers[0][10:0],csr_registers[1][10:0]};
 assign b = {csr_registers[2][10:0],csr_registers[3][10:0]};
+
+logic wr_done;
+logic [31:0] wr_addr;
+logic [31:0] data;
+logic wr_ready;
+/*
+julia_wrapper JULIA(
+.clk(clk),
+.n_rst(reset_n),
+
+.start_sig(start_sig),
+.wait_request(master_waitrequest),
+.a(a),
+.b(b),
+
+.wr_addr(master_address),
+.wr_data(master_writedata),
+.wr_enable(master_write)
+);
+*/
+
 // Slave side 
 always_ff @ ( posedge clk ) begin 
   wr_flag <= '0;
@@ -100,9 +121,8 @@ end
 
 
 //start_signal
-always_ff @ (negedge clk) begin
-	arg_count <= arg_count;
-	start_sig <= '0;
+always_ff @ (negedge clk,negedge reset_n) begin
+
 	
 	if(!reset_n) begin
 		start_sig <= 0;
@@ -114,11 +134,14 @@ always_ff @ (negedge clk) begin
 			start_sig <= 1;
 			arg_count <= '0;
 		end
+	end else begin
+		arg_count <= arg_count;
+		start_sig <= '0;
 	end
 end
 
 //start signal debug timje yo
-always_ff @ (posedge clk) begin
+always_ff @ (posedge clk, negedge reset_n) begin
 	if(!reset_n) 
 		debug <= '0;
 	else if (start_sig) 
@@ -139,6 +162,8 @@ always_ff @ ( posedge clk ) begin
 	end
 end
 
+
+
 //Next State Logic 
 always_comb begin 
 	nextState = state;
@@ -150,10 +175,10 @@ always_comb begin
 		WRITE: begin
 			master_write = 1; //write enable must be set high to write to SDRAM
 			master_address =  address; //address in SDRAM to write to (initialized to SDRAM's base address and same place that pixel buffer is looking at)
-			master_writedata = 32'h00FF0000; //(Blue = 32'h00FF0000, Green = 32'h0000FF00, Red = 32'h000000FF)
+			master_writedata = 32'h00000000; //(Blue = 32'h00FF0000, Green = 32'h0000FF00, Red = 32'h000000FF)
 			if (!master_waitrequest) begin //if not currently writing, go on to next address, otherwise wait for write to finish
 				nextAddress = address + 4; // address is in hex, and each is 32 bits wide, so move up by 4 hex
-				if(nextAddress == 32'h08CD2000) //if at the end of a 640x480 image space then go to idle (no need to write the entire SDRAM over)
+				if(nextAddress >= 32'h0800FFFF) //32'h08CD2000 if at the end of a 640x480 image space then go to idle (no need to write the entire SDRAM over)
 				begin
 					nextState = IDLE;
 				end
@@ -220,6 +245,7 @@ end
 */
 
 endmodule
+
 
 
 
