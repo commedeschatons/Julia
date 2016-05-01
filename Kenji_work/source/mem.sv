@@ -30,7 +30,7 @@ NUM_JULIA = 16
 	reg [31:0] sel_data_syn;
 	reg found;
 	//reg release_search;
-	typedef enum 	    bit [3:0] {NEXTDONE, ASSERT,ASSERT2, WRITE, DEASSERT} stateType;
+	typedef enum 	    bit [2:0] {NEXTDONE, ASSERT,ASSERT2, WRITE, DEASSERT} stateType;
 	stateType state;
 	stateType nextstate;
 	reg [31:0] sel_address_save;
