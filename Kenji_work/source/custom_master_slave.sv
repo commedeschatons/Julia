@@ -1,251 +1,201 @@
 // custom_master_slave module : Acts as an avalon slave to receive input commands from PCIE IP
 
 module custom_master_slave #(
-	parameter MASTER_ADDRESSWIDTH = 26 ,  	// ADDRESSWIDTH specifies how many addresses the Master can address 
-	parameter SLAVE_ADDRESSWIDTH = 3 ,  	// ADDRESSWIDTH specifies how many addresses the slave needs to be mapped to. log(NUMREGS)
-	parameter DATAWIDTH = 32 ,    		// DATAWIDTH specifies the data width. Default 32 bits
-	parameter NUMREGS = 8 ,       		// Number of Internal Registers for Custom Logic
-	parameter REGWIDTH = 32       		// Data Width for the Internal Registers. Default 32 bits
-)	
-(	
-	input logic  clk,
-   input logic  reset_n,
-	
+			     parameter MASTER_ADDRESSWIDTH = 32 ,  	// ADDRESSWIDTH specifies how many addresses the Master can address 
+			     parameter SLAVE_ADDRESSWIDTH = 3 ,  	// ADDRESSWIDTH specifies how many addresses the slave needs to be mapped to. log(NUMREGS)
+			     parameter DATAWIDTH = 32 ,    		// DATAWIDTH specifies the data width. Default 32 bits
+			     parameter NUMREGS = 8 ,       		// Number of Internal Registers for Custom Logic
+			     parameter REGWIDTH = 32       		// Data Width for the Internal Registers. Default 32 bits
+			     )	
+   (	
+	input logic 			       clk,
+	input logic 			       reset_n,
+   
 	// Interface to Top Level
-	input logic rdwr_cntl,					// Control Read or Write to a slave module.
-	input logic n_action,					// Trigger the Read or Write. Additional control to avoid continuous transactions. Not a required signal. Can and should be removed for actual application.
-	input logic add_data_sel,				// Interfaced to switch. Selects either Data or Address to be displayed on the Seven Segment Displays.
-	input logic [MASTER_ADDRESSWIDTH-1:0] rdwr_address,	// read_address if required to be sent from another block. Can be unused if consecutive reads are required.
-	output logic [DATAWIDTH-1:0] display_data,
+	input logic 			       rdwr_cntl, // Control Read or Write to a slave module.
+	input logic 			       n_action, // Trigger the Read or Write. Additional control to avoid continuous transactions. Not a required signal. Can and should be removed for actual application.
+	input logic 			       add_data_sel, // Interfaced to switch. Selects either Data or Address to be displayed on the Seven Segment Displays.
+	input logic [MASTER_ADDRESSWIDTH-1:0]  rdwr_address, // read_address if required to be sent from another block. Can be unused if consecutive reads are required.
+	output logic [DATAWIDTH-1:0] 	       display_data,
 
 	// Bus Slave Interface
-        input logic [SLAVE_ADDRESSWIDTH-1:0] slave_address,
-        input logic [DATAWIDTH-1:0] slave_writedata,
-        input logic  slave_write,
-        input logic  slave_read,
-        input logic  slave_chipselect,
-//      input logic  slave_readdatavalid, 			// These signals are for variable latency reads. 
-//	output logic slave_waitrequest,   			// See the Avalon Specifications for details  on how to use them.
-        output logic [DATAWIDTH-1:0] slave_readdata,
+        input logic [SLAVE_ADDRESSWIDTH-1:0]   slave_address,
+        input logic [DATAWIDTH-1:0] 	       slave_writedata,
+        input logic 			       slave_write,
+        input logic 			       slave_read,
+        input logic 			       slave_chipselect,
+        output logic [DATAWIDTH-1:0] 	       slave_readdata,
 
 	// Bus Master Interface
         output logic [MASTER_ADDRESSWIDTH-1:0] master_address,
-        output logic [DATAWIDTH-1:0] master_writedata,
-        output logic  master_write,
-        output logic  master_read,
-        input logic [DATAWIDTH-1:0] master_readdata,
-        input logic  master_readdatavalid,
-        input logic  master_waitrequest
-		  
-);
+        output logic [DATAWIDTH-1:0] 	       master_writedata,
+        output logic 			       master_write,
+        output logic 			       master_read,
+        input logic [DATAWIDTH-1:0] 	       master_readdata,
+        input logic 			       master_readdatavalid,
+        input logic 			       master_waitrequest,
 
+   output logic display_our_next_reset,
+   output logic display_nxt_start,
+   output logic display_slave_write_reg,
+	output logic display_toplevel_reset
+	);
 
-parameter START_BYTE = 32'hF00BF00B;
-parameter STOP_BYTE = 32'hDEADF00B;
-parameter SDRAM_ADDR = 32'h08000000;
+   parameter START_BYTE = 32'hF00BF00B;
+   parameter STOP_BYTE = 32'hDEADF00B;
+   parameter SDRAM_ADDR = 32'h08000000;
 
-logic [MASTER_ADDRESSWIDTH-1:0] address, nextAddress;
-logic [DATAWIDTH-1:0] nextRead_data, read_data;
-logic [DATAWIDTH-1:0] nextData, wr_data;
-logic [NUMREGS-1:0][REGWIDTH-1:0] csr_registers;  		// Command and Status Registers (CSR) for custom logic 
-logic [NUMREGS-1:0] reg_index, nextRegIndex;
-logic [NUMREGS-1:0][REGWIDTH-1:0] read_data_registers;  //Store SDRAM read data for display
-logic new_data_flag;
+   logic [MASTER_ADDRESSWIDTH-1:0] 	       address, nextAddress;
+   logic [DATAWIDTH-1:0] 		       nextRead_data, read_data;
+   logic [DATAWIDTH-1:0] 		       nextData, wr_data;
+   logic [NUMREGS-1:0][REGWIDTH-1:0] 	       csr_registers;  		// Command and Status Registers (CSR) for custom logic 
+   logic [NUMREGS-1:0] 			       reg_index, nextRegIndex;
+   logic [NUMREGS-1:0][REGWIDTH-1:0] 	       read_data_registers;  //Store SDRAM read data for display
+   logic 				       new_data_flag;
 
-typedef enum {IDLE, WRITE} state_t;
-state_t state, nextState;
+   logic [31:0] 			       debug = '0;
 
-logic [31:0] debug = '0;
-assign display_data = debug;//slave_address csr_registers[0]
+   //INPUT/OUTPUT LOGICS
+   logic 				       start_sig;		//signal that tells the program to start
+   logic 				       nxt_start;
+   reg [21:0] 				       a_reg;
+   reg [21:0] 				       b_reg;
+   logic 				       our_reset;
+   logic 				       our_next_reset;
 
-//INPUT/OUTPUT LOGICS
-logic start_sig;		//signal that tells the program to start
-logic nxt_start;
-logic [2:0] nxt_arg;
-logic [2:0] arg_count;
-logic [21:0] a;
-logic [21:0] b;
+   logic 				       slave_write_reg;
+   logic 				       toplevel_reset;
+   typedef enum bit
+		{WAIT,ASSERT} stateType;
 
-logic wr_flag;
-logic nxt_wr;
+   stateType state;
+   stateType next_state;
+   
+   assign display_data = debug;
 
-assign a = {csr_registers[0][10:0],csr_registers[1][10:0]};
-assign b = {csr_registers[2][10:0],csr_registers[3][10:0]};
+   // Slave side 
+   always_ff @ ( posedge clk,negedge toplevel_reset ) begin 
 
-logic wr_done;
-logic [31:0] wr_addr;
-logic [31:0] data;
-logic wr_ready;
-
-julia_wrapper JULIA(
-.clk(clk),
-.n_rst(reset_n),
-
-.start_sig(start_sig),
-.wait_request(master_waitrequest),
-.a(a),
-.b(b),
-
-.wr_addr(master_address),
-.wr_data(master_writedata),
-.wr_enable(master_write)
-);
-
-
-// Slave side 
-always_ff @ ( posedge clk ) begin 
-  wr_flag <= '0;
-  if(!reset_n)
+      if(!toplevel_reset)
   	begin
-    		slave_readdata <= 32'h0;
- 	      	csr_registers <= '0;
-		wr_flag <= '0;
+    	   slave_readdata <= 32'h0;
+ 	   csr_registers <= '0;
+	   debug <= '0;
+	   slave_write_reg <= '0;
+	   state <= WAIT;
   	end
-  else 
+      else 
   	begin
-  	  if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
-  	  	begin
-  	  	   csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
-		   wr_flag <= 1;
-		   
-  	  	end
-  	  else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
-  	    	begin
-       		// Send a value being requested by a master. 
-       		// If the computation is small you may compute directly and send it out to the master directly from here.
-  	    	   slave_readdata <= csr_registers[slave_address];
-  	    	end
-  	 end
-end
+ 	   slave_write_reg <= slave_write;
+	   our_reset <= our_next_reset;
+	   start_sig <= nxt_start;
+	   debug <= debug;
+	   state <= next_state;
 
+	   if(start_sig == 1)
+	     debug <= debug+1;
 
+  	   if(slave_write && slave_chipselect && (slave_address >= 0) && (slave_address < NUMREGS))
+  	     begin
+  	  	csr_registers[slave_address] <= slave_writedata;  // Write a value to a CSR register
+  	     end
+  	   else if(slave_read && slave_chipselect  && (slave_address >= 0) && (slave_address < NUMREGS)) // reading a CSR Register
+  	     begin
+  	    	slave_readdata <= csr_registers[slave_address];
+  	     end
+  	end
+   end
 
-//start_signal
-always_ff @ (negedge clk,negedge reset_n) begin
+   always_comb begin
+      a_reg = {csr_registers[0][10:0],csr_registers[1][10:0]};
+      b_reg = {csr_registers[2][10:0],csr_registers[3][10:0]};
 
+      display_our_next_reset = our_next_reset;
+      display_slave_write_reg = slave_write_reg;
+      display_nxt_start = nxt_start;
+      display_toplevel_reset = toplevel_reset;
+
+      if(slave_address == 3'b011 && slave_write_reg == 0 && slave_write == 1)
+	our_next_reset = 0;
+      else
+	our_next_reset = 1;	 
+      
+      if(our_reset == 0 && our_next_reset == 1) begin
+	 nxt_start = 1;
+      end else begin
+	 nxt_start = 0;
+      end
+
+      next_state = WAIT;
+      case(state)
+	WAIT: begin
+	   toplevel_reset = 0;
+	   if(slave_write == 1)
+	     next_state = ASSERT;
+			  else
+			    next_state = WAIT;
+	end
 	
-	if(!reset_n) begin
-		start_sig <= 0;
-		arg_count <=2'b0;
+	ASSERT: begin
+	   toplevel_reset = 1;
+
+	   next_state = ASSERT;
 	end
-	else if (wr_flag ==1) begin
-		arg_count <= arg_count + 1;
-		if(arg_count >= 2'b11) begin
-			start_sig <= 1;
-			arg_count <= '0;
-		end
-	end else begin
-		arg_count <= arg_count;
-		start_sig <= '0;
-	end
-end
+      endcase
+   end
 
-//start signal debug timje yo
-always_ff @ (posedge clk, negedge reset_n) begin
-	if(!reset_n) 
-		debug <= '0;
-	else if (start_sig) 
-		debug <= debug+1;
-	else
-		debug <= debug;
-end
-
-// Master Side
-always_ff @ ( posedge clk ) begin 
-	
-	if (!reset_n) begin 
-		address <= SDRAM_ADDR; //always start out at the base address of SDRAM, where pixel buffer is looking
-		state <= WRITE; 
-	end else begin 
-		state <= nextState;
-		address <= nextAddress;
-	end
-end
-
-
-/*
-//Next State Logic 
-always_comb begin 
-	nextState = state;
-	nextAddress = address;
-	master_write = 1'b0;
-	master_writedata = '0;
-	master_address = address;
-	case( state ) 
-		WRITE: begin
-			master_write = 1; //write enable must be set high to write to SDRAM
-			master_address =  address; //address in SDRAM to write to (initialized to SDRAM's base address and same place that pixel buffer is looking at)
-			master_writedata = 32'h0000FF00; //(Blue = 32'h00FF0000, Green = 32'h0000FF00, Red = 32'h000000FF)
-			if (!master_waitrequest) begin //if not currently writing, go on to next address, otherwise wait for write to finish
-				nextAddress = address + 4; // address is in hex, and each is 32 bits wide, so move up by 4 hex
-				if(nextAddress >= 32'h080000FF) //32'h08CD2000 if at the end of a 640x480 image space then go to idle (no need to write the entire SDRAM over)
-				begin
-					nextState = IDLE;
-				end
-				else //else keep on writing
-				begin
-					nextState = WRITE;
-				end			
-			end
-		end 
-		
-		IDLE : 
-		begin
-			nextState = IDLE;
-		end
-		
-	endcase
-end
-*/
-/*
-// Master Side
-always_ff @ ( posedge clk ) begin 
-	
-	if (!reset_n) begin 
-		address <= SDRAM_ADDR; //always start out at the base address of SDRAM, where pixel buffer is looking
-		state <= WRITE; 
-	end else begin 
-		state <= nextState;
-		address <= nextAddress;
-	end
-end
-
-//Next State Logic 
-always_comb begin 
-	nextState = state;
-	nextAddress = address;
-	master_write = 1'b0;
-	master_writedata = '0;
-	master_address = address;
-	case( state ) 
-		WRITE: begin
-			master_write = 1; //write enable must be set high to write to SDRAM
-			master_address =  address; //address in SDRAM to write to (initialized to SDRAM's base address and same place that pixel buffer is looking at)
-			master_writedata = 32'h00FF0000; //(Blue = 32'h00FF0000, Green = 32'h0000FF00, Red = 32'h000000FF)
-			if (!master_waitrequest) begin //if not currently writing, go on to next address, otherwise wait for write to finish
-				nextAddress = address + 4; // address is in hex, and each is 32 bits wide, so move up by 4 hex
-				if(nextAddress == 32'h08CD2000) //if at the end of a 640x480 image space then go to idle (no need to write the entire SDRAM over)
-				begin
-					nextState = IDLE;
-				end
-				else //else keep on writing
-				begin
-					nextState = WRITE;
-				end			
-			end
-		end 
-		
-		IDLE : 
-		begin
-			nextState = IDLE;
-		end
-		
-	endcase
-end
-*/
+   julia_wrapper JULIA
+     (
+      .clk(clk),
+      .n_rst(our_reset),
+      .start_sig(start_sig),
+      .wait_request(master_waitrequest),
+      .a(a_reg),
+      .b(b_reg),
+      .wr_addr(master_address),
+      .wr_data(master_writedata),
+      .wr_enable(master_write)
+      );
 
 endmodule
 
+/*
 
 
+      if(wr_flag == 3'b011) begin
+	 our_next_reset = 0;
+	 next_wr_flag = 0;
+      end else begin
+	 our_next_reset = 1;
+	 next_wr_flag = wr_flag + 1;
+      end
 
+
+      if(slave_address == 3'b011 && slave_write_reg == 0 && slave_write == 1)
+	our_next_reset = 0;
+      else
+	our_next_reset = 1;	 
+      
+      if(our_reset == 0 && our_next_reset == 1) begin
+	 nxt_start = 1;
+      end else begin
+	 nxt_start = 0;
+      end
+
+      next_state = WAIT;
+      case(state)
+	WAIT: begin
+	   toplevel_reset = 0;
+	   if(slave_write == 1)
+	     next_state = ASSERT;
+	   else
+	     next_state = WAIT;
+	end
+
+	ASSERT: begin
+	   toplevel_reset = 1;
+
+	   next_state = ASSERT;
+	end
+      endcase
+*/ 
