@@ -4,7 +4,8 @@
 // Author:      Kenji Inoue
 // Lab Section: 337-05
 // Version:     1.0  Initial Design Entry
-// Description: work dispatcher kenji
+// Description: Work Dispatcher. Responsible for dispatching work to the julia workers. Prioritizes workers with lower index.
+
 module dispatch
 (
 input logic clk,
@@ -13,7 +14,7 @@ input logic start,
 input logic [15:0] jw_dp_ready,
 
 output logic [15:0] dp_jw_start,
-output reg [9:0] x_reg [15:0],
+output reg [9:0] x_reg [15:0],		
 output reg [9:0] y_reg [15:0],
 output logic incr
 );
