@@ -6,7 +6,8 @@
 // Version:     1.0  Initial Design Entry
 // Description: 1)determines number of z_calculator module calls
 //              2)decode number of iterations into 8 bits pixel value
-//              3)
+//              3)receive signal from state machine that initiates calculation
+//              4)send signal to state machine informing that calculation is complete
 
 module pixel_calculator
   #(

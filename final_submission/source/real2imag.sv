@@ -4,7 +4,7 @@
 // Author:      Chongjin Chua
 // Lab Section: 337-05
 // Version:     1.0  Initial Design Entry
-// Description: Given z val and c val, calculates the new z value
+// Description: convert given x and y coordinates to values that range between -1 to 1.(imaginary plane)
 
 module real2imag
   #(

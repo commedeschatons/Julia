@@ -16,7 +16,7 @@ include /home/ecegrid/a/ece337/Course_Prod/course_make_vars
 # (do not include the source folder in the name)
 # NOTE: YOU WILL NEED TO SET THIS VARIABLE'S VALUE WHEN WORKING WITH HEIRARCHICAL DESIGNS
 # AND THE AUTOMATED GRADING SYSTEM
-COMPONENT_FILES	:= julia_wrapper.sv mem.sv mask_gen.sv search.sv flex_stp_sr.sv dispatch.sv pix_inc.sv flex_x.sv flex_y.sv addr_calculator.sv fixed_multiplication.sv flex_counter.sv julia_worker.sv pixel2color.sv pixel_calculator.sv real2imag.sv wcu.sv z_calculator.sv
+COMPONENT_FILES	:= julia_wrapper.sv mem.sv mask_gen.sv search.sv flex_stp_sr.sv dispatch.sv pix_inc.sv flex_x.sv flex_y.sv addr_calculator.sv fixed_multiplication.sv flex_counter.sv pixel2color.sv pixel_calculator.sv real2imag.sv wcu.sv z_calculator.sv julia_worker.sv
 #flex_counter.sv rcu.sv rx_data_buff.sv sr_9bit.sv start_bit_det.sv stop_bit_chk.sv flex_stp_sr.sv timer.sv
 
 # Specify the name of the top level file (do not include the source folder in the name)

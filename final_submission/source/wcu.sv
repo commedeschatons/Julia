@@ -4,7 +4,7 @@
 // Author:      Chongjin Chua
 // Lab Section: 337-05
 // Version:     1.0  Initial Design Entry
-// Description: takes input from work dispatcher and send output to memory controller
+// Description: State machine of Julia worker that takes input from work dispatcher and send output to memory controller.
 
 module wcu
   (

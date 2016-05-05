@@ -39,8 +39,10 @@ logic [16*32 - 1:0] color_1D;
 //assign jwmcdone = jw_mc_done;
 //always @(posedge disp_jw_start)
 
-   assign addr_1D = {addr_reg[15] ,addr_reg[14],addr_reg[13],addr_reg[12],addr_reg[11],addr_reg[10],addr_reg[9],addr_reg[8],addr_reg[7],addr_reg[6],addr_reg[5],addr_reg[4],addr_reg[3],addr_reg[2],addr_reg[1],addr_reg[0]};
-   assign color_1D = {color_reg[15] ,color_reg[14],color_reg[13],color_reg[12],color_reg[11],color_reg[10],color_reg[9],color_reg[8],color_reg[7],color_reg[6],color_reg[5],color_reg[4],color_reg[3],color_reg[2],color_reg[1],color_reg[0]};   
+   always_comb begin
+      addr_1D = {addr_reg[15] ,addr_reg[14],addr_reg[13],addr_reg[12],addr_reg[11],addr_reg[10],addr_reg[9],addr_reg[8],addr_reg[7],addr_reg[6],addr_reg[5],addr_reg[4],addr_reg[3],addr_reg[2],addr_reg[1],addr_reg[0]};
+      color_1D = {color_reg[15] ,color_reg[14],color_reg[13],color_reg[12],color_reg[11],color_reg[10],color_reg[9],color_reg[8],color_reg[7],color_reg[6],color_reg[5],color_reg[4],color_reg[3],color_reg[2],color_reg[1],color_reg[0]};
+   end
    
    mem MEM
      (

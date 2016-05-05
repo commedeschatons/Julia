@@ -21,7 +21,8 @@ module tb_custom_master_slave ();
 	logic tb_n_action = '0;
 	logic tb_add_data_sel = '0;
 	logic [31:0] tb_rdwr_address = '0;
-	
+   logic 	     tb_wait_request = 1;
+   
 
 	always
 	begin
@@ -50,6 +51,7 @@ module tb_custom_master_slave ();
 	#(CHK_DELAY);
 	@(posedge tb_clk);
 	#(CHK_DELAY);
+	tb_wait_request = 0;
 	tb_slave_chipselect = 1;
 	tb_slave_address = 0;
 	tb_slave_data = 32'h0;//write reg 1

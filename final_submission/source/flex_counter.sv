@@ -4,7 +4,7 @@
 // Author:      Dimitri James
 // Lab Section: 337-05
 // Version:     1.0  Initial Design Entry
-// Description: a;slkdfj;
+// Description: rollover flag is used to sample data whenever data has stabilized.
 
 module flex_counter
   #(

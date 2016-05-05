@@ -1,4 +1,4 @@
-// custom_master_slave module : Acts as an avalon slave to receive input commands from PCIE IP
+// custom_master_slave module : Acts as an avalon slave to receive input commands from PCIE IP. Initiates custom design and write output to SDRAM through avalon master.
 
 module custom_master_slave #(
 			     parameter MASTER_ADDRESSWIDTH = 32 ,  	// ADDRESSWIDTH specifies how many addresses the Master can address 

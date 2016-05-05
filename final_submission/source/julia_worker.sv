@@ -4,7 +4,7 @@
 // Author:      Chongjin Chua
 // Lab Section: 337-05
 // Version:     1.0  Initial Design Entry
-// Description: Julia worker that connects all the sub-modules together
+// Description: Julia worker top wrapper module that connects all the sub-modules together
 
 module julia_worker
   #(
