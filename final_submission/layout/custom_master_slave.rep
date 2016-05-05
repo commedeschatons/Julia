@@ -1,0 +1,899 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'custom_master_slave' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : custom_master_slave
+Version: K-2015.06-SP1
+Date   : Sun May  1 17:21:13 2016
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+  Startpoint: JULIA/MEM/state_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: master_address[31]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  JULIA/MEM/state_reg[1]/CLK (DFFSR)       0.00 #     0.00 r
+  JULIA/MEM/state_reg[1]/Q (DFFSR)         0.65       0.65 f
+  JULIA/MEM/U248/Y (INVX1)                 0.21       0.86 r
+  JULIA/MEM/U246/Y (NAND3X1)               0.05       0.91 f
+  JULIA/MEM/U5/Y (INVX1)                   0.30       1.20 r
+  JULIA/MEM/U6/Y (INVX8)                   0.82       2.03 f
+  JULIA/MEM/U114/Y (NAND3X1)               0.47       2.49 r
+  JULIA/MEM/U3/Y (INVX1)                   0.29       2.78 f
+  JULIA/MEM/U4/Y (INVX4)                   0.69       3.47 r
+  JULIA/MEM/U48/Y (AND2X1)                 0.08       3.55 r
+  JULIA/MEM/write_address[31] (mem)        0.00       3.55 r
+  JULIA/wr_addr[31] (julia_wrapper)        0.00       3.55 r
+  master_address[31] (out)                 0.00       3.55 r
+  data arrival time                                   3.55
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+ 
+****************************************
+Report : area
+Design : custom_master_slave
+Version: K-2015.06-SP1
+Date   : Sun May  1 17:21:13 2016
+****************************************
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+Number of ports:                        38845
+Number of nets:                        177106
+Number of cells:                       117759
+Number of combinational cells:         113503
+Number of sequential cells:              3764
+Number of macros/black boxes:               0
+Number of buf/inv:                      17008
+Number of references:                      15
+
+Combinational area:           59035635.000000
+Buf/Inv area:                  3172248.000000
+Noncombinational area:         2709648.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:              61745283.000000
+Total area:                 undefined
+1
+Loading db file '/package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: There is no defined clock in the design. (PWR-80)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : custom_master_slave
+Version: K-2015.06-SP1
+Date   : Sun May  1 17:21:21 2016
+****************************************
+
+
+Library(s) Used:
+
+    osu05_stdcells (File: /package/eda/cells/OSU/v2.7/synopsys/lib/ami05/osu05_stdcells.db)
+
+
+Operating Conditions: typical   Library: osu05_stdcells
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 5    
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+custom_master_slave                      15.417  198.977 2.02e+04  214.415 100.0
+  add_96 (custom_master_slave_DW01_inc_0)
+                                          0.000    0.000    8.192 8.19e-06   0.0
+  JULIA (julia_wrapper)                4.03e-02  149.882 1.99e+04  149.943  69.9
+    JW15 (julia_worker_0)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_0)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_0)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_0)     0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_0)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_0_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_0_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_0_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_0_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_0_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_0)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_0_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_1)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_1_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_2)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_2_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_3)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_3_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_4)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_4_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_0)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_1)     0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_80)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_80_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_81)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_81_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_0)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_0_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_0_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_0)                         0.000    0.307    3.387    0.307   0.1
+    JW14 (julia_worker_1)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_1)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_1)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_2)     0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_1)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_1_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_1_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_1_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_1_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_1_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_5)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_5_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_6)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_6_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_7)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_7_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_8)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_8_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_9)     0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_9_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_1)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_3)     0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_82)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_82_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_83)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_83_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_1)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_1_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_1_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_1)                         0.000    0.307    3.387    0.307   0.1
+    JW13 (julia_worker_2)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_2)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_2)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_4)     0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_2)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_2_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_2_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_2_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_2_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_2_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_10)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_10_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_11)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_11_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_12)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_12_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_13)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_13_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_14)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_14_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_2)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_5)     0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_84)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_84_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_85)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_85_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_2)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_2_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_2_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_2)                         0.000    0.307    3.387    0.307   0.1
+    JW12 (julia_worker_3)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_3)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_3)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_6)     0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_3)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_3_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_3_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_3_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_3_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_3_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_15)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_15_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_16)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_16_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_17)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_17_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_18)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_18_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_19)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_19_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_3)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_7)     0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_86)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_86_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_87)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_87_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_3)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_3_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_3_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_3)                         0.000    0.307    3.387    0.307   0.1
+    JW11 (julia_worker_4)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_4)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_4)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_8)     0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_4)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_4_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_4_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_4_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_4_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_4_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_20)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_20_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_21)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_21_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_22)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_22_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_23)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_23_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_24)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_24_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_4)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_9)     0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_88)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_88_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_89)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_89_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_4)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_4_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_4_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_4)                         0.000    0.307    3.387    0.307   0.1
+    JW10 (julia_worker_5)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_5)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_5)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_10)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_5)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_5_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_5_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_5_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_5_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_5_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_25)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_25_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_26)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_26_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_27)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_27_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_28)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_28_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_29)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_29_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_5)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_11)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_90)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_90_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_91)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_91_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_5)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_5_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_5_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_5)                         0.000    0.307    3.387    0.307   0.1
+    JW9 (julia_worker_6)                  0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_6)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_6)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_12)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_6)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_6_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_6_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_6_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_6_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_6_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_30)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_30_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_31)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_31_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_32)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_32_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_33)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_33_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_34)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_34_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_6)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_13)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_92)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_92_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_93)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_93_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_6)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_6_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_6_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_6)                         0.000    0.307    3.387    0.307   0.1
+    JW8 (julia_worker_7)                  0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_7)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_7)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_14)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_7)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_7_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_7_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_7_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_7_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_7_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_35)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_35_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_36)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_36_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_37)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_37_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_38)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_38_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_39)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_39_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_7)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_15)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_94)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_94_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_95)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_95_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_7)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_7_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_7_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_7)                         0.000    0.307    3.387    0.307   0.1
+    JW7 (julia_worker_8)                  0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_8)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_8)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_16)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_8)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_8_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_8_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_8_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_8_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_8_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_40)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_40_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_41)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_41_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_42)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_42_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_43)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_43_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_44)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_44_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_8)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_17)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_96)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_96_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_97)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_97_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_8)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_8_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_8_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_8)                         0.000    0.307    3.387    0.307   0.1
+    JW6 (julia_worker_9)                  0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_9)         0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_9)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_18)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_9)     0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_9_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_9_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_9_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_9_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_9_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_45)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_45_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_46)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_46_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_47)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_47_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_48)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_48_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_49)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_49_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_9)             0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_19)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_98)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_98_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_99)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_99_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_9)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_9_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_9_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_9)                         0.000    0.307    3.387    0.307   0.1
+    JW5 (julia_worker_10)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_10)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_10)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_20)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_10)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_10_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_10_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_10_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_10_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_10_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_50)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_50_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_51)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_51_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_52)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_52_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_53)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_53_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_54)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_54_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_10)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_21)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_100)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_100_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_101)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_101_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_10)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_10_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_10_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_10)                        0.000    0.307    3.387    0.307   0.1
+    JW4 (julia_worker_11)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_11)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_11)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_22)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_11)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_11_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_11_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_11_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_11_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_11_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_55)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_55_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_56)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_56_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_57)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_57_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_58)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_58_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_59)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_59_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_11)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_23)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_102)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_102_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_103)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_103_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_11)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_11_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_11_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_11)                        0.000    0.307    3.387    0.307   0.1
+    JW3 (julia_worker_12)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_12)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_12)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_24)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_12)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_12_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_12_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_12_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_12_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_12_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_60)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_60_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_61)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_61_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_62)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_62_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_63)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_63_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_64)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_64_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_12)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_25)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_104)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_104_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_105)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_105_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_12)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_12_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_12_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_12)                        0.000    0.307    3.387    0.307   0.1
+    JW2 (julia_worker_13)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_13)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_13)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_26)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_13)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_13_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_13_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_13_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_13_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_13_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_65)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_65_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_66)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_66_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_67)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_67_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_68)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_68_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_69)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_69_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_13)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_27)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_106)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_106_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_107)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_107_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_13)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_13_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_13_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_13)                        0.000    0.307    3.387    0.307   0.1
+    JW1 (julia_worker_14)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_14)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_14)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_28)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_14)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_14_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_14_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_14_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_14_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_14_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_70)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_70_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_71)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_71_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_72)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_72_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_73)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_73_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_74)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_74_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_14)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_29)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_108)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_108_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_109)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_109_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_14)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_14_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_14_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_14)                        0.000    0.307    3.387    0.307   0.1
+    JW0 (julia_worker_15)                 0.000    6.858 1.23e+03    6.859   3.2
+      PIXEL2COLOR (pixel2color_15)        0.000    0.000    3.998 4.00e-06   0.0
+      PIXEL_CALCULATOR (pixel_calculator_15)
+                                          0.000    6.039  838.668    6.040   2.8
+        FLEX_COUNTER (flex_counter_30)    0.000    0.512    6.086    0.512   0.2
+        Z_CALCULATOR (z_calculator_15)    0.000    0.000  784.783 7.85e-04   0.0
+          add_1_root_add_44 (z_calculator_15_DW01_add_2)
+                                          0.000    0.000    7.948 7.95e-06   0.0
+          sub_0_root_add_44 (z_calculator_15_DW01_sub_0)
+                                          0.000    0.000    8.611 8.61e-06   0.0
+          add_45 (z_calculator_15_DW01_add_1)
+                                          0.000    0.000    7.584 7.58e-06   0.0
+          add_46 (z_calculator_15_DW01_add_0)
+                                          0.000    0.000    5.763 5.76e-06   0.0
+          add_48 (z_calculator_15_DW01_inc_0)
+                                          0.000    0.000    1.807 1.81e-06   0.0
+          M5 (fixed_multiplication_75)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_75_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M4 (fixed_multiplication_76)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_76_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M3 (fixed_multiplication_77)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_77_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M2 (fixed_multiplication_78)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_78_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          M1 (fixed_multiplication_79)    0.000    0.000  149.718 1.50e-04   0.0
+            mult_23 (fixed_multiplication_79_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      REAL2IMAG (real2imag_15)            0.000    0.512  309.094    0.512   0.2
+        FLEX_COUNTER (flex_counter_31)    0.000    0.512    6.086    0.512   0.2
+        Mimag (fixed_multiplication_110)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_110_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+        Mreal (fixed_multiplication_111)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+          mult_23 (fixed_multiplication_111_DW_mult_tc_1)
+                                          0.000    0.000  149.718 1.50e-04   0.0
+      ADDR_CALCULATOR (addr_calculator_15)
+                                          0.000    0.000   70.241 7.02e-05   0.0
+        mult_32 (addr_calculator_15_DW_mult_uns_2)
+                                          0.000    0.000   43.725 4.37e-05   0.0
+        add_35 (addr_calculator_15_DW01_add_0)
+                                          0.000    0.000   11.073 1.11e-05   0.0
+      WCU (wcu_15)                        0.000    0.307    3.387    0.307   0.1
+    DISPATCH (dispatch)                   0.000   29.994  171.796   29.994  14.0
+      XYCNT (pix_inc)                     0.000    2.252   32.282    2.252   1.1
+        YCNT (flex_y)                     0.000    1.126   16.318    1.126   0.5
+          add_47_aco (flex_y_DW01_inc_0)
+                                          0.000    0.000    2.339 2.34e-06   0.0
+        XCNT (flex_x)                     0.000    1.126   15.755    1.126   0.5
+          add_47 (flex_x_DW01_inc_0)      0.000    0.000    2.339 2.34e-06   0.0
+    MEM (mem)                          4.03e-02   10.157  168.917   10.197   4.8
+      JANGO_FETT (search)                 0.000    1.638  102.804    1.638   0.8
+        mg (mask_gen)                     0.000    1.638   11.099    1.638   0.8
+          FSS (flex_stp_sr_NUM_BITS16_SHIFT_MSB1)
+                                          0.000    1.638   11.099    1.638   0.8
+1
